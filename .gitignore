@@ -1,0 +1,11 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Saved page assets (không commit thư mục tải về từ browser)
+*_files/
+*.download

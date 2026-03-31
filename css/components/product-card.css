@@ -1,0 +1,27 @@
+/* ================================================================
+   product-card.css — Product card component (dùng chung 2 trang)
+   ================================================================ */
+
+/* ---- Card Shelf / Scroller ---- */
+/* .rs-cardsshelf, .rf-cards-scroller */
+/* TODO */
+
+/* ---- Product Nav Card (Shelf-0 navigation thumbnails) ---- */
+/* .rf-productnav-card */
+/* TODO */
+
+/* ---- Standard Content Card (rf-ccard) ---- */
+/* .rf-ccard, .rf-ccard-content */
+/* TODO */
+
+/* ---- Card Image ---- */
+/* .rf-ccard-img-full-wrapper, .rf-productnav-card-image */
+/* TODO */
+
+/* ---- Card Info (title, price, description) ---- */
+/* .rf-ccard-content-header, .rf-ccard-content-desc, .rf-ccard-content-descprice */
+/* TODO */
+
+/* ---- Paddle Nav (prev/next arrows) ---- */
+/* .paddlenav-arrow */
+/* TODO */

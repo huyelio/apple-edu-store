@@ -1,0 +1,48 @@
+/* ================================================================
+   customer-form.css — Reusable styles for the customer info form
+   (Section 5 of buy-ipad-pro.html — Tính năng bổ sung)
+   ================================================================ */
+
+/* ---- Wrapper ---- */
+/* .section-customer-form */
+/* TODO */
+
+/* ---- Header ---- */
+/* .customer-form-title   (H2) */
+/* .customer-form-desc    (mô tả ngắn bên dưới tiêu đề) */
+/* TODO */
+
+/* ---- Form layout ---- */
+/* .customer-form */
+/* .form-group            (wrapper mỗi field: label + input + error) */
+/* TODO */
+
+/* ---- Labels ---- */
+/* .form-group label */
+/* .form-required         (dấu * màu đỏ) */
+/* TODO */
+
+/* ---- Inputs ---- */
+/* .form-group input[type="text"],
+   .form-group input[type="tel"]   (border, padding, focus ring) */
+/* .form-group input.error         (border đỏ khi không hợp lệ) */
+/* TODO */
+
+/* ---- Checkbox (optional) ---- */
+/* .form-group input[type="checkbox"] */
+/* .form-checkbox-label */
+/* TODO */
+
+/* ---- Error messages ---- */
+/* .error-message         (inline, màu đỏ, ẩn mặc định) */
+/* .error-message.visible (hiện khi có lỗi) */
+/* TODO */
+
+/* ---- Submit button ---- */
+/* .form-submit-btn       (style giống Apple button) */
+/* .form-submit-btn:disabled */
+/* TODO */
+
+/* ---- Success message ---- */
+/* .form-success-message  (ẩn mặc định, hiện sau khi gửi thành công) */
+/* TODO */

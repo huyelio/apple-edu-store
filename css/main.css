@@ -1,0 +1,57 @@
+/* ================================================================
+   main.css — Global styles & CSS variables
+   ================================================================ */
+
+/* ---- CSS Custom Properties (Design Tokens) ---- */
+:root {
+  /* Colors */
+  --color-bg: #ffffff;
+  --color-text-primary: #1d1d1f;
+  --color-text-secondary: #6e6e73;
+  --color-accent-blue: #0071e3;
+  --color-accent-blue-hover: #0077ed;
+  --color-border: #d2d2d7;
+  --color-surface: #f5f5f7;
+
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-size-base: 17px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+  --font-size-h1: 56px;
+  --font-size-h2: 40px;
+  --font-size-h3: 28px;
+
+  /* Spacing */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 80px;
+
+  /* Layout */
+  --container-max-width: 1200px;
+  --header-height: 48px;
+}
+
+/* ---- CSS Reset / Base ---- */
+
+/* TODO: reset & base styles */
+
+/* ---- Layout Utilities ---- */
+
+/* TODO: container, grid, flex helpers */
+
+/* ---- Typography ---- */
+
+/* TODO: heading, body, link styles */
+
+/* ---- Buttons ---- */
+
+/* TODO: primary button, secondary button */
+
+/* ---- Responsive Breakpoints ---- */
+/* Mobile  : max-width 734px  */
+/* Tablet  : 735px – 1068px   */
+/* Desktop : min-width 1069px */
