@@ -2,7 +2,11 @@
    edu-store.css — Page-specific styles for index.html
    (Trang Cửa Hàng Giáo Dục Apple)
    ================================================================ */
-
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f7;
+}
 /* ---- Section 2: Store Hero ---- */
 
 .section-hero {
@@ -64,11 +68,229 @@
 /* .rs-productnav-cardsshelf, .rf-productnav-card */
 /* TODO */
 
+.Item-list {
+  padding-left: 90px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 40px;               /* Khoảng cách giữa các mục */
+  overflow-x: auto;        /* Hỗ trợ lướt trên điện thoại */
+}
+
+/* Ẩn thanh cuộn để nhìn chuyên nghiệp hơn */
+.Item-list::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* Căn giữa ảnh và chữ theo chiều dọc */
+  min-width: 100px;        /* Đảm bảo item không bị co quá nhỏ */
+  cursor: pointer;
+}
+
+.Item-list img {
+  width: auto;             /* Để ảnh tự nhảy theo tỷ lệ */
+  height: 62px;            /* Chiều cao cố định để các icon đều nhau */
+  object-fit: contain;     /* Giữ nguyên tỷ lệ ảnh, không bị méo */
+  margin-bottom: 15px;     /* Khoảng cách giữa ảnh và chữ */
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);  /* Hiệu ứng phóng to nhẹ khi di chuột */
+}
+
+.detail {
+  font-size: 13px;         /* Size chữ chuẩn Apple */
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;     /* Không cho chữ xuống dòng */
+}
 /* ---- Section 4: Trợ Giá Cho Giáo Dục ---- */
 /* .section-edu-savings */
 /* .rs-cards-shelf-mainheader, .rs-cards-shelf-secondaryheader */
 /* .rf-ccard-40, badge ưu đãi giáo dục SVG */
 /* TODO */
+.section-edu-savings {
+  padding: 0;
+  margin-top: 40px;
+}
+
+.text-1 {
+  font-size: 28px;
+  font-weight: 600;
+
+  padding-left:90px;
+}
+
+.text-2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: darkgrey;
+}
+.scroll-container {
+   /*display: flex;
+   overflow-x: auto;*/
+   margin :0;
+   position:relative;
+   
+}
+.scroll-content {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  /* 1. Use padding here to create the 'start' and 'end' space */
+  padding-left: 90px; 
+  padding-right: 90px;
+
+  /* 2. This ensures the padding at the end of the scroll is respected */
+  box-sizing: border-box;
+}
+
+.scroll-content::after {
+  content: "";
+  padding-right: 20px; /* Adjust this to match your desired end-gap */
+}
+.scroll-content::-webkit-scrollbar {
+  display: none;               /*no scrollbar*/
+}
+.card {
+  width: 400px;
+  height: 500px;
+
+  flex-shrink: 0;
+  background: #eee;
+  border-radius: 20px;
+
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  
+  border: none;
+  background: rgba(200, 200, 200, 0.6);
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+  z-index: 5;
+}
+
+/* Hover effect */
+.arrow:hover {
+  background: rgba(150, 150, 150, 0.8);
+}
+
+/* Left arrow */
+.arrow.left {
+  left: 10px;
+}
+
+/* Right arrow */
+.arrow.right {
+  right: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 27px;   
+  font-weight: 600;
+}
+.title-white{
+   margin: 0;
+  font-size: 27px;   
+  font-weight: 600;
+  color: antiquewhite;
+}
+.subtitle {
+  margin: 0;
+  font-size: 17px;   
+  font-weight: 600;
+  padding-top: 10px;
+}
+.subtitle-white {
+  margin: 0;
+  font-size: 17px;   
+  font-weight: 600;
+  padding-top: 10px;
+  color: antiquewhite;
+}
+.price{
+   margin: 0;
+  font-size: 15px;   
+  font-weight: 200;
+  padding-top: 10px;
+}
+.price-white{
+   margin: 0;
+  font-size: 15px;   
+  font-weight: 200;
+  padding-top: 10px;
+  color: antiquewhite;
+}
+.special{
+  margin: 0;
+  font-size: 30px;   
+  font-weight: 600;
+  padding-top: 30px;
+}
+
+.card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  z-index: 1;
+}
+
+.card-text {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+
+  z-index: 2;
+}
+
+.edu-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  z-index: 3;
+}
+
+/* Chỉnh kích thước icon nếu cần */
+.edu-badge svg {
+  width: 26px;
+  height: 26px;
+}
+
 
 /* ---- Section 5: Apple Store Tạo Nên Mọi Khác Biệt ---- */
 /* .section-store-highlights */
