@@ -35,7 +35,7 @@
           </a>
         </li>
         <li class="global-nav__top-item">
-          <a href="#" class="global-nav__link" style="border-left: 0.5px solid #110909;">Thoát</a>
+          <a href="#" class="global-nav__link" style="border-left: 0.5px solid #110909; padding-left: 1rem;">Thoát</a>
         </li>
       </ul>
       <ul class="global-nav__list">
@@ -116,10 +116,10 @@
     <div class="search-panel" id="search-panel" aria-hidden="true">
       <div class="search-panel__inner">
         <div class="search-panel__input-wrap">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 15 44" aria-hidden="true"
-            class="search-panel__icon">
+          <svg height="32" viewBox="0 0 30 32" width="30" xmlns="http://www.w3.org/2000/svg">
             <path
-              d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z" />
+              d="m23.3291 23.3066-4.35-4.35c-.0105-.0105-.0247-.0136-.0355-.0235a6.8714 6.8714 0 1 0 -1.5736 1.4969c.0214.0256.03.0575.0542.0815l4.35 4.35a1.1 1.1 0 1 0 1.5557-1.5547zm-15.4507-8.582a5.6031 5.6031 0 1 1 5.603 5.61 5.613 5.613 0 0 1 -5.603-5.61z">
+            </path>
           </svg>
           <input type="search" id="search-input" class="search-panel__input" placeholder="Tìm kiếm trên apple.com"
             autocomplete="off" spellcheck="false" />
@@ -141,7 +141,6 @@
 
   <!-- Backdrop làm mờ nội dung phía dưới khi search mở -->
   <div class="search-backdrop" id="search-backdrop"></div>
-  </header>
 
   <main id="main-content">
 
@@ -189,11 +188,49 @@
                AirPods | AirTag | Apple TV 4K | Phụ Kiện
       - Mũi tên Prev/Next (paddle nav)
     ============================================================ -->
-    <section id="section-product-nav" class="section-product-nav">
-      <!-- TODO -->
+    <section class="Item-list">
+      <div class="item">
+        <img src="img/mac3.png" alt="Mac">
+        <p class="detail">Mac</p>
+      </div>
+
+      <div class="item">
+        <img src="img/ipad3.png" alt="iPad">
+        <p class="detail">iPad</p>
+      </div>
+
+      <div class="item">
+        <img src="img/iphone3.png" alt="iPhone">
+        <p class="detail">iPhone</p>
+      </div>
+
+      <div class="item">
+        <img src="img/watch3.png" alt="Apple Watch">
+        <p class="detail">Apple Watch</p>
+      </div>
+
+      <div class="item">
+        <img src="img/airpod.png" alt="AirPods">
+        <p class="detail">AirPods</p>
+      </div>
+
+      <div class="item">
+        <img src="img/airtag3.png" alt="AirTag">
+        <p class="detail">AirTag</p>
+      </div>
+
+      <div class="item">
+        <img src="img/appletv3.png" alt="Apple TV 4K">
+        <p class="detail">Apple TV 4K</p>
+      </div>
+
+      <div class="item">
+        <img src="img/phukien3.png" alt="Phụ kiện">
+        <p class="detail">Phụ kiện</p>
+      </div>
     </section>
 
-    <!-- ============================================================
+     <!-- ============================================================
       SECTION 4: TRỢ GIÁ CHO GIÁO DỤC  (#shelf-2 / Shelf-1)
       Ref gốc: #shelf-2 (dòng ~1097–1395)
       - H2: "Trợ Giá Cho Giáo Dục."
@@ -214,8 +251,216 @@
           • "Khám phá các phụ kiện với trợ giá cho giáo dục."
       - Mũi tên Prev/Next
     ============================================================ -->
-    <section id="section-edu-savings" class="section-edu-savings">
-      <!-- TODO -->
+    <section class="section-edu-savings">
+      <h2>
+        <span class="text-1">Trợ giá cho giáo dục.</span>
+        <span class="text-2">Nhận giá đặc biệt khi mua Mac, iPad và nhiều sản phẩm khác.</span>
+      </h2>
+
+      <div class="scroll-container">
+        
+        <button class="arrow left">&#10094;</button>
+        <button class="arrow right">&#10095;</button>
+
+        <div class = "scroll-content">
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+
+            <div class="card-text"> 
+              <h3 class="title-white">MacBook Pro</h3>
+              <p class="subtitle-white">Nay với M5, M5 Pro và M5 Max</p>
+              <p class="price-white">Từ 42tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/macbook-pro.jfif" alt="MacBook Pro M5">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+
+            <div class="card-text"> 
+              <h3 class="title">MacBook Air</h3>
+              <p class="subtitle">Nay siêu mạnh mẽ với M5</p>
+              <p class="price">Từ 27tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/macbook-air.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+
+            <div class="card-text"> 
+              <h3 class="title">MacBook Neo</h3>
+              <p class="subtitle">Điều tuyệt vời huyền diệu của Mac ở mức giá bất ngờ</p>
+              <p class="price">Từ 13tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/macbook-neo.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+            <div class="card-text"> 
+              <h3 class="title">iPad Air</h3>
+              <p class="subtitle">Nay siêu mạnh mẽ với M4</p>
+              <p class="price">Từ 15tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/ipad-air.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+
+            <div class="card-text"> 
+              <h3 class="title">Studio Display</h3>
+              <p class="subtitle">Tuyệt diệu từ cái nhìn đầu tiên</p>
+              <p class="price">Từ 42tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/studio-display.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+            <div class="card-text"> 
+              <h3 class="title-white">Studio Display XDR</h3>
+              <p class="subtitle-white">Thánh chuốt pixel</p>
+              <p class="price-white">Từ 87tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+
+            <img src="img/studio-display-xdr.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+
+            <div class="card-text"> 
+              <h3 class="title-white">iPad Pro</h3>
+              <p class="subtitle-white">Mmmmmạnh mẽ</p>
+              <p class="price-white">Từ 27tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/ipad-pro.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+            <div class="card-text"> 
+              <h3 class="title">iPad</h3>
+              <p class="subtitle">Thấy là yêu. Vẽ là phiêu. Tuyệt diệu</p>
+              <p class="price">Từ 9tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/ipad.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+
+            <div class="card-text"> 
+              <h3 class="title">Mac Studio</h3>
+              <p class="subtitle">Thêm sức mạnh cho bạn</p>
+              <p class="price">Từ 54tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/mac-studio" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+
+            <div class="card-text"> 
+              <h3 class="title">iMac</h3>
+              <p class="subtitle">Sáng lllllláng</p>
+              <p class="price">Từ 33tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/imac.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+
+            <div class="card-text"> 
+              <h3 class="title">Mac mini</h3>
+              <p class="subtitle">Xuống cỡ. Lên trình</p>
+              <p class="price">Từ 12tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/mac-mini.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83"/>
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z" fill="#009D83"/>
+              </svg>
+            </div>
+
+            <div class="card-text"> 
+              <h3 class="title">iPad Mini</h3>
+              <p class="subtitle">Điều tuyệt vời nằm gọn trong tay</p>
+              <p class="price">Từ 12tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/ipad-mini.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="card-text"> 
+              <p class="special">Khám phá các phụ kiện với trợ giá cho giáo dục</p>
+            </div>
+            <img src="img/final.jfif" alt="">
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============================================================
