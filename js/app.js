@@ -15,6 +15,9 @@ const searchPanel = document.getElementById("search-panel");
 const searchBackdrop = document.getElementById("search-backdrop");
 const searchCancel = document.getElementById("search-cancel");
 const searchInput = document.getElementById("search-input");
+if (searchCancel) {
+  searchCancel.hidden = true;
+}
 
 function openSearch() {
   searchPanel.classList.add("is-open");
@@ -22,6 +25,12 @@ function openSearch() {
   searchPanel.setAttribute("aria-hidden", "false");
   searchToggle.setAttribute("aria-expanded", "true");
   setTimeout(() => searchInput?.focus(), 350);
+}
+
+function syncCancelVisibility() {
+  if (!searchCancel) return;
+  const hasValue = searchInput?.value ?? "";
+  searchCancel.hidden = !hasValue;
 }
 
 function closeSearch() {
