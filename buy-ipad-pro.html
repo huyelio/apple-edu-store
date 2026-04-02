@@ -664,21 +664,23 @@
             <h2 class="customer-form-title">THÔNG TIN CÁ NHÂN</h2>
             <p class="customer-form-desc">Hãy để lại thông tin nếu bạn quan tâm đến sản phẩm của chúng tôi.</p>
         </div>
-        <form class="customer-form" id="customerForm">
+        <form class="customer-form">
             <div class="form-group">
                 <label>
                     Họ và tên
-                    <input type="text" name="fullName" placeholder="Nguyễn Văn A" required/>
+                    <input type="text" name="fullName" class="error" placeholder="Nguyễn Văn A" required/>
                 </label>
+                <span class="error-message visible">Vui lòng nhập họ và tên</span>
             </div>
             <div class="form-group">
                 <label>
                     Số điện thoại
                     <input type="tel" name="telephone" placeholder="0123456789" pattern="[0-9]{10}" required/>
                 </label>
+                <span class="error-message visible">Số điện thoại không hợp lệ</span>
             </div>
             <button type="submit" class="form-submit-btn">Gửi thông tin</button>
-            <div class="form-success-message" id="successMessage">
+            <div class="form-success-message visible">
                 Thông tin của bạn đã được ghi nhận.
             </div>
         </form>
