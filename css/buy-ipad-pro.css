@@ -3,9 +3,134 @@
    (Trang Mua iPad Pro với ưu đãi Giáo Dục)
    ================================================================ */
 
+body{
+   font-size: 17px;
+    line-height: 1.4705882353;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    color: var(--sk-body-text-color, #1d1d1f);
+    font-style: normal;
+}
+
+div{
+   display:block;
+   unicode-bidi: isolate;
+}
 /* ---- SECTION 2: Sticky Bar ---- */
 /* .rf-bfe-stickybar */
 /* TODO */
+.rf-bfe-header-wrapper{
+   position: relative;
+   z-index: 1;
+   align-items: flex-start;
+   display: flex;
+   padding: 52px 0 22px;
+}
+
+
+.rf-bfe-header{
+   max-width: 640px;
+}
+
+@media(max-width: 1023px) and (max-device-width: 736px) {
+   .rf-bfe-header{
+      max-width: auto;
+   }
+}
+
+.rf-bfe-header h1{
+   color: #1d1d1f;
+   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 48px;
+   font-weight: 600;
+   line-height: 1.083;
+   letter-spacing: -.003em;
+   padding-bottom: 13px;
+}
+.rf-bfe-header-price-point {
+    display: inline;
+    color: #1d1d1f;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47058;
+}
+
+.rf-bfe-header-savingsmessage{
+   display: inline-flex;
+   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   font-weight: 600;
+   letter-spacing: -.016em;
+   line-height: 2;
+   padding-top: 2px;
+   margin-top: 3px;
+   marginr-inline-start: 2px;
+   font-style: normal;
+}
+
+.rf-bfe-header-savingsmessage svg{
+   height: 25px;
+   width: 25px;
+}
+
+.rf-bfe-header-footer{
+   align-items: center;
+   display: flex;
+   justify-content: flex-start;
+   padding-top: 6px;
+   font-size: 14px;
+   line-height: 1.42857;
+   font-weight: 400;
+   letter-spacing: -.016em;
+   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+}
+
+.as-buttonlink{
+   color: #06c;
+   letter-spacing: inherit;
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 1.42859;
+   text-decoration: none;
+}
+
+.rf-bfe-header-rightsection{
+   margin-inline-start: auto;
+}
+
+.rf-bfe-header-learnmorelink-items{
+   align-items: flex-end;
+   display:flex;
+   flex-direction: column;
+   margin-top: 4px;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+.rf-bfe-header-learnmorelink-items a{
+   background-color: #f5f5f7;
+   border-radius: 18px;
+   color: #1d1d1f;
+   display:flex;
+   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 12px;
+   font-weight: 400;
+   letter-spacing: -.01em;
+   line-height: 1.33333;
+   margin: 6px 0;
+   padding: 12px 16px;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+
+
 
 /* ---- SECTION 3: BFE Header ---- */
 /* .rf-bfe-header-wrapper */
