@@ -179,7 +179,7 @@
   border-radius: 0;
   padding: 0 0 0.875rem 0;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #d2d2d7;
+  border-bottom: none;
   background-color: transparent;
 }
 
@@ -194,10 +194,11 @@
   flex: 1;
   border: none;
   background: transparent;
-  font-size: 19px;
+  font-size: 24px;
   font-family: inherit;
   outline: none;
   color: #1d1d1f;
+  font-weight: 600;
   min-width: 0;
 }
 
@@ -228,12 +229,12 @@
 
 /* ---- Quick links ---- */
 .search-panel__suggestions-title {
-  font-size: 11px;
-  font-weight: 600;
-  color: #6e6e73;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400px;
+  color: rgb(110, 110, 115);
+  letter-spacing: -0.12px;
   margin-bottom: 0.75rem;
+  line-height: 16px;
 }
 
 .search-panel__suggestions-list {
