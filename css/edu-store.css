@@ -4,9 +4,60 @@
    ================================================================ */
 
 /* ---- Section 2: Store Hero ---- */
-/* .section-hero */
-/* .rs-shop-header (H1), .rs-shop-subheader, .as-chat-button */
-/* TODO */
+
+.section-hero {
+  background: var(--color-bg);
+  width: 100%;
+}
+
+.section-hero__inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 56px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.section-hero__title {
+  font-size: 80px;
+  font-weight: 600;
+  color: rgb(8, 130, 124);
+  line-height: 1.05;
+  letter-spacing: -1.2px;
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.section-hero__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  gap: 6px;
+  flex-shrink: 0;
+  max-width: 400px;
+}
+
+.section-hero__subtitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.381;
+  letter-spacing: 0.011em;
+}
+
+.section-hero__link {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-accent-blue);
+  text-decoration: none;
+}
+
+.section-hero__link:hover {
+  text-decoration: underline;
+}
 
 /* ---- Section 3: Danh Mục Sản Phẩm ---- */
 /* .section-product-nav */
@@ -25,6 +76,91 @@
 /* màu nền: teal, dodger-blue, green, blue-violet, fire-dodger */
 /* icon SVG lớn phía trên text */
 /* TODO */
+
+/* =============================================
+   SQUARE CARD
+   ============================================= */
+
+.cardsshelf-header-container {
+  font-size: 28px;
+  font-weight: 600;
+  color: rgb(29, 29, 31);
+  text-align: left;
+  margin-bottom: 0.5rem;
+  margin-left: 5rem;
+}
+
+.cardsshelf-header-first {
+  color: rgb(29, 29, 31);
+}
+
+.cardsshelf-header-second {
+  color: #6e6e73;
+}
+
+.section-square-card {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-right: 5rem;
+  padding: 2rem 5rem;
+}
+.square-card-list {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 0.75rem 5rem;
+}
+
+.square-card-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.square-card-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 21rem;
+  padding: 1rem 1.75rem;
+  background-color: #fff;
+  padding-bottom: 4rem;
+  line-height: 1.2;
+  height: 14rem;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 2px 4px 12px #00000014;
+  &:hover {
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+    transform: scale(1.009);
+  }
+  transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+  white-space: normal;
+}
+.square-card-item-icon {
+  width: 46px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(8, 130, 124);
+}
+.square-card-item-header {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(29, 29, 31);
+}
+.dd-highlight {
+  color: rgb(8, 130, 124);
+}
 
 /* ---- Section 6: Tiềm Năng Vô Tận ---- */
 /* .section-edu-potential */
