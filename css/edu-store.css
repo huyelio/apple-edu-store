@@ -77,6 +77,20 @@ body {
   overflow-x: auto;        /* Hỗ trợ lướt trên điện thoại */
 }
 
+@media (max-width: 734px) {
+  .Item-list {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    gap: 20px;
+  }
+  
+  .detail {
+    font-size: 12px;
+  }
+}
+
 /* Ẩn thanh cuộn để nhìn chuyên nghiệp hơn */
 .Item-list::-webkit-scrollbar {
   display: none;
@@ -127,10 +141,27 @@ body {
   padding-left:90px;
 }
 
+@media (max-width: 734px) {
+  .text-1 {
+    font-size: 22px;
+    padding-left: 16px;
+    display: block;
+    margin-bottom: 8px;
+  }
+}
+
 .text-2 {
   font-size: 28px;
   font-weight: 600;
   color: darkgrey;
+}
+
+@media (max-width: 734px) {
+  .text-2 {
+    font-size: 15px;
+    padding-left: 16px;
+    display: block;
+  }
 }
 .scroll-container {
    /*display: flex;
@@ -151,6 +182,13 @@ body {
 
   /* 2. This ensures the padding at the end of the scroll is respected */
   box-sizing: border-box;
+}
+
+@media (max-width: 734px) {
+  .scroll-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 .scroll-content::after {
@@ -308,12 +346,34 @@ body {
   margin-left: 5rem;
 }
 
+@media (max-width: 734px) {
+  .cardsshelf-header-container {
+    font-size: 22px;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
 .cardsshelf-header-first {
   color: rgb(29, 29, 31);
 }
 
+@media (max-width: 734px) {
+  .cardsshelf-header-first {
+    font-size: 22px;
+    padding-left: 16px;
+  }
+}
+
 .cardsshelf-header-second {
   color: #6e6e73;
+}
+
+@media (max-width: 734px) {
+  .cardsshelf-header-second {
+    font-size: 14px;
+    padding-left: 16px;
+  }
 }
 
 .section-square-card {
@@ -326,11 +386,45 @@ body {
   margin-right: 5rem;
   padding: 2rem 5rem;
 }
+
+@media (max-width: 734px) {
+  .section-square-card {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-right: 1rem;
+    padding: 1.5rem;
+  }
+}
+
 .square-card-list {
   display: flex;
   flex-direction: row;
   gap: 2rem;
   padding: 0.75rem 5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Ẩn scrollbar nhưng giữ khả năng scroll */
+.square-card-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.square-card-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.square-card-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+@media (max-width: 734px) {
+  .square-card-list {
+    padding: 0.75rem;
+    gap: 1rem;
+  }
 }
 
 .square-card-row {
@@ -363,6 +457,20 @@ body {
   transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
   white-space: normal;
 }
+
+@media (max-width: 734px) {
+  .square-card-item {
+    width: 14rem;
+    height: 11rem;
+    padding: 0.75rem 1rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .square-card-item-header {
+    font-size: 18px;
+  }
+}
+
 .square-card-item-icon {
   width: 46px;
   height: 56px;
