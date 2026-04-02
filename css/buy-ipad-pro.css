@@ -253,3 +253,371 @@ div{
 /* .rc-chaticon-button */
 /* .as-chat-buyflow-container */
 /* TODO */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  color: #1d1d1f;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================
+   SECTION: So sánh các phiên bản iPad
+.compare-section {
+  max-width: 1068px;
+  margin: 0 auto;
+  padding: 80px 24px 0;
+}
+
+.compare-section h2 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: #1d1d1f;
+  margin-bottom: 10px;
+}
+
+.compare-section .compare-link {
+  display: block;
+  text-align: center;
+  font-size: 17px;
+  color: #0071e3;
+  text-decoration: none;
+  margin-bottom: 60px;
+}
+.compare-section .compare-link:hover { text-decoration: underline; }
+
+/* ---- Cards row ---- */
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-bottom: 1px solid #d2d2d7;
+  padding-bottom: 32px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 12px;
+  position: relative;
+}
+
+.card-img {
+  width: 100%;
+  max-width: 180px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/* Color dots */
+.color-dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,0,0,.15);
+}
+.dot.active { border-color: #1d1d1f; }
+
+.badge-new {
+  font-size: 13px;
+  font-weight: 600;
+  color: #bf4800;
+  margin-bottom: 4px;
+  min-height: 18px;
+}
+
+.card-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.card-desc {
+  font-size: 14px;
+  color: #1d1d1f;
+  text-align: center;
+  line-height: 1.5;
+  min-height: 60px;
+}
+
+.card-btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 20px;
+  border-radius: 980px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  background: #0071e3;
+  color: #fff;
+  white-space: nowrap;
+  transition: background .2s;
+}
+.card-btn:hover { background: #0077ed; }
+
+.card-btn-ghost {
+  background: transparent;
+  color: #0071e3;
+  border: 1.5px solid #0071e3;
+}
+.card-btn-ghost:hover { background: #f5f5f7; }
+
+/* =========================================================
+   COMPARISON TABLE
+.compare-table {
+  max-width: 1068px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.compare-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid #d2d2d7;
+  min-height: 68px;
+}
+.compare-row:last-child { border-bottom: none; }
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #1d1d1f;
+  line-height: 1.4;
+  gap: 2px;
+}
+
+.cell.price {
+  font-size: 15px;
+  color: #1d1d1f;
+  font-weight: 400;
+}
+
+.cell strong {
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.cell .dash { color: #6e6e73; font-size: 18px; line-height: 1; }
+
+.check-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+/* Chip badges */
+.chip-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1d1d1f;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -.3px;
+  margin-bottom: 4px;
+}
+.chip-badge.m5 { font-size: 16px; }
+
+/* Apple Intelligence icon */
+.ai-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 4px;
+}
+
+/* Accessory icons */
+.acc-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 4px;
+}
+
+/* =========================================================
+   FAQ / Q&A Section
+.faq-section {
+  max-width: 1068px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+  border-top: 1px solid #d2d2d7;
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.faq-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1d1d1f;
+}
+
+.faq-toggle-all {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #1d1d1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.faq-toggle-all svg { transition: transform .3s; }
+.faq-toggle-all.open svg { transform: rotate(180deg); }
+
+.faq-list { margin-top: 0; }
+
+.faq-item {
+  border-top: 1px solid #d2d2d7;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 400;
+  color: #1d1d1f;
+  font-family: inherit;
+  gap: 16px;
+}
+.faq-question:hover { color: #0071e3; }
+
+.faq-chevron {
+  flex-shrink: 0;
+  transition: transform .3s ease;
+  color: #1d1d1f;
+}
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+.faq-answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .4s ease, padding .3s;
+}
+.faq-item.open .faq-answer { max-height: 400px; }
+
+.faq-answer-inner {
+  font-size: 15px;
+  color: #6e6e73;
+  line-height: 1.7;
+  padding-bottom: 24px;
+}
+
+/* Footer note */
+.footer-note {
+  max-width: 1068px;
+  margin: 0 auto;
+  padding: 20px 24px 40px;
+  border-top: 1px solid #d2d2d7;
+  font-size: 12px;
+  color: #6e6e73;
+  line-height: 1.6;
+}
+.footer-note p { margin-bottom: 8px; }
+
+
+/* =========================================================
+   CREATOR STUDIO ADD-ON
+.creator-studio-section {
+  background-color: #000; /* Nền đen nguyên khối theo thiết kế Apple */
+  padding: 80px 24px;
+}
+
+.creator-studio-container {
+  max-width: 1068px; /* Giữ cùng chiều rộng với các phần trên để thẳng hàng */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Cột chứa nội dung chữ */
+.cs-text-col {
+  flex: 1;
+  max-width: 480px; /* Giới hạn độ rộng để chữ tự động xuống dòng giống ảnh mẫu */
+}
+
+/* Kích thước logo (đã được thu nhỏ) */
+.cs-logo {
+  height: 20px; /* Giảm từ 28px xuống 20px để logo gọn gàng hơn */
+  width: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Kích thước cụm icon (đã được thu nhỏ) */
+.cs-icons-img {
+  max-width: 100%;
+  width: 380px; /* Giảm từ 480px xuống 380px để cụm icon không bị lấn lướt chữ */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Tiêu đề giá tiền */
+.cs-headline {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+/* Đoạn văn bản mô tả */
+.cs-desc {
+  color: #f5f5f7; /* Màu trắng xám đặc trưng của Apple trên nền đen */
+  font-size: 17px;
+  line-height: 1.47;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+/* Nút link Tìm hiểu thêm */
+.cs-link {
+  color: #2997ff; /* Màu xanh dương tối ưu cho chế độ nền tối */
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.cs-link:hover {
+  text-decoration: underline;
+}
+
+/* Cột chứa ảnh icon */
+.cs-image-col {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end; /* Đẩy ảnh sát về bên phải */
+}
+

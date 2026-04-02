@@ -15,6 +15,9 @@ const searchPanel = document.getElementById("search-panel");
 const searchBackdrop = document.getElementById("search-backdrop");
 const searchCancel = document.getElementById("search-cancel");
 const searchInput = document.getElementById("search-input");
+if (searchCancel) {
+  searchCancel.hidden = true;
+}
 
 function openSearch() {
   searchPanel.classList.add("is-open");
@@ -22,6 +25,12 @@ function openSearch() {
   searchPanel.setAttribute("aria-hidden", "false");
   searchToggle.setAttribute("aria-expanded", "true");
   setTimeout(() => searchInput?.focus(), 350);
+}
+
+function syncCancelVisibility() {
+  if (!searchCancel) return;
+  const hasValue = searchInput?.value ?? "";
+  searchCancel.hidden = !hasValue;
 }
 
 function closeSearch() {
@@ -56,3 +65,42 @@ document.addEventListener("keydown", (e) => {
 
 /* ---- Smooth scroll & anchor links ---- */
 // TODO
+const container = document.querySelector(".scroll-content");
+const leftArrow = document.querySelector(".arrow.left");
+const rightArrow = document.querySelector(".arrow.right");
+
+function updateArrows() {
+  const scrollLeft = container.scrollLeft;
+  const maxScroll = container.scrollWidth - container.clientWidth;
+
+  // Ẩn hiện arrow
+  if (scrollLeft <= 0) {
+    leftArrow.style.opacity = "0";
+    leftArrow.style.pointerEvents = "none";
+  } else {
+    leftArrow.style.opacity = "1";
+    leftArrow.style.pointerEvents = "auto";
+  }
+
+  if (scrollLeft >= maxScroll - 1) {
+    rightArrow.style.opacity = "0";
+    rightArrow.style.pointerEvents = "none";
+  } else {
+    rightArrow.style.opacity = "1";
+    rightArrow.style.pointerEvents = "auto";
+  }
+}
+
+// chạy khi scroll
+container.addEventListener("scroll", updateArrows);
+
+// chạy lần đầu khi load
+updateArrows();
+
+leftArrow.addEventListener("click", () => {
+  container.scrollBy({ left: -400, behavior: "smooth" });
+});
+
+rightArrow.addEventListener("click", () => {
+  container.scrollBy({ left: 400, behavior: "smooth" });
+});

@@ -2,15 +2,15 @@
 <html lang="vi-VN">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mua iPad Pro với ưu đãi Giảm Giá Dành Cho Sinh Viên - Giáo Dục - Apple (VN)</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mua iPad Pro với ưu đãi Giảm Giá Dành Cho Sinh Viên - Giáo Dục - Apple (VN)</title>
 
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/components/header.css" />
-  <link rel="stylesheet" href="css/components/footer.css" />
-  <link rel="stylesheet" href="css/components/customer-form.css" />
-  <link rel="stylesheet" href="css/buy-ipad-pro.css" />
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/components/header.css"/>
+    <link rel="stylesheet" href="css/components/footer.css"/>
+    <link rel="stylesheet" href="css/components/customer-form.css"/>
+    <link rel="stylesheet" href="css/buy-ipad-pro.css"/>
 </head>
 
 <body>
@@ -72,8 +72,54 @@
     </div>
 
   </div>
+<!-- GLOBAL HEADER (dùng chung với index.html) -->
+<header id="globalheader" class="global-header">
+    <nav class="global-nav" aria-label="Menu toàn cục">
+        <ul class="global-nav__top-list">
+            <li class="global-nav__top-item">
+                <a href="index.html" class="global-nav__link">Trang chủ cửa hàng giáo dục</a>
+            </li>
+            <li class="global-nav__top-item">
+                <a href="#" class="global-nav__link"
+                   style="border-left: 0.5px solid #110909; padding-left: 1rem;">Thoát</a>
+            </li>
+        </ul>
+        <ul class="global-nav__list">
+            <!-- Logo Apple -->
+            <li class="global-nav__item global-nav__item--logo">
+                <a href="https://www.apple.com/vn/" class="global-nav__link" aria-label="Apple">
+                    <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                                d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z">
+                        </path>
+                    </svg>
+                </a>
+            </li>
 
-  <main id="main-content">
+            <!-- Các mục điều hướng chính -->
+            <li class="global-nav__item"><a href="#" class="global-nav__link">Cửa hàng</a></li>
+            <li class="global-nav__item"><a href="#" class="global-nav__link">Mac</a></li>
+            <li class="global-nav__item"><a href="#" class="global-nav__link">iPad</a></li>
+            <li class="global-nav__item"><a href="#" class="global-nav__link">iPhone</a></li>
+            <li class="global-nav__item"><a href="#" class="global-nav__link">Watch</a></li>
+            <li class="global-nav__item"><a href="#" class="global-nav__link">AirPods</a></li>
+            <li class="global-nav__item"><a href="#" class="global-nav__link">TV &amp; Nhà</a></li>
+            <li class="global-nav__item"><a href="#" class="global-nav__link">Giải trí</a></li>
+            <li class="global-nav__item"><a href="#" class="global-nav__link">Phụ kiện</a></li>
+            <li class="global-nav__item"><a href="#" class="global-nav__link">Hỗ trợ</a></li>
+
+            <!-- Icon Tìm kiếm -->
+            <li class="global-nav__item global-nav__item--icon">
+                <button id="search-toggle" class="global-nav__link global-nav__search-btn"
+                        aria-label="Tìm kiếm apple.com"
+                        aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+                        <path
+                                d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z">
+                        </path>
+                    </svg>
+                </button>
+            </li>
 
     <div class="rf-bfe-header-wrapper">
       <!-- TODO: H1 "Mua iPad Pro" + giá + badge "Ưu Đãi Tiết Kiệm Cho Ngành Giáo Dục"
@@ -139,130 +185,710 @@
         </div>
       </div>
     </div>
+</header>
 
-    <!-- ── FE-2.2 + FE-2.3: STICKY IMAGE GALLERY & PRODUCT OPTIONS ─────
-      Layout 2 cột bám dính: cột trái là gallery ảnh (FE-2.2), cột phải là
-      các bước chọn cấu hình tuần tự + summary box (FE-2.3).
-    ─────────────────────────────────────────────────────────────────────── -->
-    <div class="rf-bfe">
-      <div class="rf-bfe-main">
+<!-- Backdrop làm mờ nội dung phía dưới khi search mở -->
+<div class="search-backdrop" id="search-backdrop"></div>
 
-        <!-- FE-2.2: Cột trái — Sticky Image Gallery
-             Gallery 2 ảnh (iPad Pro 11" & 13") với dot nav và paddle nav Prev/Next.
-             Cột này bám dính (position sticky) khi người dùng cuộn qua cột phải. -->
-        <div class="rf-bfe-column-left">
-          <!-- TODO: .rf-bfe-gallery-container > .rc-inline-gallery -->
+<!-- ── FE-2.1: STICKY NAVIGATION ──────────────────────────────────────
+  Thanh bám dính khi cuộn: tên "iPad Pro" bên trái, giá "Từ 27.199.000đ" ở giữa,
+  thanh trạng thái giao hàng (icon + "Vận chuyển miễn phí") bên phải với paddle nav.
+  Bên dưới sticky bar là header tĩnh: H1 "Mua iPad Pro", badge giáo dục, link Trade In.
+─────────────────────────────────────────────────────────────────────── -->
+<div class="rf-bfe-stickybar">
+    <!-- TODO: .rf-bfe-stickybar-content -->
+</div>
+
+<section class="creator-studio-section">
+    <div class="creator-studio-container">
+
+        <div class="cs-text-col">
+            <img src="/images/Fe2/ipad-discount-student-2.png" alt="Apple Creator Studio Logo" class="cs-logo">
+            <h3 class="cs-headline">79.000đ mỗi tháng cho sinh viên và nhân viên sư phạm.◊</h3>
+            <p class="cs-desc">Apple Creator Studio bao gồm các ứng dụng nâng cao năng suất như Final Cut Pro, Logic
+                Pro,
+                Pixelmator Pro và nhiều tiện ích khác.</p>
+            <a href="#" class="cs-link">Tìm hiểu thêm ↗</a>
         </div>
 
-        <!-- FE-2.3: Cột phải — Product Options Layout
-             Các bước chọn cấu hình hiển thị tuần tự; bước sau bị khoá đến khi chọn xong bước trước.
-             Mỗi bước gồm: tiêu đề (eyebrow), danh sách radio option + giá, và help link. -->
-        <div class="rf-bfe-column-right">
-          <div class="rf-bfe-selectionarea">
-
-            <!-- Bước 1 — Phiên bản: 11 inch (từ 27.199.000đ) / 13 inch (từ 37.199.000đ) -->
-            <div class="rf-bfe-step" data-step="dimensionScreensize">
-              <!-- TODO -->
-            </div>
-
-            <!-- Bước 2 — Màu: Đen Không Gian / Bạc (color swatch tròn) -->
-            <div class="rf-bfe-step" data-step="dimensionColor">
-              <!-- TODO -->
-            </div>
-
-            <!-- Bước 3 — Dung lượng, bộ nhớ, chip:
-                 256GB–2TB, Bộ nhớ 12–16GB, Chip M5 CPU/GPU các lõi, giá từ 27.199.000đ–55.199.000đ -->
-            <div class="rf-bfe-step" data-step="dimensionCapacity">
-              <!-- TODO -->
-            </div>
-
-            <!-- Bước 4 — Kính màn hình: Tiêu chuẩn / Nano-texture (chỉ có ở 1TB–2TB) -->
-            <div class="rf-bfe-step" data-step="dimensionFinish">
-              <!-- TODO -->
-            </div>
-
-            <!-- Bước 5 — Kết nối: Wi-Fi / Wi-Fi + Cellular -->
-            <div class="rf-bfe-step" data-step="dimensionConnection">
-              <!-- TODO -->
-            </div>
-
-            <!-- Bước 6 — Khắc: Thêm Chi Tiết Khắc (Miễn Phí) / Không khắc -->
-            <div class="rf-bfe-step" data-step="engraving">
-              <!-- TODO -->
-            </div>
-
-            <!-- Bước 7 — Apple Pencil: Pro (3.168.000đ) / USB-C (1.885.000đ) / Không -->
-            <div class="rf-bfe-step" id="acc_pencil">
-              <!-- TODO -->
-            </div>
-
-            <!-- Bước 8 — Bàn phím: Magic Keyboard 11" (7.602.000đ) / 13" (9.068.000đ) / Không -->
-            <div class="rf-bfe-step" id="acc_keyboard">
-              <!-- TODO -->
-            </div>
-
-            <!-- Bước 9 — Apple Trade In: Đổi cũ lấy 900.000đ–24.100.000đ / Không đổi -->
-            <div class="rf-bfe-step rf-bfe-tradeup">
-              <!-- TODO -->
-            </div>
-
-            <!-- Bước 10 — AppleCare+: Thêm (3.799.000đ, badge giáo dục) / Không -->
-            <div class="rf-bfe-step rf-bfe-applecare-options">
-              <!-- TODO -->
-            </div>
-
-            <!-- Summary box: tên SP + giá tổng + nút "Tiếp tục" + icon yêu thích (trái tim) -->
-            <div class="rf-bfe-summary">
-              <!-- TODO -->
-            </div>
-
-          </div>
+        <div class="cs-image-col">
+            <img src="/images/Fe2/ipad-discount-student-1.png" alt="Creator Studio Icons" class="cs-icons-img">
         </div>
 
-      </div>
+    </div>
+</section>
+
+<!-- =============================================
+     SECTION: So sánh các phiên bản iPad
+============================================= -->
+<section class="compare-section">
+    <h2>So sánh các phiên bản iPad</h2>
+    <a href="#" class="compare-link">Xem iPad nào phù hợp với bạn ›</a>
+
+    <!-- Product Cards -->
+    <div class="cards-row">
+
+        <!-- iPad Pro -->
+        <div class="card">
+            <svg class="card-img" viewBox="0 0 180 200" fill="none">
+                <rect x="35" y="10" width="110" height="180" rx="14" fill="#2c2c2e"/>
+                <rect x="42" y="20" width="96" height="160" rx="5" fill="#1a1a1c"/>
+                <rect x="45" y="23" width="90" height="154" rx="4" fill="#0a0a0b"/>
+                <rect x="45" y="23" width="90" height="30" rx="4" fill="#6c3ff0"/>
+                <rect x="45" y="53" width="90" height="25" fill="#3b82f6"/>
+                <rect x="45" y="78" width="90" height="25" fill="#06b6d4"/>
+                <rect x="45" y="103" width="90" height="25" fill="#10b981"/>
+                <rect x="45" y="128" width="90" height="25" fill="#f59e0b"/>
+                <rect x="45" y="153" width="90" height="24" fill="#ef4444"/>
+                <path d="M45 171 Q45 177 51 177 H129 Q135 177 135 171 V169 H45 Z" fill="#ec4899"/>
+                <circle cx="90" cy="193" r="3" fill="#4a4a4f"/>
+            </svg>
+            <div class="color-dots">
+                <div class="dot active" style="background:#3a3a3c;"></div>
+                <div class="dot" style="background:#f5f5f7;"></div>
+            </div>
+            <div class="badge-new"></div>
+            <div class="card-name">iPad Pro</div>
+            <div class="card-desc">Trải nghiệm iPad đỉnh cao với công nghệ tiên tiến.</div>
+            <a href="#" class="card-btn">Mua</a>
+            <a href="#" class="card-btn card-btn-ghost" style="margin-top:8px;">Tìm hiểu thêm</a>
+        </div>
+
+        <!-- iPad Air (Mới) -->
+        <div class="card">
+            <svg class="card-img" viewBox="0 0 180 200" fill="none">
+                <rect x="35" y="10" width="110" height="180" rx="14" fill="#9b72cb"/>
+                <rect x="42" y="20" width="96" height="160" rx="5" fill="#7c5aad"/>
+                <defs>
+                    <linearGradient id="airGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#a855f7"/>
+                        <stop offset="50%" stop-color="#6366f1"/>
+                        <stop offset="100%" stop-color="#3b82f6"/>
+                    </linearGradient>
+                </defs>
+                <rect x="45" y="23" width="90" height="154" rx="4" fill="url(#airGrad)"/>
+                <path d="M45 60 Q90 100 135 60" stroke="rgba(255,255,255,.3)" stroke-width="20" fill="none"/>
+                <path d="M45 100 Q90 140 135 100" stroke="rgba(255,255,255,.15)" stroke-width="16" fill="none"/>
+                <circle cx="90" cy="193" r="3" fill="#7c5aad"/>
+                <rect x="80" y="10" width="20" height="4" rx="2" fill="#7c5aad"/>
+            </svg>
+            <div class="color-dots">
+                <div class="dot active" style="background:#4a4a4f;"></div>
+                <div class="dot" style="background:#6c9ccf;"></div>
+                <div class="dot" style="background:#f5f5f7;"></div>
+                <div class="dot" style="background:#c084fc;"></div>
+            </div>
+            <div class="badge-new">Mới</div>
+            <div class="card-name">iPad Air</div>
+            <div class="card-desc">Hiệu năng mạnh mẽ trong một thiết kế mỏng nhẹ.</div>
+            <a href="#" class="card-btn">Mua</a>
+            <a href="#" class="card-btn card-btn-ghost" style="margin-top:8px;">Tìm hiểu thêm</a>
+        </div>
+
+        <!-- iPad -->
+        <div class="card">
+            <svg class="card-img" viewBox="0 0 180 200" fill="none">
+                <rect x="35" y="10" width="110" height="180" rx="14" fill="#e63484"/>
+                <rect x="42" y="20" width="96" height="160" rx="5" fill="#c92d73"/>
+                <defs>
+                    <linearGradient id="ipadGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#f472b6"/>
+                        <stop offset="40%" stop-color="#3b82f6"/>
+                        <stop offset="70%" stop-color="#fbbf24"/>
+                        <stop offset="100%" stop-color="#10b981"/>
+                    </linearGradient>
+                </defs>
+                <rect x="45" y="23" width="90" height="154" rx="4" fill="url(#ipadGrad)"/>
+                <circle cx="90" cy="193" r="3" fill="#c92d73"/>
+                <rect x="78" y="10" width="24" height="5" rx="2" fill="#c92d73"/>
+            </svg>
+            <div class="color-dots">
+                <div class="dot active" style="background:#3b7abf;"></div>
+                <div class="dot" style="background:#e63484;"></div>
+                <div class="dot" style="background:#f0c040;"></div>
+                <div class="dot" style="background:#f0f0f0;border-color:#ccc;"></div>
+            </div>
+            <div class="badge-new"></div>
+            <div class="card-name">iPad</div>
+            <div class="card-desc">iPad màn hình toàn phần, đầy màu sắc. Cho mọi tác vụ hàng ngày.</div>
+            <a href="#" class="card-btn">Mua</a>
+            <a href="#" class="card-btn card-btn-ghost" style="margin-top:8px;">Tìm hiểu thêm</a>
+        </div>
+
+        <!-- iPad mini -->
+        <div class="card">
+            <svg class="card-img" viewBox="0 0 180 200" fill="none">
+                <rect x="50" y="24" width="80" height="152" rx="12" fill="#3a3a3c"/>
+                <rect x="57" y="34" width="66" height="132" rx="5" fill="#1c1c1e"/>
+                <defs>
+                    <linearGradient id="miniGrad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#f59e0b"/>
+                        <stop offset="40%" stop-color="#ef4444"/>
+                        <stop offset="70%" stop-color="#ec4899"/>
+                        <stop offset="100%" stop-color="#8b5cf6"/>
+                    </linearGradient>
+                </defs>
+                <rect x="57" y="34" width="66" height="132" rx="4" fill="url(#miniGrad)"/>
+                <rect x="83" y="24" width="14" height="4" rx="2" fill="#2c2c2e"/>
+                <circle cx="90" cy="182" r="3" fill="#3a3a3c"/>
+            </svg>
+            <div class="color-dots">
+                <div class="dot active" style="background:#3a3a3c;"></div>
+                <div class="dot" style="background:#f5f5f0;border-color:#ccc;"></div>
+                <div class="dot" style="background:#6c9ccf;"></div>
+                <div class="dot" style="background:#d4b8a0;"></div>
+            </div>
+            <div class="badge-new"></div>
+            <div class="card-name">iPad mini</div>
+            <div class="card-desc">Trải nghiệm trọn vẹn iPad trong một thiết kế siêu gọn nhẹ.</div>
+            <a href="#" class="card-btn">Mua</a>
+            <a href="#" class="card-btn card-btn-ghost" style="margin-top:8px;">Tìm hiểu thêm</a>
+        </div>
+
+    </div><!-- /cards-row -->
+</section><!-- /compare-section -->
+
+<!-- =============================================
+     COMPARISON TABLE
+============================================= -->
+<div class="compare-table">
+
+    <!-- Prices -->
+    <div class="compare-row">
+        <div class="cell price">Từ 27.199.000đ</div>
+        <div class="cell price">Từ 15.289.000đ</div>
+        <div class="cell price">Từ 9.257.000đ</div>
+        <div class="cell price">Từ 12.344.000đ</div>
     </div>
 
-    <!-- ── FE-2.4: WHAT'S IN THE BOX ───────────────────────────────────
-      H2 "Trong hộp có gì" + danh sách ảnh + nhãn sản phẩm đi kèm:
-      iPad Pro, Cáp Sạc USB-C, Bộ Tiếp Hợp Nguồn USB-C 20W.
-    ─────────────────────────────────────────────────────────────────────── -->
-    <section id="section-witb" class="section-witb">
-      <!-- TODO: #buyflow-witb > .rc-witb-items -->
-    </section>
-
-    <!-- ── FE-2.5 + FE-2.6: FORM THÔNG TIN KHÁCH HÀNG ─────────────────
-      Tính năng bổ sung (không có trên trang Apple gốc).
-      HTML/CSS (FE-2.5): tiêu đề, field Họ tên + Số điện thoại, nút "Gửi Thông Tin".
-      JS Validate (FE-2.6): không rỗng, số điện thoại 10 chữ số bắt đầu bằng 0.
-    ─────────────────────────────────────────────────────────────────────── -->
-    <section id="section-customer-form" class="section-customer-form">
-      <!-- TODO: .customer-form > .form-group (label + input + .error-message) -->
-    </section>
-
-    <!-- ── FE-2.7: CÂU HỎI THƯỜNG GẶP ────────────────────────────────
-      Accordion "Câu Hỏi Thường Gặp" với 5 câu hỏi lồng nhau:
-      Apple Pencil tương thích, Bàn phím tương thích, Kính màn hình, SIM, AppleCare+.
-    ─────────────────────────────────────────────────────────────────────── -->
-    <section id="section-faq" class="section-faq">
-      <!-- TODO: #buyflow-community-app > .rc-accordion -->
-    </section>
-
-    <!-- Sticky Chat Button (góc phải, hiện sau khi cuộn)
-         Nút tròn + text "Bạn có thêm câu hỏi nào nữa không?" + link "Hỏi Chuyên Gia iPad". -->
-    <div class="rs-sticky-chat">
-      <!-- TODO -->
+    <!-- Screen Size & Display Type -->
+    <div class="compare-row">
+        <div class="cell"><strong>13" hoặc 11"</strong>Màn hình Ultra Retina XDR³</div>
+        <div class="cell"><strong>13" hoặc 11"</strong>Màn hình Liquid Retina³</div>
+        <div class="cell"><strong>11"</strong>Màn hình Liquid Retina³</div>
+        <div class="cell"><strong>8,3"</strong>Màn hình Liquid Retina³</div>
     </div>
 
-  </main>
+    <!-- ProMotion -->
+    <div class="compare-row">
+        <div class="cell">
+            <svg class="check-icon" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="9" stroke="#1d1d1f" stroke-width="1.5"/>
+                <path d="M6 10.5l3 3 5-5.5" stroke="#1d1d1f" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+            Công nghệ ProMotion
+        </div>
+        <div class="cell"><span class="dash">—</span></div>
+        <div class="cell"><span class="dash">—</span></div>
+        <div class="cell"><span class="dash">—</span></div>
+    </div>
 
-  <!-- GLOBAL FOOTER (dùng chung với index.html)
-       Directory links 5 cột + bottom bar pháp lý. -->
-  <footer id="global-footersection">
+    <!-- Wide Color -->
+    <div class="compare-row">
+        <div class="cell">Dải màu rộng P3</div>
+        <div class="cell">Dải màu rộng P3</div>
+        <div class="cell">Màu sRGB</div>
+        <div class="cell">Dải màu rộng P3</div>
+    </div>
+
+    <!-- True Tone -->
+    <div class="compare-row">
+        <div class="cell">True Tone</div>
+        <div class="cell">True Tone</div>
+        <div class="cell">True Tone</div>
+        <div class="cell">True Tone</div>
+    </div>
+
+    <!-- Anti-reflective -->
+    <div class="compare-row">
+        <div class="cell">Lớp phủ chống phản chiếu</div>
+        <div class="cell">Lớp phủ chống phản chiếu</div>
+        <div class="cell"><span class="dash">—</span></div>
+        <div class="cell">Lớp phủ chống phản chiếu</div>
+    </div>
+
+    <!-- Nano-texture -->
+    <div class="compare-row">
+        <div class="cell" style="font-size:13px;line-height:1.4;">Tùy chọn mặt kính có cấu trúc nano trên các phiên bản
+            1TB hoặc 2TB
+        </div>
+        <div class="cell"><span class="dash">—</span></div>
+        <div class="cell"><span class="dash">—</span></div>
+        <div class="cell"><span class="dash">—</span></div>
+    </div>
+
+    <!-- Chip -->
+    <div class="compare-row">
+        <div class="cell">
+            <div class="chip-badge m5">M5</div>
+            <span>Chip M5</span>
+        </div>
+        <div class="cell">
+            <div class="chip-badge">M4</div>
+            <span>Chip M4</span>
+        </div>
+        <div class="cell">
+            <div class="chip-badge" style="font-size:13px;">A16</div>
+            <span>Chip A16</span>
+        </div>
+        <div class="cell">
+            <div class="chip-badge" style="font-size:12px;padding:4px 7px;">A17<br>PRO</div>
+            <span>Chip A17 Pro</span>
+        </div>
+    </div>
+
+    <!-- Apple Intelligence -->
+    <div class="compare-row">
+        <div class="cell">
+            <svg class="ai-icon" viewBox="0 0 40 40">
+                <defs>
+                    <linearGradient id="ai1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#f472b6"/>
+                        <stop offset="50%" stop-color="#818cf8"/>
+                        <stop offset="100%" stop-color="#38bdf8"/>
+                    </linearGradient>
+                    <linearGradient id="ai2" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#fb923c"/>
+                        <stop offset="50%" stop-color="#e879f9"/>
+                        <stop offset="100%" stop-color="#a78bfa"/>
+                    </linearGradient>
+                </defs>
+                <path d="M20 4 C28 4 36 10 36 20 C36 30 28 36 20 36 C12 36 4 30 4 20 C4 10 12 4 20 4Z" fill="none"
+                      stroke="url(#ai1)" stroke-width="3"/>
+                <path d="M20 8 C26 8 32 13 32 20 C32 27 26 32 20 32 C14 32 8 27 8 20 C8 13 14 8 20 8Z" fill="none"
+                      stroke="url(#ai2)" stroke-width="2.5" stroke-dasharray="5 3"/>
+                <path d="M20 12 C24 12 28 15.5 28 20 S24 28 20 28 C16 28 12 24.5 12 20 S16 12 20 12Z" fill="none"
+                      stroke="url(#ai1)" stroke-width="2"/>
+                <circle cx="20" cy="20" r="3" fill="url(#ai2)"/>
+            </svg>
+            Apple Intelligence⁴
+        </div>
+        <div class="cell">
+            <svg class="ai-icon" viewBox="0 0 40 40">
+                <defs>
+                    <linearGradient id="ai3" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#f472b6"/>
+                        <stop offset="50%" stop-color="#818cf8"/>
+                        <stop offset="100%" stop-color="#38bdf8"/>
+                    </linearGradient>
+                    <linearGradient id="ai4" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#fb923c"/>
+                        <stop offset="50%" stop-color="#e879f9"/>
+                        <stop offset="100%" stop-color="#a78bfa"/>
+                    </linearGradient>
+                </defs>
+                <path d="M20 4 C28 4 36 10 36 20 C36 30 28 36 20 36 C12 36 4 30 4 20 C4 10 12 4 20 4Z" fill="none"
+                      stroke="url(#ai3)" stroke-width="3"/>
+                <path d="M20 8 C26 8 32 13 32 20 C32 27 26 32 20 32 C14 32 8 27 8 20 C8 13 14 8 20 8Z" fill="none"
+                      stroke="url(#ai4)" stroke-width="2.5" stroke-dasharray="5 3"/>
+                <path d="M20 12 C24 12 28 15.5 28 20 S24 28 20 28 C16 28 12 24.5 12 20 S16 12 20 12Z" fill="none"
+                      stroke="url(#ai3)" stroke-width="2"/>
+                <circle cx="20" cy="20" r="3" fill="url(#ai4)"/>
+            </svg>
+            Apple Intelligence⁴
+        </div>
+        <div class="cell"><span class="dash">—</span></div>
+        <div class="cell">
+            <svg class="ai-icon" viewBox="0 0 40 40">
+                <defs>
+                    <linearGradient id="ai5" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#f472b6"/>
+                        <stop offset="50%" stop-color="#818cf8"/>
+                        <stop offset="100%" stop-color="#38bdf8"/>
+                    </linearGradient>
+                    <linearGradient id="ai6" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#fb923c"/>
+                        <stop offset="50%" stop-color="#e879f9"/>
+                        <stop offset="100%" stop-color="#a78bfa"/>
+                    </linearGradient>
+                </defs>
+                <path d="M20 4 C28 4 36 10 36 20 C36 30 28 36 20 36 C12 36 4 30 4 20 C4 10 12 4 20 4Z" fill="none"
+                      stroke="url(#ai5)" stroke-width="3"/>
+                <path d="M20 8 C26 8 32 13 32 20 C32 27 26 32 20 32 C14 32 8 27 8 20 C8 13 14 8 20 8Z" fill="none"
+                      stroke="url(#ai6)" stroke-width="2.5" stroke-dasharray="5 3"/>
+                <path d="M20 12 C24 12 28 15.5 28 20 S24 28 20 28 C16 28 12 24.5 12 20 S16 12 20 12Z" fill="none"
+                      stroke="url(#ai5)" stroke-width="2"/>
+                <circle cx="20" cy="20" r="3" fill="url(#ai6)"/>
+            </svg>
+            Apple Intelligence⁴
+        </div>
+    </div>
+
+    <!-- Camera Rear -->
+    <div class="compare-row">
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                <rect x="2" y="8" width="32" height="22" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="18" cy="18" r="6" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="18" cy="18" r="2.5" fill="#1d1d1f"/>
+                <rect x="24" y="4" width="6" height="5" rx="1.5" fill="#1d1d1f"/>
+            </svg>
+            Camera Wide 12MP<br/>Video 4K, ProRes
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                <rect x="3" y="8" width="30" height="20" rx="8" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="18" cy="17" r="5" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="18" cy="17" r="2" fill="#1d1d1f"/>
+                <circle cx="9" cy="9" r="1.5" fill="#1d1d1f"/>
+            </svg>
+            Camera Wide 12MP<br/>Video 4K
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                <rect x="3" y="8" width="30" height="20" rx="8" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="18" cy="17" r="5" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="18" cy="17" r="2" fill="#1d1d1f"/>
+                <circle cx="9" cy="9" r="1.5" fill="#1d1d1f"/>
+            </svg>
+            Camera Wide 12MP<br/>Video 4K
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                <rect x="3" y="8" width="30" height="20" rx="8" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="18" cy="17" r="5" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="18" cy="17" r="2" fill="#1d1d1f"/>
+                <circle cx="9" cy="9" r="1.5" fill="#1d1d1f"/>
+            </svg>
+            Camera Wide 12MP<br/>Video 4K
+        </div>
+    </div>
+
+    <!-- Front Camera -->
+    <div class="compare-row">
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                <rect x="2" y="6" width="32" height="24" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="30" cy="8" r="2" stroke="#1d1d1f" stroke-width="1.5"/>
+            </svg>
+            Camera 12MP Center Stage trên cạnh ngang
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                <rect x="2" y="6" width="32" height="24" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="30" cy="8" r="2" stroke="#1d1d1f" stroke-width="1.5"/>
+            </svg>
+            Camera 12MP Center Stage trên cạnh ngang
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                <rect x="2" y="6" width="32" height="24" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="30" cy="8" r="2" stroke="#1d1d1f" stroke-width="1.5"/>
+            </svg>
+            Camera 12MP Center Stage trên cạnh ngang
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                <rect x="2" y="6" width="32" height="24" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <circle cx="30" cy="8" r="2" stroke="#1d1d1f" stroke-width="1.5"/>
+            </svg>
+            Camera 12MP Center Stage
+        </div>
+    </div>
+
+    <!-- TrueDepth -->
+    <div class="compare-row">
+        <div class="cell" style="font-size:13px;">Hệ thống camera TrueDepth</div>
+        <div class="cell"><span class="dash">—</span></div>
+        <div class="cell"><span class="dash">—</span></div>
+        <div class="cell"><span class="dash">—</span></div>
+    </div>
+
+    <!-- Apple Pencil -->
+    <div class="compare-row">
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5"/>
+                <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f"/>
+                <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1"/>
+            </svg>
+            Hỗ trợ Apple Pencil Pro
+            <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5"/>
+                <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f"/>
+                <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1"/>
+            </svg>
+            Hỗ trợ Apple Pencil (USB‑C)
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5"/>
+                <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f"/>
+                <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1"/>
+            </svg>
+            Hỗ trợ Apple Pencil Pro
+            <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5"/>
+                <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f"/>
+                <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1"/>
+            </svg>
+            Hỗ trợ Apple Pencil (USB‑C)
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5"/>
+                <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f"/>
+                <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1"/>
+            </svg>
+            Hỗ trợ Apple Pencil (USB‑C)
+            <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5"/>
+                <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f"/>
+                <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1"/>
+            </svg>
+            Hỗ trợ Apple Pencil (thế hệ thứ 1)⁴
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5"/>
+                <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f"/>
+                <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1"/>
+            </svg>
+            Hỗ trợ Apple Pencil Pro
+            <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5"/>
+                <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f"/>
+                <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1"/>
+            </svg>
+            Hỗ trợ Apple Pencil (USB‑C)
+        </div>
+    </div>
+
+    <!-- Keyboard -->
+    <div class="compare-row">
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 46 32" fill="none">
+                <rect x="1" y="1" width="44" height="22" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <rect x="5" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".5"/>
+                <rect x="13" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".5"/>
+                <rect x="21" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".5"/>
+                <rect x="29" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".5"/>
+                <rect x="37" y="6" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".5"/>
+                <rect x="5" y="12" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".5"/>
+                <rect x="13" y="12" width="20" height="3" rx="1" fill="#1d1d1f" opacity=".5"/>
+                <rect x="37" y="12" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".5"/>
+            </svg>
+            Hỗ trợ Magic Keyboard cho iPad Pro
+            <svg class="acc-icon" viewBox="0 0 46 32" fill="none">
+                <rect x="1" y="1" width="44" height="22" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <rect x="5" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="13" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="21" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="29" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="37" y="6" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="5" y="12" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="13" y="12" width="20" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="37" y="12" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+            </svg>
+            Hỗ trợ Magic Keyboard cho iPad Air
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 46 32" fill="none">
+                <rect x="1" y="1" width="44" height="22" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <rect x="5" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="13" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="21" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="29" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="37" y="6" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="5" y="12" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="13" y="12" width="20" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="37" y="12" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+            </svg>
+            Hỗ trợ Magic Keyboard cho iPad Air
+            <svg class="acc-icon" viewBox="0 0 46 32" fill="none">
+                <rect x="1" y="1" width="44" height="22" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <rect x="5" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="13" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="21" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="29" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="37" y="6" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="5" y="12" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="13" y="12" width="20" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="37" y="12" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+            </svg>
+            Hỗ trợ Magic Keyboard Folio
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 46 32" fill="none">
+                <rect x="1" y="1" width="44" height="22" rx="3" stroke="#1d1d1f" stroke-width="1.8"/>
+                <rect x="5" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="13" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="21" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="29" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="37" y="6" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="5" y="12" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="13" y="12" width="20" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+                <rect x="37" y="12" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4"/>
+            </svg>
+            Hỗ trợ Magic Keyboard Folio
+            <svg class="acc-icon" viewBox="0 0 32 32" fill="none">
+                <rect x="2" y="2" width="28" height="28" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <path d="M12 10 L20 16 L12 22" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M20 10 L12 16 L20 22" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            Hỗ trợ bàn phím Bluetooth
+        </div>
+        <div class="cell">
+            <svg class="acc-icon" viewBox="0 0 32 32" fill="none">
+                <rect x="2" y="2" width="28" height="28" rx="4" stroke="#1d1d1f" stroke-width="1.8"/>
+                <path d="M12 10 L20 16 L12 22" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M20 10 L12 16 L20 22" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            Hỗ trợ bàn phím Bluetooth
+        </div>
+    </div>
+
+</div><!-- /compare-table -->
+
+<section class="section-customer-form">
+    <div class="section-customer-form__inner">
+        <div class="section-customer-form__header">
+            <h2 class="customer-form-title">THÔNG TIN CÁ NHÂN</h2>
+            <p class="customer-form-desc">Hãy để lại thông tin nếu bạn quan tâm đến sản phẩm của chúng tôi.</p>
+        </div>
+        <form class="customer-form">
+            <div class="form-group">
+                <label>Full name<input/></label>
+            </div>
+            <div class="form-group">
+                <label>Telephone number<input type="tel"/></label>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- =============================================
+     FAQ Section
+============================================= -->
+<section class="faq-section">
+    <div class="faq-header">
+        <h2>Câu Hỏi Thường Gặp</h2>
+        <button class="faq-toggle-all open" id="faqToggleAll" aria-label="Thu gọn tất cả">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 13 L10 7 L16 13" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="faq-list" id="faqList">
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Apple Pencil nào tương thích với iPad này?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 6.5 L9 11.5 L14 6.5" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    iPad Pro hỗ trợ Apple Pencil Pro và Apple Pencil (USB‑C). iPad Air hỗ trợ Apple Pencil Pro và Apple
+                    Pencil
+                    (USB‑C). iPad hỗ trợ Apple Pencil (USB‑C) và Apple Pencil (thế hệ thứ 1). iPad mini hỗ trợ Apple
+                    Pencil Pro
+                    và Apple Pencil (USB‑C).
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Bàn phím nào tương thích với iPad này?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 6.5 L9 11.5 L14 6.5" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    iPad Pro tương thích với Magic Keyboard cho iPad Pro và Magic Keyboard cho iPad Air. iPad Air tương
+                    thích
+                    với Magic Keyboard cho iPad Air và Magic Keyboard Folio. iPad tương thích với Magic Keyboard Folio
+                    và bàn
+                    phím Bluetooth. iPad mini tương thích với bàn phím Bluetooth.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                Điểm khác nhau giữa các lựa chọn kính màn hình là gì?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 6.5 L9 11.5 L14 6.5" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Màn hình tiêu chuẩn có lớp phủ chống phản chiếu giúp giảm ánh sáng phản chiếu. Tùy chọn kính có cấu
+                    trúc
+                    nano (chỉ có trên iPad Pro 1TB và 2TB) mang lại trải nghiệm viết, vẽ tự nhiên hơn với cảm giác mờ
+                    đặc trưng,
+                    đồng thời vẫn giảm độ phản chiếu hiệu quả.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                iPad này có loại SIM nào?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 6.5 L9 11.5 L14 6.5" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    Các mẫu iPad Wi-Fi + Cellular hỗ trợ eSIM và nano-SIM (tùy theo khu vực). Một số mẫu chỉ hỗ trợ
+                    eSIM. Vui
+                    lòng kiểm tra thông số kỹ thuật cụ thể của từng sản phẩm để biết thêm chi tiết.
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                AppleCare+ bao gồm những gì?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 6.5 L9 11.5 L14 6.5" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="faq-answer">
+                <div class="faq-answer-inner">
+                    AppleCare+ dành cho iPad bao gồm dịch vụ sửa chữa hoặc thay thế thiết bị, bảo vệ chống tai nạn (lên
+                    đến 2 sự
+                    cố mỗi 12 tháng với phí dịch vụ), hỗ trợ kỹ thuật ưu tiên từ chuyên gia Apple qua điện thoại hoặc
+                    chat, và
+                    bảo hành pin. Phí dịch vụ sẽ áp dụng cho mỗi sự cố về tai nạn.
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /faq-list -->
+</section>
+
+<!-- Footer note -->
+<div class="footer-note">
+    <p>Giá hiện thị đã bao gồm tất cả các khoản thuế. Giao hàng miễn phí cho tất cả đơn hàng.</p>
+    <p>◊ Chỉ dành cho người mới đăng ký. Gói dịch vụ sẽ gia hạn với giá 79.000đ mỗi tháng hoặc 790.000đ mỗi năm tùy
+        thuộc vào gói đã chọn cho đến khi bị hủy. Chỉ dành cho sinh viên đại học và nhân viên sư phạm. Yêu cầu xác thực
+        thông tin. Có áp dụng các điều khoản. Ưu đãi trong thời gian có hạn; ưu đãi có thể kết thúc bất cứ lúc nào. Ưu
+        đãi
+        chỉ áp dụng cho sinh viên đại học và nhân viên sư phạm đã xác thực, không áp dụng cho nhóm Chia Sẻ Trong Gia
+        Đình.
+    </p>
+</div>
+
+<!-- GLOBAL FOOTER -->
+<footer id="global-footersection">
     <!-- TODO -->
-  </footer>
+</footer>
 
-  <script src="js/app.js"></script>
-  <script src="js/buy-ipad-pro.js"></script>
+<script src="js/app.js"></script>
+<script src="js/buy-ipad-pro.js"></script>
 
 </body>
 

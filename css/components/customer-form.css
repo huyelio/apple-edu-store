@@ -4,23 +4,57 @@
    ================================================================ */
 
 /* ---- Wrapper ---- */
-/* .section-customer-form */
-/* TODO */
+.section-customer-form {
+    background: var(--color-bg);
+    width: 100%;
+    height: 50dvh;
+}
+
+.section-customer-form__inner {
+    height: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.section-customer-form__header {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
 /* ---- Header ---- */
-/* .customer-form-title   (H2) */
-/* .customer-form-desc    (mô tả ngắn bên dưới tiêu đề) */
-/* TODO */
+.customer-form-title {
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.customer-form-desc {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
 
 /* ---- Form layout ---- */
-/* .customer-form */
-/* .form-group            (wrapper mỗi field: label + input + error) */
-/* TODO */
+.customer-form {
+    flex-grow: 1;
+    height: 100%;
+    background: orange;
+}
+
+.form-group {
+    /*(wrapper mỗi field: label + input + error)*/
+}
 
 /* ---- Labels ---- */
-/* .form-group label */
-/* .form-required         (dấu * màu đỏ) */
-/* TODO */
+.form-group label {
+}
 
 /* ---- Inputs ---- */
 /* .form-group input[type="text"],
