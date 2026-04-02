@@ -1,30 +1,268 @@
 /* ================================================================
    header.css — Global navigation & segment bar
+   Dùng chung cho index.html và buy-ipad-pro.html
    ================================================================ */
 
-/* ---- Segment Bar (Education Store indicator) ---- */
-/* .globalmessage-segment */
-/* TODO */
+/* =============================================
+   LỚP NGOÀI CÙNG
+   ============================================= */
+.global-header {
+  position: relative;
+  top: 0;
+  z-index: 9999;
+  height: auto;
+  background-color: #f0f0f2;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+}
 
-/* ---- Global Nav Wrapper ---- */
-/* #globalnav */
-/* TODO */
+/* =============================================
+   <nav> BÊN TRONG
+   ============================================= */
+.global-nav {
+  height: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
 
-/* ---- Nav Logo (Apple icon) ---- */
-/* .globalnav-link-apple */
-/* TODO */
+/* ---- Hàng trên (segment bar) ---- */
+.global-nav__top-list {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
 
-/* ---- Nav Menu Items ---- */
-/* .globalnav-list, .globalnav-item */
-/* TODO */
+.global-nav__top-item {
+  display: flex;
+  align-items: center;
+}
 
-/* ---- Flyout Submenu ---- */
-/* .globalnav-flyout, .globalnav-submenu */
-/* TODO */
+/* ---- Danh sách các mục nav chính ---- */
+.global-nav__list {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-/* ---- Search & Bag Icons ---- */
-/* .globalnav-link-search, .globalnav-link-bag */
-/* TODO */
+/* ---- Từng mục nav ---- */
+.global-nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 1;
+}
+
+/* ---- Thẻ <a> bên trong mỗi mục ---- */
+.global-nav__link {
+  color: black;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 4px;
+  transition: color 0.15s ease;
+}
+
+/* =============================================
+   LOGO APPLE
+   ============================================= */
+.global-nav__item--logo {
+  flex: 1;
+}
+
+.icon-apple {
+  width: 14px;
+  height: 17px;
+  fill: currentColor;
+  display: block;
+  transition: fill 0.15s ease;
+}
+
+/* =============================================
+   ICON SEARCH & BAG
+   ============================================= */
+.global-nav__item--icon {
+  flex: 0 0 auto;
+  width: 44px;
+}
+
+.icon-search {
+  width: 15px;
+  height: 15px;
+  fill: black;
+  display: block;
+  transition: fill 0.15s ease;
+}
+
+.icon-bag {
+  width: 15px;
+  height: 15px;
+  fill: black;
+  display: block;
+  transition: fill 0.15s ease;
+}
+
+/* =============================================
+   SEARCH BUTTON
+   ============================================= */
+.global-nav__search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 100%;
+  color: inherit;
+}
+
+/* =============================================
+   SEARCH PANEL (slide-down)
+   ============================================= */
+.search-panel {
+  overflow: hidden;
+  max-height: 0;
+  background: #f5f5f7;
+  border-top: 1px solid #e5e5e5;
+  transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-panel.is-open {
+  max-height: 280px;
+}
+
+.search-panel__inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2rem;
+}
+
+.search-panel__input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #e8e8ed;
+  border-radius: 12px;
+  padding: 0.55rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-panel__icon {
+  flex-shrink: 0;
+  fill: #86868b;
+}
+
+.search-panel__input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 17px;
+  font-family: inherit;
+  outline: none;
+  color: #1d1d1f;
+  min-width: 0;
+}
+
+.search-panel__input::placeholder {
+  color: #86868b;
+}
+
+.search-panel__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-panel__cancel {
+  background: none;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #0071e3;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.search-panel__cancel:hover {
+  text-decoration: underline;
+}
+
+.search-panel__suggestions-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #86868b;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.search-panel__suggestions-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.search-panel__suggestions-list a {
+  font-size: 14px;
+  color: #1d1d1f;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-panel__suggestions-list a::before {
+  content: "→";
+  color: #86868b;
+  font-size: 13px;
+}
+
+.search-panel__suggestions-list a:hover {
+  color: #0071e3;
+}
+
+/* =============================================
+   SEARCH BACKDROP
+   ============================================= */
+.search-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.search-backdrop.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
 
 /* ---- Responsive (mobile hamburger) ---- */
 /* TODO */

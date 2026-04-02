@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi-VN">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +12,7 @@
   <link rel="stylesheet" href="css/components/product-card.css" />
   <link rel="stylesheet" href="css/edu-store.css" />
 </head>
+
 <body>
 
   <!-- ============================================================
@@ -24,9 +26,121 @@
        + icon Search, Bag
        + Flyout submenu khi hover mỗi mục
   ============================================================ -->
-  <header id="globalheader">
+  <header id="globalheader" class="global-header">
     <!-- TODO: .globalmessage-segment -->
+    <nav class="global-nav" aria-label="Menu toàn cục">
+      <ul class="global-nav__top-list">
+        <li class="global-nav__top-item">
+          <a href="#" class="global-nav__link">Trang chủ cửa hàng giáo dục
+          </a>
+        </li>
+        <li class="global-nav__top-item">
+          <a href="#" class="global-nav__link">Thoát</a>
+        </li>
+      </ul>
+      <ul class="global-nav__list">
+        <!-- Logo Apple -->
+        <li class="global-nav__item global-nav__item--logo">
+          <a href="https://www.apple.com/vn/" class="global-nav__link" aria-label="Apple">
+            <!-- Apple logo SVG -->
+            <!-- <svg class="icon-apple" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 814 1000" aria-hidden="true">
+              <path
+                d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105.9-57.8-155.5-127.4C46 376.6 0 246.2 0 121.8c0-74.5 27.9-144.3 79.7-194.2 51.8-50 113.5-78.2 183.4-78.2 71 0 130.9 42.3 173.6 42.3 41 0 112.2-44.4 194.6-44.4 28.2 0 127.3 2.6 194.6 96zM549.5 94.7c-.6-53.1 21.8-107.5 55.9-146.2 33.4-36.7 89-63.7 135-66.5 2.6 51.2-14.1 103.3-47.7 140.5-33.4 37.6-85.9 66.5-143.2 72.2z" />
+            </svg> -->
+            <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z">
+              </path>
+            </svg>
+          </a>
+        </li>
+
+        <!-- Các mục điều hướng chính -->
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Cửa hàng</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Mac</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">iPad</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">iPhone</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Watch</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">AirPods</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">TV &amp; Nhà</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Giải trí</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Phụ kiện</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Hỗ trợ</a>
+        </li>
+
+        <!-- Biểu tượng Tìm kiếm -->
+        <li class="global-nav__item global-nav__item--icon">
+          <button id="search-toggle" class="global-nav__link global-nav__search-btn" aria-label="Tìm kiếm apple.com"
+            aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+              <path
+                d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z">
+              </path>
+            </svg>
+          </button>
+        </li>
+
+        <!-- Biểu tượng Giỏ hàng -->
+        <li class="global-nav__item global-nav__item--icon">
+          <a href="#" class="global-nav__link" aria-label="Giỏ hàng">
+            <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z">
+              </path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
     <!-- TODO: #globalnav -->
+    <!-- Search panel — trượt xuống khi bấm icon search -->
+    <div class="search-panel" id="search-panel" aria-hidden="true">
+      <div class="search-panel__inner">
+        <div class="search-panel__input-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 15 44" aria-hidden="true"
+            class="search-panel__icon">
+            <path
+              d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z" />
+          </svg>
+          <input type="search" id="search-input" class="search-panel__input" placeholder="Tìm kiếm trên apple.com"
+            autocomplete="off" spellcheck="false" />
+          <button id="search-cancel" class="search-panel__cancel" type="button">Huỷ</button>
+        </div>
+        <div class="search-panel__suggestions">
+          <p class="search-panel__suggestions-title">Liên Kết Nhanh</p>
+          <ul class="search-panel__suggestions-list">
+            <li><a href="#">Mua Sắm Apple Store Trực Tuyến</a></li>
+            <li><a href="#">Phụ kiện</a></li>
+            <li><a href="#">AirPods</a></li>
+            <li><a href="#">Apple Intelligence</a></li>
+            <li><a href="#">Apple Trade In</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Backdrop làm mờ nội dung phía dưới khi search mở -->
+  <div class="search-backdrop" id="search-backdrop"></div>
   </header>
 
   <main id="main-content">
@@ -181,4 +295,5 @@
   <script src="js/app.js"></script>
 
 </body>
+
 </html>
