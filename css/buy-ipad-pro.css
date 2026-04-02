@@ -1,3 +1,258 @@
+/* ================================================================
+   buy-ipad-pro.css — Page-specific styles for buy-ipad-pro.html
+   (Trang Mua iPad Pro với ưu đãi Giáo Dục)
+   ================================================================ */
+
+body{
+   font-size: 17px;
+    line-height: 1.4705882353;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    color: var(--sk-body-text-color, #1d1d1f);
+    font-style: normal;
+}
+
+div{
+   display:block;
+   unicode-bidi: isolate;
+}
+/* ---- SECTION 2: Sticky Bar ---- */
+/* .rf-bfe-stickybar */
+/* TODO */
+.rf-bfe-header-wrapper{
+   position: relative;
+   z-index: 1;
+   align-items: flex-start;
+   display: flex;
+   padding: 52px 0 22px;
+}
+
+
+.rf-bfe-header{
+   max-width: 640px;
+}
+
+@media(max-width: 1023px) and (max-device-width: 736px) {
+   .rf-bfe-header{
+      max-width: auto;
+   }
+}
+
+.rf-bfe-header h1{
+   color: #1d1d1f;
+   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 48px;
+   font-weight: 600;
+   line-height: 1.083;
+   letter-spacing: -.003em;
+   padding-bottom: 13px;
+}
+.rf-bfe-header-price-point {
+    display: inline;
+    color: #1d1d1f;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47058;
+}
+
+.rf-bfe-header-savingsmessage{
+   display: inline-flex;
+   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 14px;
+   font-weight: 600;
+   letter-spacing: -.016em;
+   line-height: 2;
+   padding-top: 2px;
+   margin-top: 3px;
+   marginr-inline-start: 2px;
+   font-style: normal;
+}
+
+.rf-bfe-header-savingsmessage svg{
+   height: 25px;
+   width: 25px;
+}
+
+.rf-bfe-header-footer{
+   align-items: center;
+   display: flex;
+   justify-content: flex-start;
+   padding-top: 6px;
+   font-size: 14px;
+   line-height: 1.42857;
+   font-weight: 400;
+   letter-spacing: -.016em;
+   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+
+}
+
+.as-buttonlink{
+   color: #06c;
+   letter-spacing: inherit;
+   cursor: pointer;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 1.42859;
+   text-decoration: none;
+}
+
+.rf-bfe-header-rightsection{
+   margin-inline-start: auto;
+}
+
+.rf-bfe-header-learnmorelink-items{
+   align-items: flex-end;
+   display:flex;
+   flex-direction: column;
+   margin-top: 4px;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+.rf-bfe-header-learnmorelink-items a{
+   background-color: #f5f5f7;
+   border-radius: 18px;
+   color: #1d1d1f;
+   display:flex;
+   font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+   font-size: 12px;
+   font-weight: 400;
+   letter-spacing: -.01em;
+   line-height: 1.33333;
+   margin: 6px 0;
+   padding: 12px 16px;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+
+
+
+/* ---- SECTION 3: BFE Header ---- */
+/* .rf-bfe-header-wrapper */
+/* .rf-bfe-header */
+/* .rf-bfe-header-price-wrapper */
+/* .rf-bfe-header-savingsmessage  (Education discount badge) */
+/* .rf-bfe-header-rightsection  (Trade-in link) */
+/* TODO */
+
+/* ---- SECTION 4: BFE Main — 2-column layout ---- */
+/* .rf-bfe-main */
+/* .rf-bfe-column-left  (gallery) */
+/* .rf-bfe-column-right  (selection steps) */
+/* TODO */
+
+/* ---- SECTION 4 > Gallery ---- */
+/* .rf-bfe-gallery-container */
+/* .rf-bfe-gallery-wrapper */
+/* .rc-inline-gallery */
+/* .rc-gallery-dotnav  (dot indicators) */
+/* .rc-gallery-paddlenav  (Prev/Next arrows) */
+/* TODO */
+
+/* ---- SECTION 4 > Selection Steps ---- */
+/* .rf-bfe-step  (chung cho tất cả steps) */
+/* .rf-bfe-dimension-header  (tiêu đề từng step, eyebrow typography) */
+/* .rf-bfe-step-disabled  (step bị khoá chờ step trước) */
+/* .rc-dimension-selector-group */
+/* .rc-dimension-selector-row  (mỗi option) */
+/* .form-selector-input  (radio hidden) */
+/* .form-selector-label  (label hiển thị) */
+/* .rf-bfe-selector-left-col  (tên option + mô tả) */
+/* .rf-bfe-selector-right-col  (giá) */
+/* .rc-decisionsection  (help link bên dưới step) */
+/* TODO */
+
+/* ---- SECTION 4 > Step 2: Color swatch ---- */
+/* .colornav  (color picker) */
+/* .colornav-item */
+/* .colornav-swatch  (ảnh tròn màu) */
+/* .colornav-label */
+/* TODO */
+
+/* ---- SECTION 4 > Step 6: Engraving ---- */
+/* .rf-engraving */
+/* .rf-engraving-tileoption-input */
+/* .rf-engraving-tileoption-right-col  ("Miễn Phí") */
+/* TODO */
+
+/* ---- SECTION 4 > Step 7: Accessories (Pencil / Keyboard) ---- */
+/* .rf-inlineaccessorylot */
+/* .rf-accessory-inline-evolution */
+/* .rf-accessory-inline-price */
+/* .rf-accessory-tile-badge  ("Khắc Miễn Phí") */
+/* TODO */
+
+/* ---- SECTION 4 > Step 9: Trade In ---- */
+/* .rf-tradeupbanner */
+/* .rf-tradeupbanner-tileoptions */
+/* TODO */
+
+/* ---- SECTION 4 > Step 10: AppleCare+ ---- */
+/* .rf-applecare-section */
+/* .rf-applecare-column-left */
+/* .rf-applecare-column-right */
+/* .rf-applecare-savingsmessage  (Education badge) */
+/* TODO */
+
+/* ---- SECTION 4 > Summary Box ---- */
+/* .rf-bfe-summary */
+/* .rf-bfe-summary-producttitle */
+/* .rf-bfe-summary-price */
+/* .rf-bfe-summary-button-box */
+/* .rc-summary-button  (nút "Tiếp tục") */
+/* .rc-favorite  (nút yêu thích hình trái tim) */
+/* TODO */
+
+/* ---- SECTION 4 > Progress Scrollbar ---- */
+/* .rf-bfe-progress-scrollbar  (thanh tiến độ bên phải ngoài màn hình) */
+/* TODO */
+
+/* ---- SECTION 5: Customer Form (bổ sung) ---- */
+/* .section-customer-form */
+/* .customer-form-title */
+/* .customer-form-desc */
+/* .customer-form */
+/* .form-group */
+/* .form-group label */
+/* .form-group input */
+/* .form-group .error-message */
+/* .form-submit-btn */
+/* .form-success-message */
+/* TODO */
+
+/* ---- SECTION 6: Trong hộp có gì ---- */
+/* .section-witb */
+/* .rf-flagship-buyflow-witb */
+/* .rf-flagship-buyflow-witbheader */
+/* .rc-witb-items  (ul flex row) */
+/* .rc-witb-item */
+/* .rc-witb-image-wrapper */
+/* .rc-witb-item-image */
+/* .rc-witb-item-label */
+/* TODO */
+
+/* ---- SECTION 7: FAQ ---- */
+/* .section-faq */
+/* .rf-bfe-community  (wrapper accordion) */
+/* .rc-accordion */
+/* .rc-accordion-item */
+/* .rc-accordion-button */
+/* .rc-accordion-title */
+/* .rc-accordion-collapse-icon */
+/* .rc-accordion-content */
+/* TODO */
+
+/* ---- SECTION 8: Sticky Chat Button ---- */
+/* .rs-sticky-chat  (fixed position, bottom-right) */
+/* .rc-chat-sticky */
+/* .rc-chaticon-button */
+/* .as-chat-buyflow-container */
+/* TODO */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -9,7 +264,6 @@ body {
 
 /* =========================================================
    SECTION: So sánh các phiên bản iPad
-========================================================= */
 .compare-section {
   max-width: 1068px;
   margin: 0 auto;
@@ -122,7 +376,6 @@ body {
 
 /* =========================================================
    COMPARISON TABLE
-========================================================= */
 .compare-table {
   max-width: 1068px;
   margin: 0 auto;
@@ -202,7 +455,6 @@ body {
 
 /* =========================================================
    FAQ / Q&A Section
-========================================================= */
 .faq-section {
   max-width: 1068px;
   margin: 0 auto;
@@ -296,7 +548,6 @@ body {
 
 /* =========================================================
    CREATOR STUDIO ADD-ON
-========================================================= */
 .creator-studio-section {
   background-color: #000; /* Nền đen nguyên khối theo thiết kế Apple */
   padding: 80px 24px;
