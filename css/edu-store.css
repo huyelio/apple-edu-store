@@ -106,8 +106,8 @@ body {
   padding-left: 90px;
   margin-top: 40px;
   margin-bottom: 40px;
-  display: flex;
-  gap: 40px;               /* Khoảng cách giữa các mục */
+  display: flex;            /* các item nằm ngang */
+  gap: 40px;               /* Khoảng cách giữa các item */
   overflow-x: auto;        /* Hỗ trợ lướt trên điện thoại */
 }
 
@@ -125,33 +125,33 @@ body {
   }
 }
 
-/* Ẩn thanh cuộn để nhìn chuyên nghiệp hơn */
+/* Ẩn thanh scroll bar */
 .Item-list::-webkit-scrollbar {
   display: none;
 }
 
 .item {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  /* Các item nằm dọc*/
   align-items: center;     /* Căn giữa ảnh và chữ theo chiều dọc */
-  min-width: 100px;        /* Đảm bảo item không bị co quá nhỏ */
+  min-width: 100px;        /* tránh co khi scroll*/
   cursor: pointer;
 }
 
 .Item-list img {
   width: auto;             /* Để ảnh tự nhảy theo tỷ lệ */
-  height: 62px;            /* Chiều cao cố định để các icon đều nhau */
+  height: 62px;            /* Chiều cao cố định*/
   object-fit: contain;     /* Giữ nguyên tỷ lệ ảnh, không bị méo */
   margin-bottom: 15px;     /* Khoảng cách giữa ảnh và chữ */
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /*hiệu ứng mượt hơn*/
 }
 
 .item:hover img {
-  transform: scale(1.05);  /* Hiệu ứng phóng to nhẹ khi di chuột */
+  transform: scale(1.05);  /* phóng to 105% khi di chuột */
 }
 
 .detail {
-  font-size: 13px;         /* Size chữ chuẩn Apple */
+  font-size: 13px;         
   font-weight: 600;
   color: #1d1d1f;
   margin: 0;
@@ -198,8 +198,6 @@ body {
   }
 }
 .scroll-container {
-   /*display: flex;
-   overflow-x: auto;*/
    margin :0;
    position:relative;
    
@@ -212,10 +210,7 @@ body {
 
   /* 1. Use padding here to create the 'start' and 'end' space */
   padding-left: 90px; 
-  padding-right: 90px;
-
-  /* 2. This ensures the padding at the end of the scroll is respected */
-  box-sizing: border-box;
+  padding-right: 70px;
 }
 
 @media (max-width: 734px) {
@@ -227,7 +222,7 @@ body {
 
 .scroll-content::after {
   content: "";
-  padding-right: 20px; /* Adjust this to match your desired end-gap */
+  padding-right: 20px; /* end-gap when scrolling */
 }
 .scroll-content::-webkit-scrollbar {
   display: none;               /*no scrollbar*/
@@ -236,7 +231,7 @@ body {
   width: 400px;
   height: 500px;
 
-  flex-shrink: 0;
+  flex-shrink: 0; /* the item won't shrink when container is too small */
   background: #eee;
   border-radius: 20px;
 
@@ -248,7 +243,7 @@ body {
 .arrow {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); /* position of arrow */
   
   width: 50px;
   height: 50px;
@@ -264,12 +259,11 @@ body {
   align-items: center;
   justify-content: center;
 
-  backdrop-filter: blur(5px);
   transition: 0.3s;
   z-index: 5;
 }
 
-/* Hover effect */
+/* Hover effect: when clicked its color is different */
 .arrow:hover {
   background: rgba(150, 150, 150, 0.8);
 }
@@ -396,6 +390,7 @@ body {
   .cardsshelf-header-first {
     font-size: 22px;
     padding-left: 16px;
+    display: block;
   }
 }
 
@@ -405,8 +400,8 @@ body {
 
 @media (max-width: 734px) {
   .cardsshelf-header-second {
-    font-size: 14px;
-    padding-left: 16px;
+    font-size: 22px;
+    display: block;
   }
 }
 
@@ -442,7 +437,7 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
 }
 
-/* Ẩn scrollbar nhưng giữ khả năng scroll */
+/* Ẩn scrollbar */
 .square-card-list::-webkit-scrollbar {
   display: none;
 }
@@ -463,7 +458,7 @@ body {
   }
 }
 
-.square-card-row {
+.square-card-column {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -481,7 +476,7 @@ body {
   padding-bottom: 4rem;
   line-height: 1.2;
   height: 14rem;
-  cursor: pointer;
+  cursor: pointer; /* khi hover sẽ có hiệu ứng pointer */
   background-color: #fff;
   border-radius: 18px;
   box-shadow: 2px 4px 12px #00000014;
