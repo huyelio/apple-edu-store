@@ -1032,7 +1032,6 @@ legend h2 {
 .colornav-value {
   position: absolute;
   opacity: 0;
-  pointer-events: none;
 }
 
 /* Option Tile Label */
@@ -1620,4 +1619,246 @@ BUYFLOW WITH BOX
   font-weight: 400;
   letter-spacing: -.016em;
   font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN: TABLET & MOBILE
+   ========================================================= */
+
+/* --- Tablet Breakpoint (<= 1068px) --- */
+@media only screen and (max-width: 1068px) {
+  .sticky-image-main {
+    grid-template-columns: 50% 1fr;
+    padding: 0 40px;
+  }
+
+  .compare-section h2 {
+    font-size: 32px;
+  }
+
+  .cards-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .as-l-container {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  .rf-bfe-summary-producttitle {
+    font-size: 19px;
+  }
+}
+
+/* --- Mobile Breakpoint (<= 734px) --- */
+@media only screen and (max-width: 734px) {
+  .sticky-image-main {
+    display: flex !important;
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .column-left {
+    padding-right: 0;
+    margin-bottom: 24px;
+  }
+
+  .image-container {
+    position: relative;
+    top: 0;
+    margin-bottom: 20px;
+    padding-top: 40px;
+  }
+
+  .image-wraper {
+    max-width: 100%;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Compare section */
+  .compare-section {
+    padding: 48px 16px 0;
+  }
+
+  .compare-section h2 {
+    font-size: 28px;
+    text-align: left;
+  }
+
+  .cards-row {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: none;
+  }
+
+  .card {
+    flex: 0 0 260px;
+    scroll-snap-align: start;
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .card-name {
+    text-align: left;
+    font-size: 21px;
+  }
+
+  .card-desc {
+    text-align: left;
+  }
+
+  .color-dots {
+    justify-content: flex-start;
+  }
+
+  /* Selection steps */
+  .rf-bfe-column-right {
+    padding-top: 0;
+  }
+
+  .rf-bfe-dimension-header {
+    font-size: 24px;
+  }
+
+  .as-subheading {
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* Tile options */
+  .rc-dimension-selector-row.form-selector {
+    margin-bottom: 12px;
+  }
+
+  .form-selector-label {
+    padding: 16px;
+  }
+
+  .form-selector-title {
+    font-size: 16px;
+  }
+
+  /* Sticky Summary Bar for Mobile */
+  .summary-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid #d2d2d7;
+    padding: 12px 16px;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* In mobile, we might want to hide the desktop summary section if it's redundant */
+  .rf-bfe-summary {
+    margin-bottom: 100px; /* Space for sticky bar */
+  }
+
+  /* Keyboard & Accessories */
+  .rf-inlineaccessorylot-content {
+    flex-direction: column;
+  }
+
+  .rf-inlineaccessorylot-image-column {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .rf-inlineaccessorylot-selector-column {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+/*====================
+Sticky chat
+====================*/
+.chat{
+  display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    text-align: start;
+    transition: bottom .1s ease
+}
+.chat.sticky-chat{
+  bottom: 22px;
+    inset-inline-end: 22px;
+    position: fixed;
+    z-index: 10;
+}
+
+@media(max-width: 1068px)and (max-device-width:736px) {
+    .rc-chat.rc-chat-sticky {
+        bottom:14px;
+        inset-inline-end: 14px
+    }
+}
+
+.chat.sticky-chat .chat-button:focus {
+    border-radius: 50%;
+    padding: 3px
+}
+
+.chat.sticky-chat-bottom {
+    bottom: 80px
+}
+
+.chat-container {
+    align-items: center;
+    background: #add8ff;
+    border-radius: 100%;
+    display: flex;
+    height: 56px;
+    justify-content: center;
+    width: 56px;
+    cursor: pointer;  
+}
+
+html.no-touch .chat-container:hover {
+    background: #c9e5ff
+}
+
+@media(max-width: 1068px)and (max-device-width:736px) {
+    .chat-container {
+        height:35px;
+        width: 35px
+    }
+}
+
+.chat-button {
+    display: flex;
+    background: none;
+    border: 0;
+    box-sizing: initial;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    line-height: inherit;
+    overflow: visible;
+    vertical-align: inherit;
+}
+
+.chat-button img {
+    border-radius: 50%
+}
+
+@media(max-width: 1068px)and (max-device-width:736px) {
+    .chat-button img {
+        height:auto;
+        width: 35px
+    }
 }
