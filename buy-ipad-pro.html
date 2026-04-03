@@ -1961,29 +1961,29 @@ SECTION 2.3
 
     </div><!-- /compare-table -->
 
-    <section class="section-customer-form">
-        <div class="section-customer-form__inner">
-            <div class="section-customer-form__header">
-                <h2 class="customer-form-title">THÔNG TIN CÁ NHÂN</h2>
-                <p class="customer-form-desc">Hãy để lại thông tin nếu bạn quan tâm đến sản phẩm của chúng tôi.</p>
+    <section class="section-form">
+        <div class="section-form__inner">
+            <div class="section-form__header">
+                <h2 class="form-title">THÔNG TIN CÁ NHÂN</h2>
+                <p class="form-desc">Hãy để lại thông tin nếu bạn quan tâm đến sản phẩm của chúng tôi.</p>
             </div>
-            <form class="customer-form">
-                <div class="form-group">
+            <form class="form-content">
+                <div id="customer-name" class="form-field">
                     <label>
                         Họ và tên
-                        <input type="text" name="fullName" class="error" placeholder="Nguyễn Văn A" required />
+                        <input type="text" placeholder="Nguyễn Văn A" required/>
                     </label>
-                    <span class="error-message visible">Vui lòng nhập họ và tên</span>
+                    <span class="form-error-message">Vui lòng nhập họ và tên</span>
                 </div>
-                <div class="form-group">
+                <div id="customer-tel" class="form-field">
                     <label>
                         Số điện thoại
-                        <input type="tel" name="telephone" placeholder="0123456789" pattern="[0-9]{10}" required />
+                        <input type="tel" placeholder="0123456789" pattern="[0-9]{10}" required/>
                     </label>
-                    <span class="error-message visible">Số điện thoại không hợp lệ</span>
+                    <span class="form-error-message">Số điện thoại không hợp lệ</span>
                 </div>
-                <button type="submit" class="form-submit-btn">Gửi thông tin</button>
-                <div class="form-success-message visible">
+                <button id="customer-btn" class="form-submit-btn">Gửi thông tin</button>
+                <div id="customer-success" class="form-success-message">
                     Thông tin của bạn đã được ghi nhận.
                 </div>
             </form>

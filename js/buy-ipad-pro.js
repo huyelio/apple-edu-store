@@ -102,4 +102,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize
   updateGallery(0);
-});
+});

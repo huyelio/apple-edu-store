@@ -4,12 +4,12 @@
    ================================================================ */
 
 /* ---- Wrapper ---- */
-.section-customer-form {
+.section-form {
     background: var(--color-bg);
     width: 100%;
 }
 
-.section-customer-form__inner {
+.section-form__inner {
     height: 100%;
     padding: 4rem 2rem;
     display: flex;
@@ -18,7 +18,7 @@
     gap: 2rem;
 }
 
-.section-customer-form__header {
+.section-form__header {
     width: 40%;
     height: 100%;
     display: flex;
@@ -27,21 +27,21 @@
 }
 
 /* ---- Header ---- */
-.customer-form-title {
+.form-title {
     height: 20%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-.customer-form-desc {
+.form-desc {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
 }
 
 /* ---- Form layout ---- */
-.customer-form {
+.form-content {
     flex-grow: 1;
     align-self: stretch;
     background: var(--color-bg);
@@ -53,14 +53,14 @@
     gap: 1.5rem;
 }
 
-.form-group {
+.form-field {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
 /* ---- Labels ---- */
-.form-group label {
+.form-field label {
     display: flex;
     flex-grow: 1;
     justify-content: space-between;
@@ -69,8 +69,8 @@
 }
 
 /* ---- Inputs ---- */
-.form-group input[type="text"],
-.form-group input[type="tel"] {
+.form-field input[type="text"],
+.form-field input[type="tel"] {
     width: 30rem;
     padding: 0.75rem 1rem;
     border: 1px solid #d2d2d7;
@@ -78,12 +78,12 @@
     font-size: 1rem;
 }
 
-.form-group input:focus {
+.form-field input:focus {
     border-color: #0071e3;
     box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.3);
 }
 
-.form-group input.error {
+.form-field input.error {
     border-color: #ff3b30;
 }
 
@@ -93,7 +93,7 @@
 /* TODO */
 
 /* ---- Error messages ---- */
-.error-message {
+.form-error-message {
     color: #ff3b30;
     font-size: 0.9rem;
     display: none;
@@ -102,7 +102,7 @@
     margin-top: -0.5rem;
 }
 
-.error-message.visible {
+.form-error-message.visible {
     display: block;
 }
 
