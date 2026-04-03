@@ -189,7 +189,7 @@ body {
 .text-2 {
   font-size: 28px;
   font-weight: 600;
-  color: darkgrey;
+  color: grey;
 }
 
 @media (max-width: 734px) {
@@ -440,11 +440,13 @@ body {
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
 }
 
 /* Ẩn scrollbar nhưng giữ khả năng scroll */
 .square-card-list::-webkit-scrollbar {
-  height: 8px;
+  display: none;
 }
 
 .square-card-list::-webkit-scrollbar-track {
