@@ -9,6 +9,8 @@ Thumbs.db
 # Saved page assets (không commit thư mục tải về từ browser)
 *_files/
 *.download
+shelf-4-5-7.html
+shelf-6.html
 
 
 #node_modules
