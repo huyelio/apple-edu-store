@@ -4,7 +4,29 @@
    ================================================================ */
 
 /* ---- Global Nav: Mobile hamburger toggle ---- */
-// TODO
+const menuToggle = document.getElementById("menu-toggle");
+const mobileNav = document.getElementById("mobile-nav");
+
+function openMenu() {
+  closeSearch();
+  closeBag();
+  mobileNav.classList.add("is-open");
+  mobileNav.setAttribute("aria-hidden", "false");
+  menuToggle.setAttribute("aria-expanded", "true");
+  searchBackdrop.classList.add("is-open");
+}
+
+function closeMenu() {
+  if (!mobileNav) return;
+  mobileNav.classList.remove("is-open");
+  mobileNav.setAttribute("aria-hidden", "true");
+  menuToggle?.setAttribute("aria-expanded", "false");
+  searchBackdrop.classList.remove("is-open");
+}
+
+menuToggle?.addEventListener("click", () => {
+  mobileNav.classList.contains("is-open") ? closeMenu() : openMenu();
+});
 
 /* ---- Global Nav: Flyout submenu hover/click ---- */
 // TODO
@@ -20,17 +42,13 @@ if (searchCancel) {
 }
 
 function openSearch() {
+  closeBag();
+  closeMenu();
   searchPanel.classList.add("is-open");
   searchBackdrop.classList.add("is-open");
   searchPanel.setAttribute("aria-hidden", "false");
   searchToggle.setAttribute("aria-expanded", "true");
   setTimeout(() => searchInput?.focus(), 350);
-}
-
-function syncCancelVisibility() {
-  if (!searchCancel) return;
-  const hasValue = searchInput?.value ?? "";
-  searchCancel.hidden = !hasValue;
 }
 
 function closeSearch() {
@@ -46,11 +64,52 @@ searchToggle?.addEventListener("click", () => {
 });
 
 searchCancel?.addEventListener("click", closeSearch);
-searchBackdrop?.addEventListener("click", closeSearch);
+
+/* ---- Global Nav: Bag toggle ---- */
+const bagToggle = document.getElementById("bag-toggle");
+const bagPanel = document.getElementById("bag-panel");
+
+function openBag() {
+  closeSearch();
+  closeMenu();
+  bagPanel.classList.add("is-open");
+  searchBackdrop.classList.add("is-open");
+  bagPanel.setAttribute("aria-hidden", "false");
+  bagToggle.setAttribute("aria-expanded", "true");
+}
+
+function closeBag() {
+  if (!bagPanel) return;
+  bagPanel.classList.remove("is-open");
+  searchBackdrop.classList.remove("is-open");
+  bagPanel.setAttribute("aria-hidden", "true");
+  bagToggle?.setAttribute("aria-expanded", "false");
+}
+
+bagToggle?.addEventListener("click", () => {
+  bagPanel.classList.contains("is-open") ? closeBag() : openBag();
+});
+
+/* Backdrop đóng tất cả panel */
+searchBackdrop?.addEventListener("click", () => {
+  closeSearch();
+  closeBag();
+  closeMenu();
+});
+
+/* Tự đóng khi di chuột ra khỏi header */
+const globalHeader = document.getElementById("globalheader");
+globalHeader?.addEventListener("mouseleave", () => {
+  if (searchPanel.classList.contains("is-open")) closeSearch();
+  if (bagPanel?.classList.contains("is-open")) closeBag();
+  if (mobileNav?.classList.contains("is-open")) closeMenu();
+});
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && searchPanel.classList.contains("is-open")) {
+  if (e.key === "Escape") {
     closeSearch();
+    closeBag();
+    closeMenu();
   }
 });
 

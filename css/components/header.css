@@ -179,7 +179,7 @@
   border-radius: 0;
   padding: 0 0 0.875rem 0;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #d2d2d7;
+  border-bottom: none;
   background-color: transparent;
 }
 
@@ -194,10 +194,11 @@
   flex: 1;
   border: none;
   background: transparent;
-  font-size: 19px;
+  font-size: 24px;
   font-family: inherit;
   outline: none;
   color: #1d1d1f;
+  font-weight: 600;
   min-width: 0;
 }
 
@@ -228,12 +229,12 @@
 
 /* ---- Quick links ---- */
 .search-panel__suggestions-title {
-  font-size: 11px;
-  font-weight: 600;
-  color: #6e6e73;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400px;
+  color: rgb(110, 110, 115);
+  letter-spacing: -0.12px;
   margin-bottom: 0.75rem;
+  line-height: 16px;
 }
 
 .search-panel__suggestions-list {
@@ -252,14 +253,27 @@
   gap: 0.5rem;
 }
 
+.search-panel__suggestions-list li:hover {
+  background-color: #f0f0f2;
+}
+
 .search-panel__suggestions-list a::before {
   content: "→";
-  color: #6e6e73;
+  color: #7b7b83;
   font-size: 13px;
 }
 
 .search-panel__suggestions-list a:hover {
-  color: #0071e3;
+  color: #000;
+}
+
+/* Khi hover cả dòng <li>, đổi cả chữ và mũi tên sang đen */
+.search-panel__suggestions-list li:hover a {
+  color: #000;
+}
+
+.search-panel__suggestions-list li:hover a::before {
+  color: #000;
 }
 
 /* =============================================
@@ -282,5 +296,248 @@
   pointer-events: all;
 }
 
-/* ---- Responsive (mobile hamburger) ---- */
-/* TODO */
+/* =============================================
+   BAG BUTTON
+   ============================================= */
+.global-nav__bag-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 100%;
+  color: inherit;
+}
+
+/* =============================================
+   BAG PANEL (slide-down)
+   ============================================= */
+.bag-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  max-height: 0;
+  background: #fff;
+  z-index: 9998;
+  transition: max-height 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bag-panel.is-open {
+  max-height: 400px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+}
+
+.bag-panel__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1.75rem 2rem 2rem;
+}
+
+.bag-panel__empty-title {
+  font-size: 21px;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.4rem;
+}
+
+.bag-panel__login-text {
+  font-size: 14px;
+  color: #6e6e73;
+  margin: 0 0 1.25rem;
+}
+
+.bag-panel__login-link {
+  color: #0071e3;
+  text-decoration: none;
+}
+
+.bag-panel__login-link:hover {
+  text-decoration: underline;
+}
+
+.bag-panel__divider {
+  border: none;
+  border-top: 1px solid #d2d2d7;
+  margin: 0 0 1rem;
+}
+
+.bag-panel__profile-title {
+  font-size: 12px;
+  color: #6e6e73;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6rem;
+}
+
+.bag-panel__profile-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bag-panel__profile-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.bag-panel__profile-item:hover {
+  background-color: #f0f0f2;
+}
+
+.bag-panel__profile-item svg {
+  flex-shrink: 0;
+  color: #1d1d1f;
+}
+
+.bag-panel__profile-item a {
+  font-size: 14px;
+  color: #1d1d1f;
+  text-decoration: none;
+}
+
+.bag-panel__profile-item:hover a {
+  color: #000;
+}
+
+/* =============================================
+   HAMBURGER / MOBILE NAV — ẩn mặc định trên desktop
+   ============================================= */
+.global-nav__item--menu {
+  display: none;
+}
+
+.global-nav__menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  color: inherit;
+}
+
+.icon-close {
+  display: none;
+}
+
+.global-nav__menu-btn[aria-expanded="true"] .icon-menu {
+  display: none;
+}
+
+.global-nav__menu-btn[aria-expanded="true"] .icon-close {
+  display: block;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* =============================================
+   RESPONSIVE — max-width: 768px
+   ============================================= */
+@media (max-width: 768px) {
+
+  /* ---- Segment bar: giữ hiển thị ---- */
+  .global-nav__top-list {
+    display: flex;
+  }
+
+  /* ---- Nav bar chính ---- */
+  .global-nav__list {
+    padding: 0 4px;
+  }
+
+  /* Ẩn tất cả text nav items */
+  .global-nav__item:not(.global-nav__item--logo):not(.global-nav__item--icon):not(.global-nav__item--menu) {
+    display: none;
+  }
+
+  /* Logo bên trái, đẩy các item còn lại sang phải */
+  .global-nav__item--logo {
+    flex: 1;
+    justify-content: flex-start;
+    padding-left: 8px;
+  }
+
+  /* Search & bag */
+  .global-nav__item--icon {
+    flex: 0 0 44px;
+  }
+
+  /* Hamburger bên phải nhất */
+  .global-nav__item--menu {
+    display: flex;
+    flex: 0 0 44px;
+    order: 99;
+  }
+
+  /* ---- Search panel trên mobile ---- */
+  .search-panel__inner {
+    padding: 1.25rem 1rem 2rem;
+  }
+
+  .search-panel__input {
+    font-size: 18px;
+  }
+
+  /* ---- Bag panel trên mobile ---- */
+  .bag-panel__inner {
+    padding: 1.25rem 1rem 1.5rem;
+  }
+
+  /* ---- Mobile nav drawer ---- */
+  .mobile-nav {
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    background: #fff;
+    border-top: 1px solid #e8e8ed;
+    transition: max-height 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-nav.is-open {
+    max-height: 520px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0 1rem;
+  }
+
+  .mobile-nav__link {
+    display: block;
+    padding: 0.7rem 1.25rem;
+    font-size: 17px;
+    font-weight: 400;
+    color: #1d1d1f;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid #f0f0f2;
+    transition: background-color 0.15s ease;
+  }
+
+  .mobile-nav__link:last-of-type {
+    border-bottom: none;
+  }
+
+  .mobile-nav__link:hover {
+    background-color: #f5f5f7;
+  }
+}
