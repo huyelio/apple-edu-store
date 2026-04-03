@@ -380,9 +380,7 @@ STICKY BAR
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.72);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    background-color: rgba(255, 255, 255);
     border-bottom: 1px solid #d2d2d7;
     z-index: 9999;
 }
@@ -635,3 +633,47 @@ Wrapper Header
 .header-learnmorelink .header-plusicon:after {
     padding-inline-start:.24em;top: 0
 }
+
+
+/*================= 
+Column Left
+==================*/
+.column-left{
+
+}
+.image-container{
+
+}
+.image-wraper{
+
+}
+.image-section {
+
+}
+.image-section-firstrender {
+
+}
+.transition-enter-done{
+
+}
+.image-dotnav{}
+.dotnav-items{}
+.dotnav-item{}
+.gallery-dotnav-button{}
+.dotnav-link {}
+.typography-body{}
+.raw-image{}
+.inline-image-item{}
+.image-item{}
+.image-content{}
+.galary-image-wrapper{}
+.galary-image{}
+.image-paddler-nav{}
+.paddlenav-arrow {}
+.paddlenav-arrow-previous {}
+.visuallyhidden{}
+.paddlenav-arrow-next{}
+
+/*================= 
+Column Right
+==================*/
