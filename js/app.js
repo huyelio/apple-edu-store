@@ -15,17 +15,19 @@ const searchPanel = document.getElementById("search-panel");
 const searchBackdrop = document.getElementById("search-backdrop");
 const searchCancel = document.getElementById("search-cancel");
 const searchInput = document.getElementById("search-input");
+// Lay cac phan tu html để thao tác
 if (searchCancel) {
   searchCancel.hidden = true;
 }
 
 function openSearch() {
-  if (bagPanel?.classList.contains("is-open")) closeBag();
-  searchPanel.classList.add("is-open");
-  searchBackdrop.classList.add("is-open");
-  searchPanel.setAttribute("aria-hidden", "false");
-  searchToggle.setAttribute("aria-expanded", "true");
-  setTimeout(() => searchInput?.focus(), 350);
+  // Hàm này có nhiệm vụ mở search panel.
+  if (bagPanel?.classList.contains("is-open")) closeBag(); // Nếu bag panel đang mở, đóng nó trước
+  searchPanel.classList.add("is-open"); // Thêm class is-open để hiện panel
+  searchBackdrop.classList.add("is-open"); // Mở backdrop để che đi phần dưới
+  searchPanel.setAttribute("aria-hidden", "false"); // Cho phép screen reader đọc panel
+  searchToggle.setAttribute("aria-expanded", "true"); // Cho phép screen reader biết rằng search panel đang mở
+  setTimeout(() => searchInput?.focus(), 350); // Đặt focus vào input search sau 350ms để tránh hiện lỗi
 }
 
 function syncCancelVisibility() {
