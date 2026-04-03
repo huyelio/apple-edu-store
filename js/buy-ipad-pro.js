@@ -246,6 +246,7 @@ function initBuyFlow() {
       if (summaryPrice) summaryPrice.textContent = `Từ ${formatted}`;
       if (stickyBarPrice) stickyBarPrice.textContent = formatted;
       if (headerPriceEl) headerPriceEl.textContent = formatted;
+      if (mobileStickyBarPrice) mobileStickyBarPrice.textContent = `Từ ${formatted}`;
     }
 
     // 2. Update Option-level "From" prices (Contextual prices)
@@ -334,6 +335,8 @@ function initBuyFlow() {
   const stepPencil = document.getElementById('acc_pencil');
   const stepKeyboard11 = document.getElementById('acc_keyboard_11inch');
   const stepKeyboard13 = document.getElementById('acc_keyboard_13inch');
+  const stepTradeIn = document.querySelector('.rf-bfe-tradeup');
+  const stepAppleCare = document.querySelector('.rf-bfe-applecare-options');
 
   // Summary elements
   const summaryTitle = document.querySelector('.rf-bfe-summary-producttitle');
@@ -344,6 +347,12 @@ function initBuyFlow() {
   const stickyBarPrice = document.querySelector('.sticky-bar-price span');
   const headerPriceEl = document.querySelector('.rc-prices-currentprice .nowrap');
 
+  // Mobile sticky summary bar
+  const mobileStickyBar = document.querySelector('.summary-sticky-bar');
+  const mobileStickyBarPrice = document.querySelector('.summary-sticky-bar-price');
+  const mobileStickyBarTitle = document.querySelector('.summary-sticky-bar-title');
+  const mobileContinueBtn = document.querySelector('.summary-sticky-bar-action button');
+
   // --- Update summary product name ---
   function updateSummaryTitle() {
     const { size, color, capacity, finish, connection } = state;
@@ -351,7 +360,9 @@ function initBuyFlow() {
     const sizeLabel = size === '11inch' ? '11 inch' : '13 inch';
     const colorLabel = color === 'spaceblack' ? 'Đen Không Gian' : 'Bạc';
     const capLabel = { '256gb': '256GB', '512gb': '512GB', '1tb': '1TB', '2tb': '2TB' }[capacity] || '';
-    if (summaryTitle) summaryTitle.textContent = `iPad Pro ${sizeLabel}, ${capLabel}, ${colorLabel}`;
+    const fullTitle = `iPad Pro ${sizeLabel}, ${capLabel}, ${colorLabel}`;
+    if (summaryTitle) summaryTitle.textContent = fullTitle;
+    if (mobileStickyBarTitle) mobileStickyBarTitle.textContent = fullTitle;
   }
 
   // --- Handle Nano-texture availability (only for 1TB / 2TB) ---
@@ -409,9 +420,11 @@ function initBuyFlow() {
   document.querySelectorAll('input[name="dimensionScreensize"]').forEach(input => {
     input.addEventListener('change', () => {
       state.size = input.value;
-      // Reset downstream
+      // Reset all downstream
       state.color = state.capacity = state.finish = state.connection = null;
-      [stepColor, stepCapacity, stepFinish, stepConnection, stepPencil, stepKeyboard11, stepKeyboard13]
+      state.engraving = state.pencil = state.keyboard = state.tradeIn = state.appleCare = null;
+      [stepColor, stepCapacity, stepFinish, stepConnection, stepEngraving,
+       stepPencil, stepKeyboard11, stepKeyboard13, stepTradeIn, stepAppleCare]
         .forEach(disableStep);
       enableStep(stepColor);
       updateKeyboardVisibility();
@@ -427,7 +440,9 @@ function initBuyFlow() {
     input.addEventListener('change', () => {
       state.color = input.value;
       state.capacity = state.finish = state.connection = null;
-      [stepCapacity, stepFinish, stepConnection, stepPencil, stepKeyboard11, stepKeyboard13]
+      state.engraving = state.pencil = state.keyboard = state.tradeIn = state.appleCare = null;
+      [stepCapacity, stepFinish, stepConnection, stepEngraving,
+       stepPencil, stepKeyboard11, stepKeyboard13, stepTradeIn, stepAppleCare]
         .forEach(disableStep);
       enableStep(stepCapacity);
       syncAllPrices();
@@ -442,7 +457,9 @@ function initBuyFlow() {
     input.addEventListener('change', () => {
       state.capacity = input.value;
       state.finish = state.connection = null;
-      [stepFinish, stepConnection, stepPencil, stepKeyboard11, stepKeyboard13]
+      state.engraving = state.pencil = state.keyboard = state.tradeIn = state.appleCare = null;
+      [stepFinish, stepConnection, stepEngraving,
+       stepPencil, stepKeyboard11, stepKeyboard13, stepTradeIn, stepAppleCare]
         .forEach(disableStep);
       enableStep(stepFinish);
       updateFinishAvailability();
@@ -458,7 +475,9 @@ function initBuyFlow() {
     input.addEventListener('change', () => {
       state.finish = input.value;
       state.connection = null;
-      [stepConnection, stepPencil, stepKeyboard11, stepKeyboard13]
+      state.engraving = state.pencil = state.keyboard = state.tradeIn = state.appleCare = null;
+      [stepConnection, stepEngraving,
+       stepPencil, stepKeyboard11, stepKeyboard13, stepTradeIn, stepAppleCare]
         .forEach(disableStep);
       enableStep(stepConnection);
       syncAllPrices();
@@ -472,54 +491,52 @@ function initBuyFlow() {
   document.querySelectorAll('input[name="dimensionConnection"]').forEach(input => {
     input.addEventListener('change', () => {
       state.connection = input.value;
+      state.engraving = state.pencil = state.keyboard = state.tradeIn = state.appleCare = null;
+      [stepEngraving, stepPencil, stepKeyboard11, stepKeyboard13, stepTradeIn, stepAppleCare]
+        .forEach(disableStep);
 
-      // Enable accessory sections
+      // Enable engraving step next
       enableStep(stepEngraving);
-      // Enable correct keyboard based on size
-      if (state.size === '11inch') enableStep(stepKeyboard11);
-      else if (state.size === '13inch') enableStep(stepKeyboard13);
-
       syncAllPrices();
-
-      // Enable continue button
-      if (continueBtn) {
-        continueBtn.removeAttribute('disabled');
-        // Final summary section should be enabled too
-        const stepSummary = document.querySelector('.rf-bfe-summary');
-        if (stepSummary) stepSummary.classList.remove('rf-bfe-step-disabled');
-      }
-
-      // Scroll to the next visible major action (Pencil)
       scrollToStep(stepEngraving);
     });
   });
 
   // ============================
-  // Step 6: Engraving
+  // Step 6: Engraving (iPad)
   // ============================
-    document.querySelectorAll('input[name="dimensionEngraving"]').forEach(input => {
+  // The engraving fieldset name is 'engraving-option-select-'
+  document.querySelectorAll('input[name="engraving-option-select-"]').forEach(input => {
+    // Only handle the top-level iPad engraving (not nested Pencil engraving)
+    if (input.closest('#acc_pencil')) return;
     input.addEventListener('change', () => {
       state.engraving = input.value;
-      state.pencil = null;
-      [stepPencil, stepKeyboard11, stepKeyboard13]
+      state.pencil = state.keyboard = state.tradeIn = state.appleCare = null;
+      [stepPencil, stepKeyboard11, stepKeyboard13, stepTradeIn, stepAppleCare]
         .forEach(disableStep);
       enableStep(stepPencil);
+      // Enable correct keyboard based on size
+      if (state.size === '11inch') enableStep(stepKeyboard11);
+      else if (state.size === '13inch') enableStep(stepKeyboard13);
       syncAllPrices();
       scrollToStep(stepPencil);
     });
   });
 
   // ============================
-  // Apple Pencil → Engraving reveal
+  // Apple Pencil → Engraving reveal + scroll to keyboard
   // ============================
   document.querySelectorAll('input[name="acc_pencil"]').forEach(input => {
     input.addEventListener('change', () => {
       handlePencilEngraving(input.value);
+      // After pencil is selected, scroll to keyboard
+      const activeKeyboard = state.size === '13inch' ? stepKeyboard13 : stepKeyboard11;
+      scrollToStep(activeKeyboard);
     });
   });
 
   // ============================
-  // Keyboard selectors → scroll to next
+  // Keyboard selectors → scroll to Trade In
   // ============================
   ['acc_keyboard_11inch', 'acc_keyboard_13inch'].forEach(name => {
     document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
@@ -534,11 +551,85 @@ function initBuyFlow() {
   });
 
   // ============================
-  // Init: only step 1 enabled
+  // "Xác nhận" buttons for Pencil & Keyboard → unlock Trade In
   // ============================
-  [stepColor, stepCapacity, stepFinish, stepConnection, stepEngraving, stepPencil, stepKeyboard11, stepKeyboard13]
+  document.querySelectorAll(
+    '#acc_pencil_grp_pro_add, #acc_pencil_grp_usbc_add, #acc_magickeyboard_11inch_add, #acc_magickeyboard_13inch_add'
+  ).forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.tradeIn = null;
+      state.appleCare = null;
+      [stepTradeIn, stepAppleCare].forEach(disableStep);
+      enableStep(stepTradeIn);
+      syncAllPrices();
+      scrollToStep(stepTradeIn);
+    });
+  });
+
+  // When user picks "Không có" pencil/keyboard, also unlock Trade In
+  document.querySelectorAll(
+    'input[value="acc_pencil_section_noaccessory"], input[value="acc_keyboard_11inch_section_noaccessory"], input[value="acc_keyboard_13inch_section_noaccessory"]'
+  ).forEach(input => {
+    input.addEventListener('change', () => {
+      state.tradeIn = null;
+      state.appleCare = null;
+      [stepTradeIn, stepAppleCare].forEach(disableStep);
+      enableStep(stepTradeIn);
+      syncAllPrices();
+      scrollToStep(stepTradeIn);
+    });
+  });
+
+  // ============================
+  // Step 7: Trade In
+  // ============================
+  document.querySelectorAll('input[name="tradeup-option"]').forEach(input => {
+    input.addEventListener('change', () => {
+      state.tradeIn = input.value;
+      state.appleCare = null;
+      disableStep(stepAppleCare);
+      enableStep(stepAppleCare);
+      syncAllPrices();
+      scrollToStep(stepAppleCare);
+    });
+  });
+
+  // ============================
+  // Step 8: AppleCare+
+  // ============================
+  document.querySelectorAll('input[name="applecare-options"]').forEach(input => {
+    input.addEventListener('change', () => {
+      state.appleCare = input.value;
+      syncAllPrices();
+      // Enable the continue button and summary
+      if (continueBtn) {
+        continueBtn.removeAttribute('disabled');
+      }
+      if (mobileContinueBtn) {
+        mobileContinueBtn.removeAttribute('disabled');
+      }
+      const stepSummary = document.querySelector('.rf-bfe-summary');
+      if (stepSummary) {
+        stepSummary.classList.remove('rf-bfe-step-disabled');
+        stepSummary.querySelectorAll('button, input').forEach(el => el.removeAttribute('disabled'));
+      }
+      scrollToStep(stepSummary);
+    });
+  });
+
+  // ============================
+  // Init: only step 1 (Size) enabled
+  // ============================
+  [stepColor, stepCapacity, stepFinish, stepConnection, stepEngraving,
+   stepPencil, stepKeyboard11, stepKeyboard13, stepTradeIn, stepAppleCare]
     .filter(Boolean)
     .forEach(s => s.classList.add('rf-bfe-step-disabled'));
+
+  // Disable all inputs in Trade In and AppleCare+ (they're enabled by step logic)
+  [stepTradeIn, stepAppleCare].filter(Boolean).forEach(step => {
+    step.querySelectorAll('input, select, button').forEach(el => el.setAttribute('disabled', ''));
+    step.querySelectorAll('fieldset').forEach(f => f.setAttribute('disabled', ''));
+  });
 
   // Keyboard 13-inch hidden until 13-inch is selected
   if (stepKeyboard13) stepKeyboard13.classList.add('rf-inlineaccessorylot-hidden');
