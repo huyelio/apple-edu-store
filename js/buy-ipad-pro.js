@@ -1,3 +1,32 @@
+// Customer form
+{
+  const nameDiv = document.getElementById('customer-name');
+  const telDiv = document.getElementById('customer-tel');
+  const button = document.getElementById('customer-btn');
+  const successMsg = document.getElementById('customer-success');
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const customerName = validateDiv(nameDiv);
+    const customerTel = validateDiv(telDiv);
+    if (customerName && customerTel) {
+      console.log(`Fullname: ${customerName}\nTelephone: ${customerTel}`);
+      successMsg.classList.add('visible');
+    }
+  });
+}
+
+const validateDiv = (fieldDiv) => {
+  const input = fieldDiv.children[0].children[0];
+  if (input.validity.valid) {
+    input.classList.remove('error');
+    fieldDiv.children[1].classList.remove('visible');
+    return input.value;
+  }
+  input.classList.add('error');
+  fieldDiv.children[1].classList.add('visible');
+  return null;
+};
+
 // FAQ Accordion
 const faqItems = document.querySelectorAll('.faq-item');
 const toggleAllBtn = document.getElementById('faqToggleAll');
