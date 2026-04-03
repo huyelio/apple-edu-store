@@ -5,6 +5,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+
 /* =========================================================
    SECTION: So sánh các phiên bản iPad
 ========================================================= */
@@ -714,9 +715,9 @@ Wrapper Header
 Sticky Container & Layout
 ==================*/
 .sticky-image-main {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch; /* Bắt buộc các cột kéo dài để sticky hoạt động */
+  display: grid !important;
+  grid-template-columns: 58.33% 1fr 20px;
+  gap: 0;
   position: relative;
   width: 100%;
   max-width: 1440px !important;
@@ -729,15 +730,16 @@ Column Left
 ==================*/
 .column-left {
   position: relative;
-  flex-basis: 58.33333%;
-  max-width: 58.33333%;
-  padding-right: 0;
-  /* align-self: stretch được kế thừa từ flex parent với align-items: stretch */
+  grid-column: 1;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .image-container {
   position: sticky;
-  top: 109px; /* Matches the scrollbar stickiness */
+  top: 209px;
+  /* Matches the scrollbar stickiness */
   width: 100%;
   max-width: 903px;
   margin: 0 auto;
@@ -844,7 +846,7 @@ Column Left
 .gallery-image,
 .galary-image {
   max-width: 100%;
-  height: auto;
+  height: fit-content;
   object-fit: contain;
 }
 
@@ -907,15 +909,16 @@ Column Left
 Column Right
 ==================*/
 .rf-bfe-column-right {
-  flex-basis: 19.2941176471rem;
-  max-width: 19.2941176471rem;
+  flex-basis: 40rem;
+  max-width: 40rem;
 }
 
 @media only screen and (min-width: 1069px) {
   .rf-bfe-column-right {
-    flex-basis: 33.33333%;
-    max-width: 33.33333%;
-    padding-top: 322px; /* Tăng padding để tiêu đề Phiên Bản căn vừa tầm ảnh iPad */
+    grid-column: 2;
+    padding-top: 100px;
+    /* Tăng padding để tiêu đề Phiên Bản căn vừa tầm ảnh iPad */
+    padding-left: 90px;
   }
 }
 
@@ -1025,7 +1028,7 @@ legend h2 {
 }
 
 /* Hide raw radio inputs */
-.form-selector-input, 
+.form-selector-input,
 .colornav-value {
   position: absolute;
   opacity: 0;
@@ -1051,12 +1054,12 @@ legend h2 {
   border-color: #86868b;
 }
 
-.form-selector-input:checked + .form-selector-label {
+.form-selector-input:checked+.form-selector-label {
   border-color: #0071e3;
   box-shadow: 0 0 0 1px #0071e3;
 }
 
-.form-selector-input:disabled + .form-selector-label {
+.form-selector-input:disabled+.form-selector-label {
   opacity: 0.5;
   cursor: not-allowed;
   background-color: #f5f5f7;
@@ -1122,11 +1125,11 @@ legend h2 {
   height: 32px;
   border-radius: 50%;
   border: 2px solid transparent;
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease;
 }
 
-.colornav-value:checked + .colornav-link .colornav-swatch {
+.colornav-value:checked+.colornav-link .colornav-swatch {
   box-shadow: 0 0 0 2px #0071e3;
 }
 
@@ -1135,10 +1138,11 @@ legend h2 {
   margin-top: 8px;
   font-weight: 400;
   color: #1d1d1f;
-  display: none; /* Usually hidden until selected, but we will keep simple */
+  display: none;
+  /* Usually hidden until selected, but we will keep simple */
 }
 
-.colornav-value:checked + .colornav-link .colornav-label {
+.colornav-value:checked+.colornav-link .colornav-label {
   display: block;
   font-weight: 600;
 }
@@ -1151,7 +1155,7 @@ legend h2 {
   transition: opacity 0.3s ease, filter 0.3s ease;
 }
 
-/* Enabled step transition in */  
+/* Enabled step transition in */
 .rf-bfe-step:not(.rf-bfe-step-disabled) {
   opacity: 1;
   pointer-events: auto;
@@ -1179,12 +1183,131 @@ legend h2 {
 }
 
 
+/* =========================================================
+   ACCESSORY SELECTION UI REFINEMENTS
+   ========================================================= */
+
+.rf-accessory-tile-header-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.rf-accessory-tile-badge {
+  background-color: #f5f5f7;
+  color: #1d1d1f;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+.rf-accessorybutton-left-label {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.23536;
+  letter-spacing: -0.022em;
+  color: #1d1d1f;
+}
+
+.rf-inlineaccessorylot-accessory-reveal {
+  border-top: 1px solid #d2d2d7;
+  padding: 24px 0;
+  margin-top: 16px;
+  background-color: #fbfbfd;
+  border-radius: 0 0 12px 12px;
+  display: none;
+  /* Controlled by JS */
+}
+
+.rf-accessory-inline-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.rf-accessory-tile-dimensions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rf-accessory-dimension-header {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin-bottom: 8px;
+}
+
+.rf-accessory-dropdown select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #d2d2d7;
+  background-color: #fff;
+  font-size: 17px;
+}
+
+.rf-accessory-tile-dimension-colornav-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #1d1d1f;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.rf-accessory-inline .button {
+  margin-top: 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Engraving specific refinements */
+.rf-engraving-tileoptions {
+  border: none;
+  padding: 0;
+}
+
+.rf-engraving-container {
+  padding: 0;
+}
+
+.rf-flagship-collapsable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid #d2d2d7;
+}
+
+.rf-engraving-edit-button {
+  color: #0066cc;
+  font-size: 14px;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.rf-engraving-edit-button:hover {
+  text-decoration: underline;
+}
+
+/* Utility to hide sections */
+.is-hidden {
+  display: none !important;
+}
+
+
 /* Decision Support Section (Find out more links) */
 .rc-decisionsection {
   background: #f5f5f7;
   border-radius: 12px;
   padding: 16px;
   margin-top: 15px;
+  margin-left: 11px;
+  margin-right: 11px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1215,16 +1338,19 @@ legend h2 {
   cursor: pointer;
   position: relative;
 }
+
 .rc-decisionsection-button::before,
 .rc-decisionsection-button::after {
   content: "";
   position: absolute;
   background-color: #1d1d1f;
 }
+
 .rc-decisionsection-button::before {
   width: 10px;
   height: 2px;
 }
+
 .rc-decisionsection-button::after {
   width: 2px;
   height: 10px;
@@ -1340,151 +1466,158 @@ SCROLLBAR
 ==================*/
 
 .rf-bfe-progress-scrollbar {
-    display: none;
+  display: none;
 }
 
 @media only screen and (min-width: 1069px) {
-    .rf-bfe-progress-scrollbar {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 20px;
-        z-index: 10;
-    }
+  .rf-bfe-progress-scrollbar {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    z-index: 10;
+    pointer-events: none;
+  }
 }
 
 .rc-progress-scrollbar {
-    height: 100%;
-    width: 4px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
+  height: 100%;
+  width: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
 }
 
 .rf-bfe-progress-scrollbar .rc-progress-scrollbar-section {
-    position: sticky;
-    top: 109px;
-    height: calc(100vh - 109px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: sticky;
+  top: 109px;
+  height: calc(100vh - 109px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .rf-bfe-progress-scrollbar .rc-progress-scrollbar-container {
-    height: calc(100vh - 109px);
+  height: calc(100vh - 109px);
 }
 
 .rc-progress-scrollbar-container {
-    align-items: center;
-    display: flex;
-    height: 100vh;
+  align-items: center;
+  display: flex;
+  height: 100vh;
 }
 
 .rc-progress-scrollbar-steps {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .rf-bfe-progress-scrollbar-stepitem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 14px 0;
-    width: 4px;
-    height: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 14px 0;
+  width: 4px;
+  height: 4px;
 }
 
 .rf-bfe-progress-scrollbar-stepitem span {
-    display: block;
-    width: 4px;
-    height: 4px;
-    background-color: #d2d2d7;
-    border-radius: 50%;
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: #d2d2d7;
+  border-radius: 50%;
 }
 
 .rf-bfe-progress-scrollbar .rc-progress-scrollbar-indicator {
-    min-height: 0;
-    padding-bottom: 4px;
-    top: -4px;
-    transition: height .3s ease-in-out;
+  min-height: 0;
+  padding-bottom: 4px;
+  top: -4px;
+  transition: height .3s ease-in-out;
 }
 
-.rc-progress-scrollbar .rc-progress-verticalline, 
+.rc-progress-scrollbar .rc-progress-verticalline,
 .rc-progress-scrollbar-indicator {
-    background: #1d1d1f;
-    border-radius: 4px;
-    height: 4px;
-    min-height: 4px;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
+  background: #1d1d1f;
+  border-radius: 4px;
+  height: 4px;
+  min-height: 4px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
 }
 
 /*=================
 BUYFLOW WITH BOX
 ==================*/
 
-.rf-flagship-buyflow-witb{
+.rf-flagship-buyflow-witb {
   padding-bottom: 48px;
 }
+
 .as-l-container {
-    width: 980px
+  width: 980px
 }
+
 @media(max-width: 1023px)and (max-device-width:736px) {
-    .rf-flagship-buyflow-witb {
-        padding-bottom:46px
-    }
+  .rf-flagship-buyflow-witb {
+    padding-bottom: 46px
+  }
 }
+
 @media(min-width: 1441px) {
-    .as-l-container {
-        margin-inline-start:auto;
-        margin-inline-end:auto;width: 980px;
-    }
+  .as-l-container {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    width: 980px;
+  }
 }
+
 .rf-flagship-buyflow-witb .rf-flagship-buyflow-witbheader {
-    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
-    font-size: 40px;
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 1.1;
-    padding: 64px 0 41px;
-    text-align: center;
+  font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.1;
+  padding: 64px 0 41px;
+  text-align: center;
 }
+
 .row {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
 }
 
 .rc-witb-items {
-    justify-content: space-around;
-    list-style: none;
-    margin: 0;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
 }
+
 .rc-witb-item {
-    flex-grow: 1;
-    text-align: center;
+  flex-grow: 1;
+  text-align: center;
 }
+
 .rc-witb-image-wrapper {
-    background-color: #f5f5f7;
+  background-color: #f5f5f7;
 }
 
 .rc-witb-item-label {
-    color: #1d1d1f;
-    padding: 20px 15px 50px;
+  color: #1d1d1f;
+  padding: 20px 15px 50px;
 }
+
 .typography-body-reduced {
-    font-size: 14px;
-    line-height: 1.4285914286;
-    font-weight: 400;
-    letter-spacing: -.016em;
-    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.4285914286;
+  font-weight: 400;
+  letter-spacing: -.016em;
+  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
