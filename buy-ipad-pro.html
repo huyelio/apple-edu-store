@@ -1,163 +1,2136 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi-VN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mua iPad Pro với ưu đãi Giảm Giá Dành Cho Sinh Viên - Giáo Dục - Apple (VN)</title>
 
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet" href="css/components/header.css" />
-  <link rel="stylesheet" href="css/components/footer.css" />
-  <link rel="stylesheet" href="css/components/customer-form.css" />
-  <link rel="stylesheet" href="css/buy-ipad-pro.css" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mua iPad Pro với ưu đãi Giảm Giá Dành Cho Sinh Viên - Giáo Dục - Apple (VN)</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/components/header.css" />
+    <link rel="stylesheet" href="css/components/footer.css" />
+    <link rel="stylesheet" href="css/components/customer-form.css" />
+    <link rel="stylesheet" href="css/buy-ipad-pro.css" />
+    <script src="js/buy-ipad-pro.js"></script>
 </head>
+
 <body>
 
-  <!-- GLOBAL HEADER (dùng chung với index.html)
-       Segment bar "Trang Chủ Cửa Hàng Giáo Dục | Thoát" + Apple global nav. -->
-  <header id="globalheader">
-    <!-- TODO -->
-  </header>
+    <!-- GLOBAL HEADER (dùng chung với index.html) -->
+    <header id="globalheader" class="global-header">
+        <nav class="global-nav" aria-label="Menu toàn cục">
+            <ul class="global-nav__top-list">
+                <li class="global-nav__top-item">
+                    <a href="index.html" class="global-nav__link">Trang chủ cửa hàng giáo dục</a>
+                </li>
+                <li class="global-nav__top-item">
+                    <a href="#" class="global-nav__link"
+                        style="border-left: 0.5px solid #110909; padding-left: 1rem;">Thoát</a>
+                </li>
+            </ul>
+            <ul class="global-nav__list">
+                <!-- Logo Apple -->
+                <li class="global-nav__item global-nav__item--logo">
+                    <a href="https://www.apple.com/vn/" class="global-nav__link" aria-label="Apple">
+                        <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
 
-  <!-- ── FE-2.1: STICKY NAVIGATION ──────────────────────────────────────
-    Thanh bám dính khi cuộn: tên "iPad Pro" bên trái, giá "Từ 27.199.000đ" ở giữa,
-    thanh trạng thái giao hàng (icon + "Vận chuyển miễn phí") bên phải với paddle nav.
-    Bên dưới sticky bar là header tĩnh: H1 "Mua iPad Pro", badge giáo dục, link Trade In.
-  ─────────────────────────────────────────────────────────────────────── -->
-  <div class="rf-bfe-stickybar">
-    <!-- TODO: .rf-bfe-stickybar-content -->
-  </div>
+                <!-- Các mục điều hướng chính -->
+                <li class="global-nav__item"><a href="#" class="global-nav__link">Cửa hàng</a></li>
+                <li class="global-nav__item"><a href="#" class="global-nav__link">Mac</a></li>
+                <li class="global-nav__item"><a href="#" class="global-nav__link">iPad</a></li>
+                <li class="global-nav__item"><a href="#" class="global-nav__link">iPhone</a></li>
+                <li class="global-nav__item"><a href="#" class="global-nav__link">Watch</a></li>
+                <li class="global-nav__item"><a href="#" class="global-nav__link">AirPods</a></li>
+                <li class="global-nav__item"><a href="#" class="global-nav__link">TV &amp; Nhà</a></li>
+                <li class="global-nav__item"><a href="#" class="global-nav__link">Giải trí</a></li>
+                <li class="global-nav__item"><a href="#" class="global-nav__link">Phụ kiện</a></li>
+                <li class="global-nav__item"><a href="#" class="global-nav__link">Hỗ trợ</a></li>
 
-  <main id="main-content">
+                <!-- Icon Tìm kiếm -->
+                <li class="global-nav__item global-nav__item--icon">
+                    <button id="search-toggle" class="global-nav__link global-nav__search-btn"
+                        aria-label="Tìm kiếm apple.com" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+                            <path
+                                d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z">
+                            </path>
+                        </svg>
+                    </button>
+                </li>
 
-    <div class="rf-bfe-header-wrapper">
-      <!-- TODO: H1 "Mua iPad Pro" + giá + badge "Ưu Đãi Tiết Kiệm Cho Ngành Giáo Dục"
-                 + logo Apple Intelligence + link "Nhận 900.000đ–24.100.000đ khi đổi" -->
+                <!-- Icon Giỏ hàng -->
+                <li class="global-nav__item global-nav__item--icon">
+                    <a href="#" class="global-nav__link" aria-label="Giỏ hàng">
+                        <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z">
+                            </path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Search panel -->
+        <div class="search-panel" id="search-panel" aria-hidden="true">
+            <div class="search-panel__inner">
+                <div class="search-panel__input-wrap">
+                    <svg height="32" viewBox="0 0 30 32" width="30" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m23.3291 23.3066-4.35-4.35c-.0105-.0105-.0247-.0136-.0355-.0235a6.8714 6.8714 0 1 0 -1.5736 1.4969c.0214.0256.03.0575.0542.0815l4.35 4.35a1.1 1.1 0 1 0 1.5557-1.5547zm-15.4507-8.582a5.6031 5.6031 0 1 1 5.603 5.61 5.613 5.613 0 0 1 -5.603-5.61z">
+                        </path>
+                    </svg>
+                    <input type="search" id="search-input" class="search-panel__input"
+                        placeholder="Tìm kiếm trên apple.com" autocomplete="off" spellcheck="false" />
+                    <button id="search-cancel" class="search-panel__cancel" type="button">Huỷ</button>
+                </div>
+                <div class="search-panel__suggestions">
+                    <p class="search-panel__suggestions-title">Liên Kết Nhanh</p>
+                    <ul class="search-panel__suggestions-list">
+                        <li><a href="#">Mua Sắm Apple Store Trực Tuyến</a></li>
+                        <li><a href="#">Phụ kiện</a></li>
+                        <li><a href="#">AirPods</a></li>
+                        <li><a href="#">Apple Intelligence</a></li>
+                        <li><a href="#">Apple Trade In</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Backdrop làm mờ nội dung phía dưới khi search mở -->
+    <div class="search-backdrop" id="search-backdrop"></div>
+
+    <!-- ── FE-2.1: STICKY NAVIGATION ──────────────────────────────────────
+  Thanh bám dính khi cuộn: tên "iPad Pro" bên trái, giá "Từ 27.199.000đ" ở giữa,
+  thanh trạng thái giao hàng (icon + "Vận chuyển miễn phí") bên phải với paddle nav.
+  Bên dưới sticky bar là header tĩnh: H1 "Mua iPad Pro", badge giáo dục, link Trade In.
+─────────────────────────────────────────────────────────────────────── -->
+    <div class="sticky-bar">
+        <div class="sticky-bar-container">
+            <div class="sticky-bar-main">
+                <a class="sticky-bar-title" href="https://www.apple.com/vn/ipad-pro">iPad Pro</a>
+                <div class="sticky-bar-price">
+                    Từ <span>27.199.000đ</span>
+                </div>
+            </div>
+        </div>
+        <div class="sticky-bar-shipping-wrapper">
+            <div class="sticky-bar-container sticky-bar-shipping">
+                <svg height="25" viewBox="0 0 23 25" width="23" aria-hidden="true" fill="currentColor">
+                    <path
+                        d="m22.4825 12.8467-2.9209-3.2085c-.4121-.4473-.8828-.6382-1.5752-.6382h-1.9863v-2.505c0-1.3807-1.1194-2.5-2.5-2.5h-11.0001c-1.3806 0-2.5 1.1194-2.5 2.5v9.75c0 1.3808 1.1194 2.5 2.5 2.5h.5479c.2258 1.2913 1.3462 2.275 2.7021 2.275s2.28-.7235 2.6721-2.0201h6.6808c.3199 1.1639 1.3814 2.02 2.647 2.02 1.3477 0 2.4639-.9707 2.6997-2.25h.7349c1.1367 0 1.8154-.6689 1.8154-1.7896v-2.8081c0-.498-.1914-.9849-.5176-1.3257zm-15.0562 5.8984c-.2087.7333-.8772 1.275-1.6763 1.275s-1.4675-.5417-1.6763-1.275c-.0432-.152-.0737-.3093-.0737-.475 0-.1841.0364-.3582.0894-.525.2246-.7075.8799-1.225 1.6606-1.225s1.436.5175 1.6606 1.225c.053.1668.0894.3409.0894.525 0 .1657-.0305.3229-.0737.475zm1.0208-.745c-.1238-1.3988-1.3582-2.4799-2.697-2.4799s-2.4517.9578-2.697 2.225h-.553c-.8271 0-1.5-.6729-1.5-1.5v-9.7502c0-.8271.6729-1.5 1.5-1.5h10.9999c.8271 0 1.5.6729 1.5 1.5v11.505h-6.553zm10.9714.7701c-.2168.7203-.8784 1.25-1.6685 1.25s-1.4517-.5297-1.6685-1.25c-.0479-.1595-.0815-.3251-.0815-.5s.0337-.3405.0815-.5c.2168-.7203.8784-1.25 1.6685-1.25s1.4517.5297 1.6685 1.25c.0479.1595.0815.3251.0815.5s-.0337.3405-.0815.5zm2.5815-1.7896c0 .5684-.2285.7896-.8154.7896h-.7349c-.2358-1.2794-1.3521-2.25-2.6997-2.25-.6687 0-1.2734.2482-1.75.645v-6.165h1.9863c.4102 0 .623.0796.8379.3135l2.9268 3.2148c.1562.1636.249.4043.249.644zm-1.3238-3.3608c.1084.1198.1738.2113.1738.3803h-3.3066c-.3335 0-.5435-.2042-.5435-.5282v-2.4718h1.0725c.2534 0 .4419.0986.594.2676l2.0097 2.3521z">
+                    </path>
+                </svg>
+                <span>Vận chuyển miễn phí</span>
+            </div>
+        </div>
     </div>
 
-    <!-- ── FE-2.2 + FE-2.3: STICKY IMAGE GALLERY & PRODUCT OPTIONS ─────
-      Layout 2 cột bám dính: cột trái là gallery ảnh (FE-2.2), cột phải là
-      các bước chọn cấu hình tuần tự + summary box (FE-2.3).
-    ─────────────────────────────────────────────────────────────────────── -->
-    <div class="rf-bfe">
-      <div class="rf-bfe-main">
-
-        <!-- FE-2.2: Cột trái — Sticky Image Gallery
-             Gallery 2 ảnh (iPad Pro 11" & 13") với dot nav và paddle nav Prev/Next.
-             Cột này bám dính (position sticky) khi người dùng cuộn qua cột phải. -->
-        <div class="rf-bfe-column-left">
-          <!-- TODO: .rf-bfe-gallery-container > .rc-inline-gallery -->
+    <!-- ============================
+    SECTION 2.2
+===============================-->
+    <div class="header-wrapper">
+        <div class="header">
+            <div>
+                <h1>
+                    Mua iPad Pro
+                </h1>
+            </div>
+            <div class="header-price-wrapper">
+                <div class="header-price r-fade-transition-exit-done">
+                    <div class="rc-prices">
+                        <div>
+                            <div class="rc-prices-currentprice"><span> <span class="price-point">Từ
+                                        <span class="nowrap">27.199.000đ</span></span></span></div>
+                        </div>
+                        <div class="rc-prices-footer"></div>
+                    </div>
+                    <div class="header-savingsmessage"><svg height="35" viewBox="0 0 35 35" width="35"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g fill="none" fill-rule="evenodd">
+                                <path d="m0 0h35v35h-35z"></path>
+                                <path
+                                    d="m9 18.7728v5.3914c-.61143092-.6239047-.96802746-1.4535266-1-2.3265v-3.5207l.9272.4224zm11.6159 2.4615c-.9317176.4767769-1.958535.7384363-3.0048.7657l-.0867-.0016-.1354.0016c-1.0447951-.027019-2.0702278-.2880245-3.0008-.7638l-3.5775-1.6346-.8107-.3702v5.8144c2.2405033 1.4045651 4.8550652 2.0948159 7.4969 1.9792h.0063c5.8668 0 9.4968-2.5937 9.4968-5.1873v-3.5218l-.9352.4227zm9.5225-8.0083-9.9422-4.5533c-.8190429-.41572779-1.7197947-.64543162-2.6379-.6727h-.0583-.0582c-.9181305.02731605-1.8189046.25701687-2.638.6727l-9.952 4.5533c-.51552366.213068-.85177474.7158805-.85177474 1.2737s.33625108 1.060632.85177474 1.2737l3.1482 1.4444.1089.05 1.0375.4726 6.3436-3.0725c-.0703139-.1033163-.1101635-.2243204-.115-.3492 0-.4745.5565-.8784 1.3413-1.0437.5168439-.1084009 1.0505561-.1084009 1.5674 0 .7848.1653 1.3413.5692 1.3413 1.0437 0 .6213-.9514 1.125-2.125 1.125-.3450911.0006688-.6885257-.0477151-1.02-.1437l-6.1544 2.9809.9006.4112 3.5778 1.6348c.8004678.4149094 1.6838314.6449257 2.585.6731.037 0 .074-.0004333.111-.0013.0371.0009.074.0013.1111.0013.90122-.0282079 1.7846232-.2582939 2.5851-.6733l5.4522-2.4973 1.2427-.5616.1089-.05 3.1384-1.4443c.5204134-.2086963.8615206-.7130002.8615206-1.2737s-.3411072-1.0650037-.8615206-1.2737zm-21.1384 13.424c-.49597634.057359-.87133619.4755314-.875.9748v3.25c0 .5522847.44771525 1 1 1h.75c.5522847 0 1-.4477153 1-1v-3.25c-.0036638-.4992686-.3790237-.917441-.875-.9748v-1.6042c-.36454924-.2564393-.69988581-.552072-1-.8816z"
+                                    fill="#08827c" fill-rule="nonzero"></path>
+                            </g>
+                        </svg><span>Ưu Đãi Tiết Kiệm Cho Ngành
+                            Giáo Dục</span></div>
+                </div>
+            </div>
+            <div class="header-footer"><img
+                    src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/apple-intelligence-header-202410?wid=50&amp;hei=50&amp;fmt=p-jpg&amp;qlt=95&amp;.v=d00zY2EwNDlvbzB6TFQvM2pneitlelhiak84ZVl4UjlIKytHVDBMOGp3RWdqTGtUNFYvbURxOVpTbXRpcVlXaTRHeXB5TnVsU3R6Qjd0Y2JzbURyWE5ycjAzMGVueGRLSTMrbVRRcE9KK1YrYWpGdS9XeFgvbS9ITnNYOEhYaG4"
+                    alt="" width="25" height="25">
+                Apple Intelligence
+                &nbsp;<a href="/vn-edu/shop/browse/overlay/ipad/ai">Tìm&nbsp;hiểu&nbsp;thêm</a>
+            </div>
+            <div class="rf-energylabel-container"></div>
         </div>
+        <div class="header-rightsection">
+            <div class="header-learnmorelink-items">
+                <div class="header-learnmorelink"><a href="/vn-edu/shop/browse/overlay/ipad/tradein/ipadpro"
+                        class="header-plusicon">
+                        Nhận
+                        900.000đ
+                        –
+                        24.100.000đ
+                        khi đổi</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <!-- FE-2.3: Cột phải — Product Options Layout
-             Các bước chọn cấu hình hiển thị tuần tự; bước sau bị khoá đến khi chọn xong bước trước.
-             Mỗi bước gồm: tiêu đề (eyebrow), danh sách radio option + giá, và help link. -->
+    <div class="sticky-image-main row">
+        <div class="column-left">
+            <div class="image-container">
+                <div class="image-wrapper" height="647px" width="903px">
+                    <div class="image-section image-section-firstrender transition-enter-done">
+                        <div class="image inline-image">
+                            <div class="image-dotnav">
+                                <ul class="dotnav-items">
+                                    <li class="dotnav-item">
+                                        <button type="button" class="gallery-dotnav-button dotnav-link typography-body"
+                                            disabled></button>
+                                    </li>
+                                    <li class="dotnav-item">
+                                        <button type="button" class="gallery-dotnav-button dotnav-link typography-body"
+                                            disabled></button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="raw-image">
+                                <div
+                                    style="transform: translateX(0px); width: 200%; inset-inline-start: 0%; transition: none;">
+                                    <div class="inline-image-item">
+                                        <div class="image-item">
+                                            <div class="image-content">
+                                                <div class="galary-image-wrapper">
+                                                    <picture>
+                                                        <img width="2560" height="1440"
+                                                            alt="Hai phiên bản, vỏ ngoài mặt trước, iPad Pro 11 inch, iPad Pro 13 inch, nằm dọc, iPad Pro 13 inch cao và rộng hơn iPad Pro 11 inch, các góc được bo tròn, viền màn hình màu đen"
+                                                            class="gallery-image"
+                                                            src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-model-select-gallery-1-202405?wid=5120&amp;hei=2880&amp;fmt=p-jpg&amp;qlt=80&amp;.v=cXN0QTVTNDBtbGIzcy91THBPRThnNE5sSFgwakNWNmlhZ2d5NGpHdllWY09WV3R2ZHdZMXRzTjZIcWdMTlg4eVM1L0VuR3dWZGNjaVhFSWhJU255OFgwS0NUL3lieGZmUG5IUUtTQUVSNDl3SDJoYXNTQWlYYStqYlk3Wjl6eks&amp;traceId=1">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="inline-image-item">
+                                        <div class="image-item">
+                                            <div class="image-content">
+                                                <div class="galary-image-wrapper">
+                                                    <picture>
+                                                        <img width="2560" height="1440"
+                                                            alt="Hai phiên bản, vỏ ngoài mặt trước, iPad Pro 13 inch, iPad Pro 11 inch, iPad Pro 13 inch cao và rộng hơn iPad Pro 11 inch, các góc được bo tròn, viền màn hình màu đen"
+                                                            class="gallery-image"
+                                                            src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-model-select-gallery-2-202405?wid=5120&amp;hei=2880&amp;fmt=p-jpg&amp;qlt=80&amp;.v=cXN0QTVTNDBtbGIzcy91THBPRThnMkpvMjZnN3E5aGRZVXJIWmhFMitJSU9WV3R2ZHdZMXRzTjZIcWdMTlg4eVM1L0VuR3dWZGNjaVhFSWhJU255OFgwS0NUL3lieGZmUG5IUUtTQUVSNC9Bd2JXdERWZWxoVEhrM2MzNGxzd0s&amp;traceId=1">
+                                                    </picture>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="image-paddler-nav">
+                                <button type="button" class="paddlenav-arrow paddlenav-arrow-previous visuallyhidden">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                                            <path
+                                                d="M21.559,12.062 L15.618,17.984 L21.5221,23.944 C22.105,24.533 22.1021,25.482 21.5131,26.065 C21.2211,26.355 20.8391,26.4999987 20.4571,26.4999987 C20.0711,26.4999987 19.6851,26.352 19.3921,26.056 L12.4351,19.034 C11.8531,18.446 11.8551,17.4999987 12.4411,16.916 L19.4411,9.938 C20.0261,9.353 20.9781,9.354 21.5621,9.941 C22.1471,10.528 22.1451,11.478 21.5591,12.062 L21.559,12.062 Z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <button type="button" class="paddlenav-arrow paddlenav-arrow-next">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+                                            <path
+                                                d="M23.5587,16.916 C24.1447,17.4999987 24.1467,18.446 23.5647,19.034 L16.6077,26.056 C16.3147,26.352 15.9287,26.4999987 15.5427,26.4999987 C15.1607,26.4999987 14.7787,26.355 14.4867,26.065 C13.8977,25.482 13.8947,24.533 14.4777,23.944 L20.3818,17.984 L14.4408,12.062 C13.8548,11.478 13.8528,10.5279 14.4378,9.941 C15.0218,9.354 15.9738,9.353 16.5588,9.938 L23.5588,16.916 L23.5587,16.916 Z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="rf-bfe-column-right">
-          <div class="rf-bfe-selectionarea">
+            <div class="rf-bfe-selectionarea">
+                <div
+                    class="rf-bfe-step rf-bfe-first-step rf-bfe-focused-step rf-bfe-right-rail-step rf-bfe-dimension rf-bfe-dimension-dimensionscreensize">
+                    <fieldset class="rc-dimension rf-bfe-product-dimension-group">
+                        <legend>
+                            <h2 id="dimensionScreensize" class="rf-bfe-dimension-header typography-eyebrow"><span>Phiên
+                                    bản.</span> <span class="as-subheading">Chọn kích cỡ.</span>
+                            </h2>
+                        </legend>
+                        <div class="rc-dimension-selector-group form-selector-group">
+                            <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                    name="dimensionScreensize" id=":r8:" type="radio" value="11inch"><label for=":r8:"
+                                    class="form-selector-label" id=":r8:_label"><span class="row"><span
+                                            class="column form-selector-left-col rf-bfe-selector-left-col"><span
+                                                class="form-selector-title">Phiên bản 11 inch<div
+                                                    class="form-label-small">Màn hình Ultra&nbsp;Retina&nbsp;XDR</div>
+                                            </span></span><span
+                                            class="column form-selector-right-col rf-bfe-selector-right-col"><span
+                                                class="form-label-small">
+                                                <span class="price-point price-point-fullPrice">Từ <span
+                                                        class="nowrap">27.199.000đ</span></span></span></span></span></label>
+                            </div>
+                            <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                    name="dimensionScreensize" id=":r9:" type="radio" value="13inch"><label for=":r9:"
+                                    class="form-selector-label" id=":r9:_label"><span class="row"><span
+                                            class="column form-selector-left-col rf-bfe-selector-left-col"><span
+                                                class="form-selector-title">Phiên bản 13 inch<div
+                                                    class="form-label-small">Màn hình Ultra&nbsp;Retina&nbsp;XDR</div>
+                                            </span></span><span
+                                            class="column form-selector-right-col rf-bfe-selector-right-col"><span
+                                                class="form-label-small">
+                                                <span class="price-point price-point-fullPrice">Từ <span
+                                                        class="nowrap">37.199.000đ</span></span></span></span></span></label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="rf-bfe-decision-support">
+                        <div class="rc-decisionsection as-util-relatedlink">
+                            <div class="rc-decisionsection-details typography-body-reduced">
+                                <div class="rc-decisionsection-info">
+                                    <div id=":ra:" class="rc-decisionsection-header typography-body-reduced-tight">Bạn
+                                        muốn tìm hiểu thêm về Ultra Retina XDR?</div>
+                                    <div class="rc-decisionsection-desc typography-body-reduced-tight">Đắm mình trong
+                                        màn hình tiên tiến nhất của chúng tôi.</div>
+                                </div>
+                            </div><a href="/vn-edu/shop/browse/overlay/ipad/model/ipad"
+                                class="rc-decisionsection-button"><span id=":ra:_showmore" class="visuallyhidden">Hiển
+                                    thị thêm</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="rf-bfe-step rf-bfe-right-rail-step rf-bfe-dimension rf-bfe-dimension-dimensioncolor">
+                    <fieldset class="colornav rc-dimension-colornav rf-bfe-product-dimension-group" disabled="">
+                        <legend>
+                            <h2 id="dimensionColor" class="rf-bfe-dimension-header typography-eyebrow">
+                                <span>Màu.</span> <span class="as-subheading">Chọn màu bạn yêu thích.</span>
+                            </h2>
+                        </legend>
+                        <div class="rf-bfe-product-dimension-colornav-header">Màu</div>
+                        <ul class="colornav-items rf-bfe-step-disabled">
+                            <li class="colornav-item"><input type="radio" id=":rb:"
+                                    class="colornav-value rc-dimension-colornav-input rf-bfe-product-dimension-colornav-input"
+                                    name="dimensionColor" disabled="" value="spaceblack"><label for=":rb:"
+                                    class="colornav-link rc-dimension-colornav-link rf-bfe-product-dimension-colornav-label"><img
+                                        alt=""
+                                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-finish-space-black-2024?wid=204&amp;amp;hei=204&amp;amp;fmt=png-alpha&amp;amp;.v=YXpaUEtKWGhlNnNrVGZkTEo4T0xsNFpBVkhINFVhMEF4cDhiL1hFK3hxMGRGZkRIOXlYamJZeXJpMktxS05vTlM0TjRWdzF2UjRGVEY0c3dBQVZ6VFdhRGVtZXlJWEZGQ2s4dDdTVkFLbHc"
+                                        class="colornav-swatch"><span id=":rb:_label" class="colornav-label">Đen Không
+                                        Gian</span></label></li>
+                            <li class="colornav-item"><input type="radio" id=":rc:"
+                                    class="colornav-value rc-dimension-colornav-input rf-bfe-product-dimension-colornav-input"
+                                    name="dimensionColor" disabled="" value="silver"><label for=":rc:"
+                                    class="colornav-link rc-dimension-colornav-link rf-bfe-product-dimension-colornav-label"><img
+                                        alt=""
+                                        src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-finish-silver-2024?wid=204&amp;amp;hei=204&amp;amp;fmt=png-alpha&amp;amp;.v=YXpaUEtKWGhlNnNrVGZkTEo4T0xsNGxQY1hOSDdhS0pOMk9tbDBnb2ZlVmJ2bms2cWc1NkdwbllBUzc5RHBDRnZiZnVuR3ZTSkRob1BrVGFpRG00T2xKVGN3UEJZWU14SEVrZTY3b0czTlU"
+                                        class="colornav-swatch"><span id=":rc:_label"
+                                        class="colornav-label">Bạc</span></label></li>
+                        </ul>
+                    </fieldset>
+                </div>
+                <div class="rf-bfe-step rf-bfe-right-rail-step rf-bfe-dimension rf-bfe-dimension-dimensioncapacity">
+                    <fieldset class="rc-dimension rf-bfe-product-dimension-group" disabled="">
+                        <legend>
+                            <h2 id="dimensionCapacity" class="rf-bfe-dimension-header typography-eyebrow">
+                                <span>Dung lượng lưu trữ, bộ nhớ, và chip. </span><span class="as-subheading">Chọn cấu
+                                    hình của bạn.</span>
+                            </h2>
+                        </legend>
+                        <div class="rc-dimension-selector-group rf-bfe-step-disabled form-selector-group">
+                            <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                    name="dimensionCapacity" id=":rd:" type="radio" disabled="" value="256gb"><label
+                                    for=":rd:" class="form-selector-label" id=":rd:_label"><span class="row"><span
+                                            class="column form-selector-left-col rf-bfe-selector-left-col"><span
+                                                class="form-selector-title">Dung lượng lưu trữ
+                                                256<small>GB</small><as-footnote><sup
+                                                        class="as-footnote footnote footnote-number"><span
+                                                            class="visuallyhidden">&nbsp;Chú
+                                                            thích&nbsp;</span>2</sup></as-footnote>
+                                                <div class="typography-caption">Bộ nhớ 12GB</div>
+                                                <div class="form-label-small">Chip M5:<br>CPU 9 lõi, GPU 10 lõi</div>
+                                            </span></span><span
+                                            class="column form-selector-right-col rf-bfe-selector-right-col"><span
+                                                class="form-label-small"> <span
+                                                    class="price-point price-point-fullPrice">Từ <span
+                                                        class="nowrap">27.199.000đ</span></span></span></span></span></label>
+                            </div>
+                            <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                    name="dimensionCapacity" id=":re:" type="radio" disabled="" value="512gb"><label
+                                    for=":re:" class="form-selector-label" id=":re:_label"><span class="row"><span
+                                            class="column form-selector-left-col rf-bfe-selector-left-col"><span
+                                                class="form-selector-title">Dung lượng lưu trữ
+                                                512<small>GB</small><as-footnote><sup
+                                                        class="as-footnote footnote footnote-number"><span
+                                                            class="visuallyhidden">&nbsp;Chú
+                                                            thích&nbsp;</span>2</sup></as-footnote>
+                                                <div class="typography-caption">Bộ nhớ 12GB</div>
+                                                <div class="form-label-small">Chip M5:<br>CPU 9 lõi, GPU 10 lõi</div>
+                                            </span></span><span
+                                            class="column form-selector-right-col rf-bfe-selector-right-col"><span
+                                                class="form-label-small"> <span
+                                                    class="price-point price-point-fullPrice">Từ <span
+                                                        class="nowrap">32.799.000đ</span></span></span></span></span></label>
+                            </div>
+                            <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                    name="dimensionCapacity" id=":rf:" type="radio" disabled="" value="1tb"><label
+                                    for=":rf:" class="form-selector-label" id=":rf:_label"><span class="row"><span
+                                            class="column form-selector-left-col rf-bfe-selector-left-col"><span
+                                                class="form-selector-title">Dung lượng lưu trữ
+                                                1<small>TB</small><as-footnote><sup
+                                                        class="as-footnote footnote footnote-number"><span
+                                                            class="visuallyhidden">&nbsp;Chú
+                                                            thích&nbsp;</span>2</sup></as-footnote>
+                                                <div class="typography-caption">Bộ nhớ 16GB</div>
+                                                <div class="form-label-small">Chip M5:<br>CPU 10 lõi, GPU 10 lõi</div>
+                                            </span></span><span
+                                            class="column form-selector-right-col rf-bfe-selector-right-col"><span
+                                                class="form-label-small"> <span
+                                                    class="price-point price-point-fullPrice">Từ <span
+                                                        class="nowrap">43.999.000đ</span></span></span></span></span></label>
+                            </div>
+                            <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                    name="dimensionCapacity" id=":rg:" type="radio" disabled="" value="2tb"><label
+                                    for=":rg:" class="form-selector-label" id=":rg:_label"><span class="row"><span
+                                            class="column form-selector-left-col rf-bfe-selector-left-col"><span
+                                                class="form-selector-title">Dung lượng lưu trữ
+                                                2<small>TB</small><as-footnote><sup
+                                                        class="as-footnote footnote footnote-number"><span
+                                                            class="visuallyhidden">&nbsp;Chú
+                                                            thích&nbsp;</span>2</sup></as-footnote>
+                                                <div class="typography-caption">Bộ nhớ 16GB</div>
+                                                <div class="form-label-small">Chip M5:<br>CPU 10 lõi, GPU 10 lõi</div>
+                                            </span></span><span
+                                            class="column form-selector-right-col rf-bfe-selector-right-col"><span
+                                                class="form-label-small"> <span
+                                                    class="price-point price-point-fullPrice">Từ <span
+                                                        class="nowrap">55.199.000đ</span></span></span></span></span></label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="rf-bfe-decision-support rf-bfe-step-disabled">
+                        <div class="rc-decisionsection as-util-relatedlink rc-decisionsection-disabled">
+                            <div class="rc-decisionsection-details typography-body-reduced">
+                                <div class="rc-decisionsection-info">
+                                    <div id=":rh:" class="rc-decisionsection-header typography-body-reduced-tight">Bạn
+                                        không chắc mình cần bao nhiêu dung lượng?</div>
+                                    <div class="rc-decisionsection-desc typography-body-reduced-tight">Hiểu rõ hơn về
+                                        dung lượng bạn cần.</div>
+                                </div>
+                            </div><a class="rc-decisionsection-button"><span id=":rh:_showmore"
+                                    class="visuallyhidden">Hiển thị thêm</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="rf-bfe-step rf-bfe-right-rail-step rf-bfe-dimension rf-bfe-dimension-dimensionfinish">
+                    <fieldset class="rc-dimension rf-bfe-product-dimension-group" disabled="">
+                        <legend>
+                            <h2 id="dimensionFinish" class="rf-bfe-dimension-header typography-eyebrow">
+                                <span>Kính màn hình. </span><span class="as-subheading">Chọn mặt kính phù hợp với bạn
+                                    nhất.</span>
+                            </h2>
+                        </legend>
+                        <div class="rc-dimension-selector-group rf-bfe-step-disabled form-selector-group">
+                            <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                    name="dimensionFinish" id=":ri:" type="radio" disabled="" value="glossy"><label
+                                    for=":ri:" class="form-selector-label" id=":ri:_label"><span class="row"><span
+                                            class="column form-selector-left-col rf-bfe-selector-left-col"><span
+                                                class="form-selector-title">Mặt kính tiêu chuẩn</span></span><span
+                                            class="column form-selector-right-col rf-bfe-selector-right-col"><span
+                                                class="form-label-small"> <span
+                                                    class="price-point price-point-fullPrice">Từ <span
+                                                        class="nowrap">27.199.000đ</span></span></span></span></span></label>
+                            </div>
+                            <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                    name="dimensionFinish" id=":rj:" type="radio" disabled="" value="matte"><label
+                                    for=":rj:" class="form-selector-label" id=":rj:_label"><span class="row"><span
+                                            class="column form-selector-left-col rf-bfe-selector-left-col"><span
+                                                class="form-selector-title">Mặt kính Nano‑texture
+                                                <div class="form-label-small">Có sẵn ở các phiên bản có dung lượng lưu
+                                                    trữ 1TB hoặc 2TB</div>
+                                            </span></span><span
+                                            class="column form-selector-right-col rf-bfe-selector-right-col"><span
+                                                class="form-label-small"> <span
+                                                    class="price-point price-point-fullPrice">Từ <span
+                                                        class="nowrap">46.799.000đ</span></span></span></span></span></label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="rf-bfe-decision-support rf-bfe-step-disabled">
+                        <div class="rc-decisionsection as-util-relatedlink rc-decisionsection-disabled">
+                            <div class="rc-decisionsection-details typography-body-reduced">
+                                <div class="rc-decisionsection-info">
+                                    <div id=":rk:" class="rc-decisionsection-header typography-body-reduced-tight">Mặt
+                                        kính nào phù hợp với bạn?</div>
+                                    <div class="rc-decisionsection-desc typography-body-reduced-tight">Cả mặt kính tiêu
+                                        chuẩn và mặt kính có cấu trúc nano đều được thiết kế để đạt độ phản chiếu cực
+                                        thấp. Hãy cân nhắc đến môi trường làm việc của bạn trước khi quyết định lựa chọn
+                                        nào phù hợp với mình.</div>
+                                </div>
+                            </div><a class="rc-decisionsection-button"><span id=":rk:_showmore"
+                                    class="visuallyhidden">Hiển thị thêm</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="rf-bfe-step rf-bfe-right-rail-step rf-bfe-dimension rf-bfe-dimension-dimensionconnection">
+                    <fieldset class="rc-dimension rf-bfe-product-dimension-group" disabled="">
+                        <legend>
+                            <h2 id="dimensionConnection" class="rf-bfe-dimension-header typography-eyebrow"><span>Kết
+                                    Nối. </span>
+                                <span class="as-subheading">Chọn cách bạn sẽ duy trì kết nối.</span>
+                            </h2>
+                        </legend>
+                        <div class="rc-dimension-selector-group rf-bfe-step-disabled form-selector-group">
+                            <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                    name="dimensionConnection" id=":rl:" type="radio" disabled="" value="wifi"><label
+                                    for=":rl:" class="form-selector-label" id=":rl:_label"><span class="row"><span
+                                            class="column form-selector-left-col rf-bfe-selector-left-col"><span
+                                                class="form-selector-title">Wi-Fi<div class="form-label-small">Mọi iPad
+                                                    đều có thể kết nối với Wi-Fi, vì vậy bạn sẽ luôn được kết nối.&nbsp;
+                                                </div></span></span><span
+                                            class="column form-selector-right-col rf-bfe-selector-right-col"><span
+                                                class="form-label-small">
+                                                <span class="price-point price-point-fullPrice">Từ <span
+                                                        class="nowrap">27.199.000đ</span></span></span></span></span></label>
+                            </div>
+                            <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                    name="dimensionConnection" id=":rm:" type="radio" disabled=""
+                                    value="wificell"><label for=":rm:" class="form-selector-label" id=":rm:_label"><span
+                                        class="row"><span
+                                            class="column form-selector-left-col rf-bfe-selector-left-col"><span
+                                                class="form-selector-title">Wi-Fi + Cellular<div
+                                                    class="form-label-small">Wi-Fi + Cellular cho phép bạn duy trì kết
+                                                    nối khi không có Wi-Fi.</div></span></span><span
+                                            class="column form-selector-right-col rf-bfe-selector-right-col"><span
+                                                class="form-label-small">
+                                                <span class="price-point price-point-fullPrice">Từ <span
+                                                        class="nowrap">32.799.000đ</span></span></span></span></span></label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="rf-bfe-decision-support rf-bfe-step-disabled">
+                        <div class="rc-decisionsection as-util-relatedlink rc-decisionsection-disabled">
+                            <div class="rc-decisionsection-details typography-body-reduced">
+                                <div class="rc-decisionsection-info">
+                                    <div id=":rn:" class="rc-decisionsection-header typography-body-reduced-tight">Tại
+                                        sao nên chọn Wi-Fi + Cellular?</div>
+                                    <div class="rc-decisionsection-desc typography-body-reduced-tight">Nếu không có
+                                        Wi-Fi, Wi-Fi + Cellular sẽ cho phép bạn duy trì kết nối qua gói cước dữ liệu di
+                                        động.</div>
+                                    <div class="rc-decisionsection-footer">Bạn chỉ cần thiết lập kết nối mạng di động
+                                        sau khi nhận được iPad.</div>
+                                </div>
+                            </div><a class="rc-decisionsection-button"><span id=":rn:_showmore"
+                                    class="visuallyhidden">Hiển thị thêm</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="rf-bfe-engraving rf-bfe-step rf-bfe-right-rail-step">
+                    <div class="rf-engraving">
+                        <div class="rf-engraving-nonbundle rf-engraving-nocollapsable">
+                            <div class="rf-engraving-container rf-engraving-tile">
+                                <fieldset class="rc-dimension rf-engraving-tileoptions">
+                                    <legend>
+                                        <h2 class="rf-engraving-section-header"><span>
+                                                Khắc.
+                                            </span>
+                                            <span class="as-subheading">
+                                                Tạo dấu ấn riêng cho iPad Pro của bạn miễn phí.
+                                            </span>
+                                        </h2>
+                                    </legend>
+                                    <div class="rc-dimension-selector-group form-selector-group">
+                                        <div class="rc-dimension-selector-row form-selector"><input
+                                                class="form-selector-input rf-engraving-tileoption-input"
+                                                name="engraving-option-select-" id=":r17:" type="radio" disabled=""
+                                                value="addEngraving"><label for=":r17:" class="form-selector-label"
+                                                id=":r17:_label"><span class="row row-logical"><span
+                                                        class="rf-engraving-tileoption-left-col form-selector-left-col column large-9 small-8"><span
+                                                            class="form-selector-title">Thêm Chi Tiết Khắc</span><span
+                                                            id=":r16:"
+                                                            class="row row-logical form-label-small rf-engraving-tileoption-desc">
+                                                            Hình khắc sẽ không ảnh hưởng đến giá trị đổi cũ lấy mới với
+                                                            Apple.</span></span><span
+                                                        class="rf-engraving-tileoption-right-col form-selector-right-col form-label-small column large-3 small-4"><span
+                                                            class="rf-engraving-tileoption-labelright">Miễn
+                                                            Phí</span></span></span></label></div>
+                                        <div class="rc-dimension-selector-row form-selector"><input
+                                                class="form-selector-input" name="engraving-option-select-" id=":r18:"
+                                                type="radio" disabled="" value="noEngraving"><label for=":r18:"
+                                                class="form-selector-label"><span class="row row-logical"><span
+                                                        class="form-selector-left-col column large-12"><span
+                                                            class="form-selector-title">Không
+                                                            khắc</span></span></span></label></div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="acc_pencil"
+                    class="rf-bfe-step rf-bfe-right-rail-step rf-bfe-accessory-slot rf-bfe-accessory-slot-acc_pencil rf-inlineaccessorylot">
+                    <fieldset class="rc-dimension">
+                        <legend>
+                            <h2 class="rf-inlineaccessorylot-header typography-label"><span>
+                                    Apple Pencil.
+                                </span>
+                                <span class="as-subheading">
+                                    Chọn tùy chọn đáp ứng nhu cầu của bạn.
+                                </span>
+                            </h2>
+                        </legend>
+                        <div class="rc-dimension-selector-group form-selector-group">
+                            <div class="rf-inlineaccessorylot-disabled">
+                                <div class="rf-accessory-inline-evolution">
+                                    <div class="rc-dimension-selector-row form-selector"><input
+                                            class="form-selector-input" name="acc_pencil" id=":r1t:" type="radio"
+                                            disabled="" value="acc_pencil_grp_pro"><label for=":r1t:"
+                                            class="form-selector-label" id="acc_pencil_grp_pro"><span
+                                                class="row row-logical"><span
+                                                    class="form-selector-left-col column large-12"><span
+                                                        class="row"><span class="column rf-bfe-selector-left-col"><span
+                                                                class="badge badge-reduced badge-no-scrim rf-accessory-tile-badge">Khắc
+                                                                Miễn Phí</span><span
+                                                                class="rf-accessorybutton-left-label">Thêm
+                                                                Apple&nbsp;Pencil&nbsp;Pro</span></span><span
+                                                            class="rf-accessory-inline-price rf-accessorybutton-right-label column rf-bfe-selector-right-col">
+                                                            <div
+                                                                class="rc-prices-inline rc-prices-inline-lead-with-full-price">
+                                                                <div class="rc-price"><span><span
+                                                                            class="rc-prices-currentprice typography-label">3.168.000đ</span></span>
+                                                                </div>
+                                                                <div class="rc-prices-footer"></div>
+                                                            </div>
+                                                        </span></span></span></span></label></div>
+                                </div>
+                                <div
+                                    class="rf-inlineaccessorylot-accessory-reveal large-12 small-12 r-height-transition-exit-done">
+                                    <div>
+                                        <div class="rf-accessory-inline-wrapper">
+                                            <div class="rf-accessory-inline rf-accessory-inline-withengraving">
+                                                <div>
+                                                    <div class="rf-accessory-tile-configuration">
+                                                        <div class="rf-accessory-tile-engraving">
+                                                            <div class="rf-engraving">
+                                                                <div class="rf-engraving-nonbundle">
+                                                                    <div
+                                                                        class="rf-engraving-container rf-engraving-tile">
+                                                                        <div class="r-height-transition-enter-done">
+                                                                            <div>
+                                                                                <fieldset
+                                                                                    class="rc-dimension rf-engraving-tileoptions">
+                                                                                    <legend><span
+                                                                                            class="rf-engraving-section-header"><span
+                                                                                                class="visuallyhidden">Apple
+                                                                                                Pencil Đang
+                                                                                                khắc</span></span>
+                                                                                    </legend>
+                                                                                    <div
+                                                                                        class="rc-dimension-selector-group form-selector-group">
+                                                                                        <div
+                                                                                            class="rc-dimension-selector-row form-selector">
+                                                                                            <input
+                                                                                                class="form-selector-input rf-engraving-tileoption-input"
+                                                                                                name="engraving-option-select-engraving-acc_pencil_grp_pro"
+                                                                                                id=":r1v:" type="radio"
+                                                                                                disabled=""
+                                                                                                value="addEngraving"><label
+                                                                                                for=":r1v:"
+                                                                                                class="form-selector-label"
+                                                                                                id=":r1v:_label"><span
+                                                                                                    class="row row-logical"><span
+                                                                                                        class="rf-engraving-tileoption-left-col form-selector-left-col column large-9 small-8"><span
+                                                                                                            class="form-selector-title">Thêm
+                                                                                                            Chi Tiết
+                                                                                                            Khắc</span><span
+                                                                                                            id=":r1u:"
+                                                                                                            class="row row-logical form-label-small rf-engraving-tileoption-desc"></span></span><span
+                                                                                                        class="rf-engraving-tileoption-right-col form-selector-right-col form-label-small column large-3 small-4"><span
+                                                                                                            class="rf-engraving-tileoption-labelright">Miễn
+                                                                                                            Phí</span></span></span></label>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="rc-dimension-selector-row form-selector">
+                                                                                            <input
+                                                                                                class="form-selector-input"
+                                                                                                name="engraving-option-select-engraving-acc_pencil_grp_pro"
+                                                                                                id=":r20:" type="radio"
+                                                                                                disabled=""
+                                                                                                value="noEngraving"><label
+                                                                                                for=":r20:"
+                                                                                                class="form-selector-label"><span
+                                                                                                    class="row row-logical"><span
+                                                                                                        class="form-selector-left-col column large-12"><span
+                                                                                                            class="form-selector-title">Không
+                                                                                                            Khắc</span></span></span></label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </fieldset>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="r-height-transition-exit-done">
+                                                                            <div>
+                                                                                <div class="rf-engraving-collapsable">
+                                                                                    <div
+                                                                                        class="rf-flagship-collapsable-header r-fade-transition-enter-done">
+                                                                                        <div
+                                                                                            class="rf-flagship-collapsable-header-text rf-flagship-collapsable-link">
+                                                                                            Không Khắc</div><button
+                                                                                            class="as-buttonlink rf-flagship-collapsable-header-button"
+                                                                                            type="button"
+                                                                                            disabled="">undefined
+                                                                                            <span
+                                                                                                class="visuallyhidden">
+                                                                                                (Tạo dấu ấn riêng miễn
+                                                                                                phí. - Không Khắc
+                                                                                                undefined)
+                                                                                            </span></button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="rf-accessory-tile-dimensions"></div>
+                                                    </div><button type="button" id="acc_pencil_grp_pro_add"
+                                                        class="button rf-accessoryinlinefeature-buttonlink-disabled"
+                                                        disabled=""><span>Xác nhận</span><span
+                                                            class="visuallyhidden">Thêm
+                                                            Apple&nbsp;Pencil&nbsp;Pro</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rf-accessory-inline-evolution">
+                                    <div class="rc-dimension-selector-row form-selector"><input
+                                            class="form-selector-input" name="acc_pencil" id=":r21:" type="radio"
+                                            disabled="" value="acc_pencil_grp_usbc"><label for=":r21:"
+                                            class="form-selector-label" id="acc_pencil_grp_usbc"><span
+                                                class="row row-logical"><span
+                                                    class="form-selector-left-col column large-12"><span
+                                                        class="row"><span class="column rf-bfe-selector-left-col"><span
+                                                                class="rf-accessorybutton-left-label">Thêm Apple Pencil
+                                                                <span
+                                                                    class="rf-accessory-tile-subcopy">(USB‑C)</span></span></span><span
+                                                            class="rf-accessory-inline-price rf-accessorybutton-right-label column rf-bfe-selector-right-col">
+                                                            <div
+                                                                class="rc-prices-inline rc-prices-inline-lead-with-full-price">
+                                                                <div class="rc-price"><span><span
+                                                                            class="rc-prices-currentprice typography-label">1.885.000đ</span></span>
+                                                                </div>
+                                                                <div class="rc-prices-footer"></div>
+                                                            </div>
+                                                        </span></span></span></span></label></div>
+                                </div>
+                                <div
+                                    class="rf-inlineaccessorylot-accessory-reveal large-12 small-12 r-height-transition-exit-done">
+                                    <div>
+                                        <div class="rf-accessory-inline-wrapper">
+                                            <div class="rf-accessory-inline">
+                                                <div>
+                                                    <div class="rf-accessory-tile-configuration">
+                                                        <div class="rf-accessory-tile-dimensions"></div>
+                                                    </div><button type="button" id="acc_pencil_grp_usbc_add"
+                                                        class="button" disabled=""><span>Xác nhận</span><span
+                                                            class="visuallyhidden">Thêm Apple Pencil
+                                                            <span
+                                                                class="rf-accessory-tile-subcopy">(USB‑C)</span></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                        name="acc_pencil" id=":r1d:" type="radio" disabled=""
+                                        value="acc_pencil_section_noaccessory"><label for=":r1d:"
+                                        class="form-selector-label"><span class="row row-logical"><span
+                                                class="form-selector-left-col column large-12"><span class="row"><span
+                                                        class="column large-12"><span
+                                                            class="rf-accessorybutton-left-label typography-body-tight">Không
+                                                            có Apple Pencil</span></span></span></span></span></label>
+                                </div>
+                                <div class="rc-decisionsection as-util-relatedlink rc-decisionsection-disabled">
+                                    <div class="rc-decisionsection-details typography-body-reduced">
+                                        <div class="rc-decisionsection-info">
+                                            <div id=":r1e:"
+                                                class="rc-decisionsection-header typography-body-reduced-tight">Bạn muốn
+                                                biết thêm về Apple Pencil?</div>
+                                            <div class="rc-decisionsection-desc typography-body-reduced-tight">Apple
+                                                Pencil thiết lập chuẩn mực cho các tác vụ vẽ, tô màu, viết tay và ghi
+                                                chú: trực quan, chuẩn xác và kỳ diệu.</div>
+                                        </div>
+                                    </div><a class="rc-decisionsection-button"><span id=":r1e:_showmore"
+                                            class="visuallyhidden">Hiển thị thêm</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="acc_keyboard_11inch"
+                    class="rf-bfe-step rf-bfe-right-rail-step rf-bfe-accessory-slot rf-bfe-accessory-slot-acc_keyboard_11inch rf-inlineaccessorylot">
+                    <fieldset class="rc-dimension">
+                        <legend>
+                            <h2 class="rf-inlineaccessorylot-header typography-label"><span>Bàn phím.
+                                </span>
+                                <span class="as-subheading">Tận hưởng trải nghiệm gõ phím tuyệt vời cùng khả năng bảo vệ
+                                    bền bỉ.</span>
+                            </h2>
+                        </legend>
+                        <div class="rc-dimension-selector-group form-selector-group">
+                            <div class="rf-inlineaccessorylot-disabled">
+                                <div class="rf-accessory-inline-evolution">
+                                    <div class="rc-dimension-selector-row form-selector"><input
+                                            class="form-selector-input" name="acc_keyboard_11inch" id=":r22:"
+                                            type="radio" disabled="" value="acc_magickeyboard_11inch"><label for=":r22:"
+                                            class="form-selector-label" id="acc_magickeyboard_11inch"><span
+                                                class="row row-logical"><span
+                                                    class="form-selector-left-col column large-12"><span
+                                                        class="row"><span class="column rf-bfe-selector-left-col"><span
+                                                                class="rf-accessorybutton-left-label">Thêm
+                                                                Magic&nbsp;Keyboard cho iPad&nbsp;Pro</span></span><span
+                                                            class="rf-accessory-inline-price rf-accessorybutton-right-label column rf-bfe-selector-right-col">
+                                                            <div
+                                                                class="rc-prices-inline rc-prices-inline-lead-with-full-price">
+                                                                <div class="rc-price"><span><span
+                                                                            class="rc-prices-currentprice typography-label">7.602.000đ</span></span>
+                                                                </div>
+                                                                <div class="rc-prices-footer"></div>
+                                                            </div>
+                                                        </span></span></span></span></label></div>
+                                </div>
+                                <div
+                                    class="rf-inlineaccessorylot-accessory-reveal large-12 small-12 r-height-transition-exit-done">
+                                    <div>
+                                        <div class="rf-accessory-inline-wrapper">
+                                            <div class="rf-accessory-inline">
+                                                <div>
+                                                    <div class="rf-accessory-tile-configuration">
+                                                        <div class="rf-accessory-tile-dimensions">
+                                                            <div>
+                                                                <div class="rf-accessory-dimension-header">Chọn một ngôn
+                                                                    ngữ:</div>
+                                                                <div class="form-dropdown rf-accessory-dropdown"><select
+                                                                        id="acc_magickeyboard_11inch_dimensionLanguage"
+                                                                        name="acc_magickeyboard_11inch_dimensionLanguage"
+                                                                        class="form-dropdown-select" disabled="">
+                                                                        <option value="en_us">Tiếng Anh Mỹ</option>
+                                                                    </select><span
+                                                                        class="form-dropdown-chevron"></span><span
+                                                                        class="form-dropdown-label"
+                                                                        id="acc_magickeyboard_11inch_dimensionLanguage_label">Ngôn
+                                                                        ngữ</span>
+                                                                    <div>
+                                                                        <div class="">
+                                                                            <div class=""
+                                                                                id="acc_magickeyboard_11inch_dimensionLanguage_error">
+                                                                                <span></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <fieldset
+                                                                    class="colornav rc-dimension-colornav colornav-reduced">
+                                                                    <legend><span
+                                                                            class="rf-accessory-tile-dimension-colornav-label typography-body-reduced">Màu
+                                                                            - Trắng</span></legend>
+                                                                    <ul class="colornav-items">
+                                                                        <li class="colornav-item"><input type="radio"
+                                                                                id=":r24:"
+                                                                                class="colornav-value rc-dimension-colornav-input"
+                                                                                name="acc_magickeyboard_11inch_dimensionColor"
+                                                                                disabled="" value="black"><label
+                                                                                for=":r24:"
+                                                                                class="colornav-link rc-dimension-colornav-link"
+                                                                                id="black_acc_magickeyboard_11inch"><img
+                                                                                    width="28" height="28" alt=""
+                                                                                    src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MWR23_SW_COLOR?wid=56&amp;hei=56&amp;fmt=jpeg&amp;qlt=90&amp;.v=SmsxdFhxWDdLaXdiNGlURzZzazRaMml1aTJRRkFMWkh2bXZDVGtKNUk3d3pIV3RHbE5qdS8zMStVUzZUdGp5bGtmRm4zZEpWbHljSG9Vb3duNjVYQUE"
+                                                                                    class="colornav-swatch"><span
+                                                                                    id=":r24:_label"
+                                                                                    class="colornav-label"><span
+                                                                                        class="visuallyhidden">Đen</span></span></label>
+                                                                        </li>
+                                                                        <li class="colornav-item"><input type="radio"
+                                                                                id=":r25:"
+                                                                                class="colornav-value rc-dimension-colornav-input"
+                                                                                name="acc_magickeyboard_11inch_dimensionColor"
+                                                                                disabled="" value="white"
+                                                                                checked=""><label for=":r25:"
+                                                                                class="colornav-link rc-dimension-colornav-link"
+                                                                                id="white_acc_magickeyboard_11inch"><img
+                                                                                    width="28" height="28" alt=""
+                                                                                    src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MWR03_SW_COLOR?wid=56&amp;hei=56&amp;fmt=jpeg&amp;qlt=90&amp;.v=dUMzMlZRRVR6L3M0dGdaSDJBeFBkV2l1aTJRRkFMWkh2bXZDVGtKNUk3d3pIV3RHbE5qdS8zMStVUzZUdGp5bGc3clFFRGtjT0JpNkw2Q1FnMXJpQ1E"
+                                                                                    class="colornav-swatch"><span
+                                                                                    id=":r25:_label"
+                                                                                    class="colornav-label"><span
+                                                                                        class="visuallyhidden">Trắng</span></span></label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </fieldset>
+                                                            </div>
+                                                        </div>
+                                                    </div><button type="button" id="acc_magickeyboard_11inch_add"
+                                                        class="button" disabled=""><span>Xác
+                                                            nhận</span><span class="visuallyhidden">Thêm
+                                                            Magic&nbsp;Keyboard cho iPad&nbsp;Pro</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                        name="acc_keyboard_11inch" id=":r1f:" type="radio" disabled=""
+                                        value="acc_keyboard_11inch_section_noaccessory"><label for=":r1f:"
+                                        class="form-selector-label"><span class="row row-logical"><span
+                                                class="form-selector-left-col column large-12"><span class="row"><span
+                                                        class="column large-12"><span
+                                                            class="rf-accessorybutton-left-label typography-body-tight">Không
+                                                            có bàn phím&nbsp;</span></span></span></span></span></label>
+                                </div>
+                                <div class="rc-decisionsection as-util-relatedlink rc-decisionsection-disabled">
+                                    <div class="rc-decisionsection-details typography-body-reduced">
+                                        <div class="rc-decisionsection-info">
+                                            <div id=":r1g:"
+                                                class="rc-decisionsection-header typography-body-reduced-tight">Bạn muốn
+                                                tìm hiểu thêm về Magic&nbsp;Keyboard?</div>
+                                            <div class="rc-decisionsection-desc typography-body-reduced-tight">Nâng cao
+                                                hiệu suất công việc với trải nghiệm gõ phím và bàn di tuyệt vời.</div>
+                                            <div class="rc-decisionsection-footer">Bàn phím có thể sẽ được giao riêng
+                                                với iPad Pro.</div>
+                                        </div>
+                                    </div><a class="rc-decisionsection-button"><span id=":r1g:_showmore"
+                                            class="visuallyhidden">Hiển thị thêm</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div id="acc_keyboard_13inch"
+                    class="rf-bfe-step rf-bfe-right-rail-step rf-bfe-accessory-slot rf-bfe-accessory-slot-acc_keyboard_13inch rf-inlineaccessorylot rf-inlineaccessorylot-hidden">
+                    <fieldset class="rc-dimension">
+                        <legend>
+                            <h2 class="rf-inlineaccessorylot-header typography-label"><span>Bàn phím.
+                                </span>
+                                <span class="as-subheading">Tận hưởng trải nghiệm gõ phím tuyệt vời cùng khả năng bảo vệ
+                                    bền bỉ.</span>
+                            </h2>
+                        </legend>
+                        <div class="rc-dimension-selector-group form-selector-group">
+                            <div class="">
+                                <div class="rf-accessory-inline-evolution">
+                                    <div class="rc-dimension-selector-row form-selector"><input
+                                            class="form-selector-input" name="acc_keyboard_13inch" id=":r26:"
+                                            type="radio" disabled="" value="acc_magickeyboard_13inch"><label for=":r26:"
+                                            class="form-selector-label" id="acc_magickeyboard_13inch"><span
+                                                class="row row-logical"><span
+                                                    class="form-selector-left-col column large-12"><span
+                                                        class="row"><span class="column rf-bfe-selector-left-col"><span
+                                                                class="rf-accessorybutton-left-label">Thêm
+                                                                Magic&nbsp;Keyboard cho iPad&nbsp;Pro</span></span><span
+                                                            class="rf-accessory-inline-price rf-accessorybutton-right-label column rf-bfe-selector-right-col">
+                                                            <div
+                                                                class="rc-prices-inline rc-prices-inline-lead-with-full-price">
+                                                                <div class="rc-price"><span><span
+                                                                            class="rc-prices-currentprice typography-label">9.068.000đ</span></span>
+                                                                </div>
+                                                                <div class="rc-prices-footer"></div>
+                                                            </div>
+                                                        </span></span></span></span></label></div>
+                                </div>
+                                <div
+                                    class="rf-inlineaccessorylot-accessory-reveal large-12 small-12 r-height-transition-exit-done">
+                                    <div>
+                                        <div class="rf-accessory-inline-wrapper">
+                                            <div class="rf-accessory-inline">
+                                                <div>
+                                                    <div class="rf-accessory-tile-configuration">
+                                                        <div class="rf-accessory-tile-dimensions">
+                                                            <div>
+                                                                <div class="rf-accessory-dimension-header">Chọn một ngôn
+                                                                    ngữ:</div>
+                                                                <div class="form-dropdown rf-accessory-dropdown"><select
+                                                                        id="acc_magickeyboard_13inch_dimensionLanguage"
+                                                                        name="acc_magickeyboard_13inch_dimensionLanguage"
+                                                                        class="form-dropdown-select" disabled="">
+                                                                        <option value="en_us">Tiếng Anh Mỹ</option>
+                                                                    </select><span
+                                                                        class="form-dropdown-chevron"></span><span
+                                                                        class="form-dropdown-label"
+                                                                        id="acc_magickeyboard_13inch_dimensionLanguage_label">Ngôn
+                                                                        ngữ</span>
+                                                                    <div>
+                                                                        <div class="">
+                                                                            <div class=""
+                                                                                id="acc_magickeyboard_13inch_dimensionLanguage_error">
+                                                                                <span></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                                <fieldset
+                                                                    class="colornav rc-dimension-colornav colornav-reduced">
+                                                                    <legend><span
+                                                                            class="rf-accessory-tile-dimension-colornav-label typography-body-reduced">Màu
+                                                                            - Trắng</span></legend>
+                                                                    <ul class="colornav-items">
+                                                                        <li class="colornav-item"><input type="radio"
+                                                                                id=":r28:"
+                                                                                class="colornav-value rc-dimension-colornav-input"
+                                                                                name="acc_magickeyboard_13inch_dimensionColor"
+                                                                                disabled="" value="white"
+                                                                                checked=""><label for=":r28:"
+                                                                                class="colornav-link rc-dimension-colornav-link"
+                                                                                id="white_acc_magickeyboard_13inch"><img
+                                                                                    width="28" height="28" alt=""
+                                                                                    src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MWR43_SW_COLOR?wid=56&amp;hei=56&amp;fmt=jpeg&amp;qlt=90&amp;.v=NDFaR1htWXhkdTNTQjhtUWJiTzFrV2l1aTJRRkFMWkh2bXZDVGtKNUk3d3pIV3RHbE5qdS8zMStVUzZUdGp5bHRSY3VBNnBOUUNJK1lyZ3oyL3RJWWc"
+                                                                                    class="colornav-swatch"><span
+                                                                                    id=":r28:_label"
+                                                                                    class="colornav-label"><span
+                                                                                        class="visuallyhidden">Trắng</span></span></label>
+                                                                        </li>
+                                                                        <li class="colornav-item"><input type="radio"
+                                                                                id=":r29:"
+                                                                                class="colornav-value rc-dimension-colornav-input"
+                                                                                name="acc_magickeyboard_13inch_dimensionColor"
+                                                                                disabled="" value="black"><label
+                                                                                for=":r29:"
+                                                                                class="colornav-link rc-dimension-colornav-link"
+                                                                                id="black_acc_magickeyboard_13inch"><img
+                                                                                    width="28" height="28" alt=""
+                                                                                    src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MWR53_SW_COLOR?wid=56&amp;hei=56&amp;fmt=jpeg&amp;qlt=90&amp;.v=OUxvWXczS3ErNmVUUndaSld2Q3N1R2l1aTJRRkFMWkh2bXZDVGtKNUk3d3pIV3RHbE5qdS8zMStVUzZUdGp5bFF4RzFVek5YTFhSZWlNalYyeUN6TEE"
+                                                                                    class="colornav-swatch"><span
+                                                                                    id=":r29:_label"
+                                                                                    class="colornav-label"><span
+                                                                                        class="visuallyhidden">Đen</span></span></label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </fieldset>
+                                                            </div>
+                                                        </div>
+                                                    </div><button type="button" id="acc_magickeyboard_13inch_add"
+                                                        class="button" disabled=""><span>Xác
+                                                            nhận</span><span class="visuallyhidden">Thêm
+                                                            Magic&nbsp;Keyboard cho iPad&nbsp;Pro</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rc-dimension-selector-row form-selector"><input class="form-selector-input"
+                                        name="acc_keyboard_13inch" id=":r1h:" type="radio"
+                                        value="acc_keyboard_13inch_section_noaccessory"><label for=":r1h:"
+                                        class="form-selector-label"><span class="row row-logical"><span
+                                                class="form-selector-left-col column large-12"><span class="row"><span
+                                                        class="column large-12"><span
+                                                            class="rf-accessorybutton-left-label typography-body-tight">Không
+                                                            có bàn phím&nbsp;</span></span></span></span></span></label>
+                                </div>
+                                <div class="rc-decisionsection as-util-relatedlink rc-decisionsection-disabled">
+                                    <div class="rc-decisionsection-details typography-body-reduced">
+                                        <div class="rc-decisionsection-info">
+                                            <div id=":r1i:"
+                                                class="rc-decisionsection-header typography-body-reduced-tight">Bạn muốn
+                                                tìm hiểu thêm về Magic&nbsp;Keyboard?</div>
+                                            <div class="rc-decisionsection-desc typography-body-reduced-tight">Nâng cao
+                                                hiệu suất công việc với trải nghiệm gõ phím và bàn di tuyệt vời.</div>
+                                            <div class="rc-decisionsection-footer">Bàn phím có thể sẽ được giao riêng
+                                                với iPad Pro.</div>
+                                        </div>
+                                    </div><a class="rc-decisionsection-button"><span id=":r1i:_showmore"
+                                            class="visuallyhidden">Hiển thị thêm</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="rf-bfe-step rf-bfe-right-rail-step rf-bfe-tradeup">
+                    <div class="rf-bfe-tradeup-header">
+                        <h2 id="tradeupbanner" class="typography-eyebrow"><span>Apple Trade
+                                In.</span><span class="rf-bfe-tradeup-subheader typography-eyebrow">Nhận
+                                900.000đ–24.100.000đ điểm tín dụng để mua iPad mới. <as-footnote><sup
+                                        class="as-footnote footnote"><span class="visuallyhidden">&nbsp;Chú
+                                            thích&nbsp;</span>§</sup></as-footnote></span></h2>
+                    </div>
+                    <div class="rf-bfe-step-disabled">
+                        <div class="">
+                            <div class="rf-tradeupbanner">
+                                <section class="rf-tradeupbanner-content">
+                                    <div class="rf-tradeup-tileview">
+                                        <div class="r-fade-transition-enter-done">
+                                            <fieldset class="rc-dimension rf-tradeupbanner-tileoptions">
+                                                <legend></legend>
+                                                <div class="rc-dimension-selector-group form-selector-group">
+                                                    <div class="rc-dimension-selector-row form-selector"><input
+                                                            class="form-selector-input rf-tradeupbanner-tileoption-input"
+                                                            name="tradeup-option" id=":r19:" type="radio" disabled=""
+                                                            value="addTradeUp"><label for=":r19:"
+                                                            class="form-selector-label">
+                                                            <div class="row">
+                                                                <div
+                                                                    class="rf-tradeupbanner-tileoption-left-col form-selector-left-col column large-12 small-12">
+                                                                    <span class="form-selector-title">Thêm yêu cầu đổi
+                                                                        cũ lấy mới</span>
+                                                                    <div
+                                                                        class="row form-label-small rf-tradeupbanner-tileoption-desc">
+                                                                        Đổi iPad của bạn lấy điểm tín dụng hoặc tái chế
+                                                                        miễn phí.<as-footnote><sup
+                                                                                class="as-footnote footnote"><span
+                                                                                    class="visuallyhidden">&nbsp;Chú
+                                                                                    thích&nbsp;</span>§</sup></as-footnote>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </label></div>
+                                                    <div class="rc-dimension-selector-row form-selector"><input
+                                                            class="form-selector-input rf-tradeupbanner-tileoption-input-notradein"
+                                                            name="tradeup-option" id=":r1a:" type="radio" disabled=""
+                                                            value="noTradeUp"><label for=":r1a:"
+                                                            class="form-selector-label"><span class="row"><span
+                                                                    class="form-selector-left-col column large-12"><span
+                                                                        class="form-selector-title">Không đổi cũ lấy
+                                                                        mới</span></span></span></label></div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <div></div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="rf-bfe-decision-support">
+                                <div class="rc-decisionsection as-util-relatedlink rc-decisionsection-disabled">
+                                    <div class="rc-decisionsection-details typography-body-reduced">
+                                        <div class="rc-decisionsection-info">
+                                            <div id=":r1c:"
+                                                class="rc-decisionsection-header typography-body-reduced-tight">Chương
+                                                trình đổi cũ lấy mới hoạt động như thế nào?</div>
+                                            <div class="rc-decisionsection-desc typography-body-reduced-tight">Chúng tôi
+                                                sẽ giúp bạn đổi thiết bị đủ điều kiện lấy điểm tín dụng để mua iPad Pro
+                                                mới hoặc tái chế thiết bị miễn phí.</div>
+                                        </div>
+                                    </div><a class="rc-decisionsection-button"><span id=":r1c:_showmore"
+                                            class="visuallyhidden">Hiển thị thêm</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="rf-bfe-applecare-options rf-bfe-step rf-bfe-right-rail-step rf-bfe-applecare-options-rightrail">
+                    <div>
+                        <div class="rf-applecare-section">
+                            <div class="row rf-applecare-section-disabled">
+                                <div class="rf-applecare-column-left">
+                                    <h2 id="rf-applecare-section-heading"
+                                        class="rf-applecare-section-heading typography-eyebrow">
+                                        <span><span>Gói bảo hành AppleCare+. </span></span><span
+                                            class="rf-applecare-section-subheading">Hãy bảo vệ iPad&nbsp;Pro,
+                                            Apple&nbsp;Pencil và bàn phím Apple của bạn. Học sinh/sinh viên và nhà giáo
+                                            đủ điều kiện sẽ tiết kiệm được tối đa đến 10% khi mua gói hỗ trợ bảo hành
+                                            AppleCare+ cho iPad.</span>
+                                    </h2>
+                                    <div class="rf-applecare-content r-fade-transition-enter-done">
+                                        <fieldset class="rc-dimension" name="inlinetile-options-iPad Pro 11 inch">
+                                            <legend></legend>
+                                            <div class="rc-dimension-selector-group form-selector-group">
+                                                <div class="row">
+                                                    <div
+                                                        class="column large-12 small-12 rf-applecare-option rc-dimension-selector-row form-selector">
+                                                        <input class="form-selector-input rf-applecare-selector"
+                                                            name="applecare-options" id=":r11:" type="radio" disabled=""
+                                                            value="">
+                                                        <div id=":r11:_label"
+                                                            class="form-selector-label rf-applecare-label"><label
+                                                                for=":r11:"
+                                                                class="rc-dimension-list-header form-selector-list-header"><span
+                                                                    class="row row-logical"><span
+                                                                        class="form-selector-left-col column large-12 rc-dimension-stacked-layout"><span
+                                                                            class="row row-logical"><span
+                                                                                class="as-svgicon-container rf-applecare-quote-icon"><svg
+                                                                                    viewBox="0 0 25 25"
+                                                                                    class="as-svgicon as-svgicon-applelogo as-svgicon-reduced as-svgicon-applelogoreduced"
+                                                                                    width="25px" height="25px">
+                                                                                    <path fill="none" d="M0 0h25v25H0z">
+                                                                                    </path>
+                                                                                    <path
+                                                                                        d="M18.4 8.146a3.5 3.5 0 0 0-1.675 2.948 3.41 3.41 0 0 0 2.075 3.129 8.2 8.2 0 0 1-1.063 2.2c-.662.953-1.354 1.905-2.407 1.905s-1.324-.612-2.537-.612c-1.183 0-1.6.632-2.567.632s-1.634-.882-2.407-1.965A9.5 9.5 0 0 1 6.2 11.255c0-3.008 1.955-4.6 3.881-4.6 1.023 0 1.875.672 2.517.672.612 0 1.564-.712 2.727-.712A3.65 3.65 0 0 1 18.4 8.146M12.68 6.442a1 1 0 0 1-.211-.02 1.4 1.4 0 0 1-.03-.281 3.36 3.36 0 0 1 .852-2.1 3.46 3.46 0 0 1 2.276-1.173 1.5 1.5 0 0 1 .03.311 3.46 3.46 0 0 1-.822 2.156 3 3 0 0 1-2.095 1.107">
+                                                                                    </path>
+                                                                                </svg></span><span
+                                                                                class="form-selector-title">Thêm
+                                                                                AppleCare+</span></span><span
+                                                                            class="row row-logical"><span
+                                                                                class="rf-applecare-price typography-body-reduced">3.799.000đ</span></span></span></span></label>
+                                                            <div class="as-form-choiceselectordesc-list"><span
+                                                                    class="as-form-choiceselectordesc-listitem"> Sửa
+                                                                    chữa không hạn chế cho trường hợp hư hỏng do sự cố
+                                                                    bất ngờ.<as-footnote><sup
+                                                                            class="as-footnote footnote"><span
+                                                                                class="visuallyhidden">&nbsp;Chú
+                                                                                thích&nbsp;</span>※</sup></as-footnote>
+                                                                </span>
+                                                                <span class="as-form-choiceselectordesc-listitem"> Dịch
+                                                                    vụ bảo dưỡng và hỗ trợ được Apple chứng nhận
+                                                                </span>
+                                                                <span class="as-form-choiceselectordesc-listitem"> Dịch
+                                                                    Vụ Thay Thế Cấp Tốc — Chúng tôi sẽ gửi cho bạn một
+                                                                    thiết bị thay thế để bạn không phải chờ sửa chữa
+                                                                </span>
+                                                                <span class="as-form-choiceselectordesc-listitem"> Ưu
+                                                                    tiên tiếp cận các chuyên gia Apple
+                                                                </span>
+                                                                <span class="as-form-choiceselectordesc-listitem"> Bảo
+                                                                    vệ cho tất cả các thiết bị của bạn như iPad, Apple
+                                                                    Pencil, bàn phím Apple với một mức giá duy
+                                                                    nhất<as-footnote><sup
+                                                                            class="as-footnote footnote"><span
+                                                                                class="visuallyhidden">&nbsp;Chú
+                                                                                thích&nbsp;</span>±</sup></as-footnote>
+                                                                </span>
+                                                            </div>
+                                                            <div class="rf-applecare-savingsmessage typography-caption">
+                                                                <svg height="35" viewBox="0 0 35 35" width="35"
+                                                                    xmlns="http://www.w3.org/2000/svg">
+                                                                    <g fill="none" fill-rule="evenodd">
+                                                                        <path d="m0 0h35v35h-35z"></path>
+                                                                        <path
+                                                                            d="m9 18.7728v5.3914c-.61143092-.6239047-.96802746-1.4535266-1-2.3265v-3.5207l.9272.4224zm11.6159 2.4615c-.9317176.4767769-1.958535.7384363-3.0048.7657l-.0867-.0016-.1354.0016c-1.0447951-.027019-2.0702278-.2880245-3.0008-.7638l-3.5775-1.6346-.8107-.3702v5.8144c2.2405033 1.4045651 4.8550652 2.0948159 7.4969 1.9792h.0063c5.8668 0 9.4968-2.5937 9.4968-5.1873v-3.5218l-.9352.4227zm9.5225-8.0083-9.9422-4.5533c-.8190429-.41572779-1.7197947-.64543162-2.6379-.6727h-.0583-.0582c-.9181305.02731605-1.8189046.25701687-2.638.6727l-9.952 4.5533c-.51552366.213068-.85177474.7158805-.85177474 1.2737s.33625108 1.060632.85177474 1.2737l3.1482 1.4444.1089.05 1.0375.4726 6.3436-3.0725c-.0703139-.1033163-.1101635-.2243204-.115-.3492 0-.4745.5565-.8784 1.3413-1.0437.5168439-.1084009 1.0505561-.1084009 1.5674 0 .7848.1653 1.3413.5692 1.3413 1.0437 0 .6213-.9514 1.125-2.125 1.125-.3450911.0006688-.6885257-.0477151-1.02-.1437l-6.1544 2.9809.9006.4112 3.5778 1.6348c.8004678.4149094 1.6838314.6449257 2.585.6731.037 0 .074-.0004333.111-.0013.0371.0009.074.0013.1111.0013.90122-.0282079 1.7846232-.2582939 2.5851-.6733l5.4522-2.4973 1.2427-.5616.1089-.05 3.1384-1.4443c.5204134-.2086963.8615206-.7130002.8615206-1.2737s-.3411072-1.0650037-.8615206-1.2737zm-21.1384 13.424c-.49597634.057359-.87133619.4755314-.875.9748v3.25c0 .5522847.44771525 1 1 1h.75c.5522847 0 1-.4477153 1-1v-3.25c-.0036638-.4992686-.3790237-.917441-.875-.9748v-1.6042c-.36454924-.2564393-.69988581-.552072-1-.8816z"
+                                                                            fill="#08827c" fill-rule="nonzero"></path>
+                                                                    </g>
+                                                                </svg><span
+                                                                    class="visuallyhidden">Includes&nbsp;</span><span>Ưu
+                                                                    Đãi Tiết Kiệm Cho Ngành Giáo Dục</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="column large-12 small-12 rf-applecare-option rf-applecare-even-option rf-no-applecare-option rc-dimension-selector-row form-selector">
+                                                        <input class="form-selector-input rf-applecare-selector"
+                                                            name="applecare-options" id=":r13:" type="radio" disabled=""
+                                                            value=""><label for=":r13:"
+                                                            class="form-selector-label rf-applecare-label"
+                                                            id=":r13:_label"><span class="row row-logical"><span
+                                                                    class="form-selector-left-col column large-12 rc-dimension-stacked-layout"><span
+                                                                        class="row row-logical"><span
+                                                                            class="form-selector-title">Không có
+                                                                            AppleCare+</span></span><span
+                                                                        class="row row-logical"></span></span></span></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="rf-applecare-summary r-fade-transition-exit-done">
+                                        <div class="rf-applecare-summary-view">
+                                            <div class="row">
+                                                <div class="column large-9 small-12 rf-applecare-summary-view-header">
+                                                    <span
+                                                        class="as-svgicon-container rf-applecare-summary-view-icon"><svg
+                                                            viewBox="0 0 35 35"
+                                                            class="as-svgicon as-svgicon-applelogo as-svgicon-base as-svgicon-applelogobase"
+                                                            width="35px" height="35px">
+                                                            <path fill="none" d="M0 0h35v35H0z"></path>
+                                                            <path
+                                                                d="M25.99 11.345a5.05 5.05 0 0 0-2.411 4.245 4.91 4.91 0 0 0 2.989 4.51 11.7 11.7 0 0 1-1.531 3.162C24.084 24.629 23.088 26 21.572 26s-1.906-.881-3.653-.881c-1.7 0-2.31.91-3.7.91s-2.354-1.271-3.465-2.83a13.7 13.7 0 0 1-2.325-7.378c0-4.332 2.816-6.628 5.588-6.628 1.473 0 2.7.967 3.624.967.881 0 2.253-1.025 3.927-1.025a5.25 5.25 0 0 1 4.422 2.21M17.76 8.89a1.7 1.7 0 0 1-.3-.029 2 2 0 0 1-.043-.4 4.84 4.84 0 0 1 1.227-3.018 5 5 0 0 1 3.274-1.693 2 2 0 0 1 .043.448 4.98 4.98 0 0 1-1.184 3.1A4.33 4.33 0 0 1 17.76 8.89">
+                                                            </path>
+                                                        </svg></span>
+                                                    <div>
+                                                        <div class="rf-applecare-summary-view-label typography-body">
+                                                        </div>
+                                                        <div class="rf-applecare-summary-view-option typography-body">
+                                                        </div>
+                                                        <div class="rf-applecare-summary-view-price"></div>
+                                                        <div class="rf-applecare-summary-view-desc typography-caption">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="column large-3 small-12 rf-applecare-summary-view-action">
+                                                    <button type="button"
+                                                        class="as-buttonlink typography-body"><span>Chỉnh
+                                                            sửa</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rf-applecare-column-right">
+                                    <div class="rf-applecare-decision-support">
+                                        <div class="rc-decisionsection as-util-relatedlink rc-decisionsection-disabled">
+                                            <div class="rc-decisionsection-details typography-body-reduced">
+                                                <div class="rc-decisionsection-info">
+                                                    <div id=":r14:"
+                                                        class="rc-decisionsection-header typography-body-reduced-tight">
+                                                        AppleCare+ hoạt động như thế nào?&nbsp;</div>
+                                                    <div class="rc-decisionsection-desc typography-body-reduced-tight">
+                                                        Bảo hành sự cố rơi vỡ, đổ nước và các sự cố bất ngờ khác cho
+                                                        iPad, Apple&nbsp;Pencil và bàn phím Apple của bạn với một mức
+                                                        giá duy nhất. Xem dịch vụ đi kèm.</div>
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="rc-decisionsection-button-container"> <button
+                                                        id="as-compareapplecare-link"
+                                                        class="as-compareapplecare-learnmore" disabled=""><span
+                                                            id=":r14:_showmore" class="visuallyhidden">Hiển thị
+                                                            thêm</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rf-bfe-summary">
+                    <div class="rf-bfe-summary-section rf-bfe-summary-section-not-buyable">
+                        <div class="rf-bfe-summary-titlesection rf-bfe-summary-section-disabled">
+                            <h2 class="rf-bfe-summary-producttitle typography-body">
+                                iPad Pro</h2>
+                        </div>
+                        <div class="rf-bfe-summary-quotes-box rf-bfe-summary-section-disabled">
+                            <div></div>
+                            <div class="rf-bfe-accessory-fulfillment"></div>
+                        </div>
+                        <div class="rf-bfe-summary-border"></div>
+                        <div class="rf-bfe-summary-price-content rf-bfe-summary-section-disabled">
+                            <div class="rf-bfe-summary-price">
+                                <div class="as-price-currentprice"> <span class="price-point price-point-fullPrice">Từ
+                                        <span class="nowrap">27.199.000đ</span></span></div>
+                            </div>
+                        </div>
+                        <div class="rf-bfe-summary-button-box rf-bfe-summary-section-disabled">
+                            <div class="rf-bfe-summary-button-after">
+                                <div class="rf-bfe-summary-favorite-wrapper">
+                                    <div class="rc-favorite">
+                                        <div class="rc-favorite-tooltip"><button type="button"
+                                                class="rc-favorite as-svgicon-container" disabled=""><svg
+                                                    viewBox="0 0 35 35"
+                                                    class="as-svgicon as-svgicon-heart as-svgicon-base as-svgicon-heartbase"
+                                                    width="35px" height="35px">
+                                                    <path fill="none" d="M0 1.213h35v35H0z"></path>
+                                                    <path
+                                                        d="M17.5 29.263a1.2 1.2 0 0 1-.85-.352L6.967 19.2a6.53 6.53 0 0 1 .46-9.617 6.71 6.71 0 0 1 8.943.647l1.13 1.133 1.13-1.133a6.706 6.706 0 0 1 8.943-.647 6.53 6.53 0 0 1 .46 9.617l-9.683 9.711a1.2 1.2 0 0 1-.85.352m-6.06-20a5.15 5.15 0 0 0-3.31 1.167 5.35 5.35 0 0 0-1.948 3.913 5.42 5.42 0 0 0 1.564 4.081l9.684 9.711.53.388-.39-.388 9.684-9.711a5.42 5.42 0 0 0 1.564-4.081 5.35 5.35 0 0 0-1.948-3.913 5.6 5.6 0 0 0-7.461.577l-1.7 1.7a.3.3 0 0 1-.425 0l-1.7-1.7a5.9 5.9 0 0 0-4.144-1.741Z">
+                                                    </path>
+                                                </svg></button>
+                                            <div class="r-fade-transition-exit-done">
+                                                <div id=":ro:"><span class="rc-favorite-tooltiptext">Thêm vào Mục Yêu
+                                                        Thích</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rc-summary-button"><button class="button button-block rc-summary-button-height"
+                                    type="button" disabled="">Tiếp tục</button></div>
+                        </div>
+                        <div class="rf-bfe-summary-buttons-container">
+                            <div class="rf-bfe-summary-shareitem"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rf-bfe-progress-scrollbar">
+            <div class="rc-progress-scrollbar">
+                <div class="rc-progress-scrollbar-section">
+                    <div class="rc-progress-scrollbar-container">
+                        <div class="rc-progress-scrollbar-steps">
+                            <div>
+                                <div class="rf-bfe-progress-scrollbar-stepitem"><span></span></div>
+                                <div class="rf-bfe-progress-scrollbar-stepitem"><span></span></div>
+                                <div class="rf-bfe-progress-scrollbar-stepitem"><span></span></div>
+                                <div class="rf-bfe-progress-scrollbar-stepitem"><span></span></div>
+                                <div class="rf-bfe-progress-scrollbar-stepitem"><span></span></div>
+                                <div class="rf-bfe-progress-scrollbar-stepitem"><span></span></div>
+                                <div class="rf-bfe-progress-scrollbar-stepitem"><span></span></div>
+                                <div class="rf-bfe-progress-scrollbar-stepitem"><span></span></div>
+                                <div class="rf-bfe-progress-scrollbar-stepitem"><span></span></div>
+                                <div class="rf-bfe-progress-scrollbar-stepitem"><span></span></div>
+                            </div>
+                            <div class="rc-progress-scrollbar-indicator" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <!-- Bước 1 — Phiên bản: 11 inch (từ 27.199.000đ) / 13 inch (từ 37.199.000đ) -->
-            <div class="rf-bfe-step" data-step="dimensionScreensize">
-              <!-- TODO -->
+
+    <!--======================================
+SECTION 2.3
+=======================================-->
+
+    <div class="buyflow-witb">
+        <div class="rf-flagship-buyflow-witb as-l-container">
+            <h2 class="rf-flagship-buyflow-witbheader">Trong hộp có gì</h2>
+            <ul class="rc-witb-items row">
+                <li class="rc-witb-item">
+                    <div class="rc-witb-image-wrapper">
+                        <img loading="lazy" width="290" height="340"
+                            alt="iPad Pro, Vỏ ngoài mặt sau, màu Đen Không Gian, logo Apple ở giữa, Hệ Thống Camera Chuyên Nghiệp"
+                            src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-11-witb-spaceblack-wifi-202405?wid=580&amp;hei=680&amp;fmt=jpeg&amp;qlt=90&amp;.v=VmZyMGJaRGRneGVrVWdYK1BVR3BXbnFBVlM3UFFkSEk5dkUvZGszL1g1V09BanpWQ1hUdk5OTFV3cnh4NHJTdXRJeTRHZTNjc1JRYlNTTXoyVUZhUE1wdUt3S25hMjhaakhLSUtSV3lSd2NpTEkzMmQ1Si9SWk82R3NpSEw2dDU"
+                            class="rc-witb-item-image">
+                    </div>
+                    <div class="rc-witb-item-label typography-body-reduced">iPad Pro 11 inch</div>
+                </li>
+                <li class="rc-witb-item">
+                    <div class="rc-witb-image-wrapper">
+                        <img loading="lazy" width="83" height="340"
+                            alt="Cáp USB-C sang USB-C, thiết kế kiểu cáp bện, màu Đen"
+                            src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-witb-black-cable-202405?wid=166&amp;hei=680&amp;fmt=jpeg&amp;qlt=90&amp;.v=M0pyczF2Rnd2SzFaNGtPSnRYRHRGazU3M1NPd1BEU0NjL0RQNTIrcnc0ZWNwRXJFZ3lyNnBoYkxUM2d2YzZLV2JGcXNRQnFCV0w3WVRjTExvdm1ic1NPRjBLWk5xd3FnckxJc3ppamFnSjhVRk5BYjU4dkMrYjBKSjFqVXFOVGg"
+                            class="rc-witb-item-image">
+                    </div>
+                    <div class="rc-witb-item-label typography-body-reduced">Cáp Sạc USB‑C</div>
+                </li>
+                <li class="rc-witb-item">
+                    <div class="rc-witb-image-wrapper">
+                        <img loading="lazy" width="155" height="340"
+                            alt="Bộ Tiếp Hợp Nguồn USB-C 20W, đầu cắm Type A, màu Trắng"
+                            src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ipad-pro-witb-adapter-202405_GEO_VN?wid=310&amp;hei=680&amp;fmt=jpeg&amp;qlt=90&amp;.v=RmJqQWxBbWFlaWVuT1p4ci9yS2hVRk9wbzBYcDFVdkNJd3hLOWtiUTJuS3k5TXFGZ3JWcmNJdW94N3JoMzMzNFMwWnZwL3FIMTFsdjJkaGdCV1RvWWd3bXZGUlA2TmRrRk01aHdyNDhwMVo2SFN6aVNXMm9qT3dFWVFSSkRWQ1U"
+                            class="rc-witb-item-image">
+                    </div>
+                    <div class="rc-witb-item-label typography-body-reduced">Bộ Tiếp Hợp Nguồn USB‑C 20W</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!---=========================================================-->
+    <section class="creator-studio-section">
+        <div class="creator-studio-container">
+
+            <div class="cs-text-col">
+                <img src="images/Fe2/ipad-discount-student-2.png" alt="Apple Creator Studio Logo" class="cs-logo">
+                <h3 class="cs-headline">79.000đ mỗi tháng cho sinh viên và nhân viên sư phạm.◊</h3>
+                <p class="cs-desc">Apple Creator Studio bao gồm các ứng dụng nâng cao năng suất như Final Cut Pro, Logic
+                    Pro,
+                    Pixelmator Pro và nhiều tiện ích khác.</p>
+                <a href="#" class="cs-link">Tìm hiểu thêm ↗</a>
             </div>
 
-            <!-- Bước 2 — Màu: Đen Không Gian / Bạc (color swatch tròn) -->
-            <div class="rf-bfe-step" data-step="dimensionColor">
-              <!-- TODO -->
+            <div class="cs-image-col">
+                <img src="images/Fe2/ipad-discount-student-1.png" alt="Creator Studio Icons" class="cs-icons-img">
             </div>
 
-            <!-- Bước 3 — Dung lượng, bộ nhớ, chip:
-                 256GB–2TB, Bộ nhớ 12–16GB, Chip M5 CPU/GPU các lõi, giá từ 27.199.000đ–55.199.000đ -->
-            <div class="rf-bfe-step" data-step="dimensionCapacity">
-              <!-- TODO -->
+        </div>
+    </section>
+
+    <!-- =============================================
+     SECTION: So sánh các phiên bản iPad
+============================================= -->
+    <section class="compare-section">
+        <h2>So sánh các phiên bản iPad</h2>
+        <a href="#" class="compare-link">Xem iPad nào phù hợp với bạn ›</a>
+
+        <!-- Product Cards -->
+        <div class="cards-row">
+
+            <!-- iPad Pro -->
+            <div class="card">
+                <svg class="card-img" viewBox="0 0 180 200" fill="none">
+                    <rect x="35" y="10" width="110" height="180" rx="14" fill="#2c2c2e" />
+                    <rect x="42" y="20" width="96" height="160" rx="5" fill="#1a1a1c" />
+                    <rect x="45" y="23" width="90" height="154" rx="4" fill="#0a0a0b" />
+                    <rect x="45" y="23" width="90" height="30" rx="4" fill="#6c3ff0" />
+                    <rect x="45" y="53" width="90" height="25" fill="#3b82f6" />
+                    <rect x="45" y="78" width="90" height="25" fill="#06b6d4" />
+                    <rect x="45" y="103" width="90" height="25" fill="#10b981" />
+                    <rect x="45" y="128" width="90" height="25" fill="#f59e0b" />
+                    <rect x="45" y="153" width="90" height="24" fill="#ef4444" />
+                    <path d="M45 171 Q45 177 51 177 H129 Q135 177 135 171 V169 H45 Z" fill="#ec4899" />
+                    <circle cx="90" cy="193" r="3" fill="#4a4a4f" />
+                </svg>
+                <div class="color-dots">
+                    <div class="dot active" style="background:#3a3a3c;"></div>
+                    <div class="dot" style="background:#f5f5f7;"></div>
+                </div>
+                <div class="badge-new"></div>
+                <div class="card-name">iPad Pro</div>
+                <div class="card-desc">Trải nghiệm iPad đỉnh cao với công nghệ tiên tiến.</div>
+                <a href="#" class="card-btn">Mua</a>
+                <a href="#" class="card-btn card-btn-ghost" style="margin-top:8px;">Tìm hiểu thêm</a>
             </div>
 
-            <!-- Bước 4 — Kính màn hình: Tiêu chuẩn / Nano-texture (chỉ có ở 1TB–2TB) -->
-            <div class="rf-bfe-step" data-step="dimensionFinish">
-              <!-- TODO -->
+            <!-- iPad Air (Mới) -->
+            <div class="card">
+                <svg class="card-img" viewBox="0 0 180 200" fill="none">
+                    <rect x="35" y="10" width="110" height="180" rx="14" fill="#9b72cb" />
+                    <rect x="42" y="20" width="96" height="160" rx="5" fill="#7c5aad" />
+                    <defs>
+                        <linearGradient id="airGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#a855f7" />
+                            <stop offset="50%" stop-color="#6366f1" />
+                            <stop offset="100%" stop-color="#3b82f6" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="45" y="23" width="90" height="154" rx="4" fill="url(#airGrad)" />
+                    <path d="M45 60 Q90 100 135 60" stroke="rgba(255,255,255,.3)" stroke-width="20" fill="none" />
+                    <path d="M45 100 Q90 140 135 100" stroke="rgba(255,255,255,.15)" stroke-width="16" fill="none" />
+                    <circle cx="90" cy="193" r="3" fill="#7c5aad" />
+                    <rect x="80" y="10" width="20" height="4" rx="2" fill="#7c5aad" />
+                </svg>
+                <div class="color-dots">
+                    <div class="dot active" style="background:#4a4a4f;"></div>
+                    <div class="dot" style="background:#6c9ccf;"></div>
+                    <div class="dot" style="background:#f5f5f7;"></div>
+                    <div class="dot" style="background:#c084fc;"></div>
+                </div>
+                <div class="badge-new">Mới</div>
+                <div class="card-name">iPad Air</div>
+                <div class="card-desc">Hiệu năng mạnh mẽ trong một thiết kế mỏng nhẹ.</div>
+                <a href="#" class="card-btn">Mua</a>
+                <a href="#" class="card-btn card-btn-ghost" style="margin-top:8px;">Tìm hiểu thêm</a>
             </div>
 
-            <!-- Bước 5 — Kết nối: Wi-Fi / Wi-Fi + Cellular -->
-            <div class="rf-bfe-step" data-step="dimensionConnection">
-              <!-- TODO -->
+            <!-- iPad -->
+            <div class="card">
+                <svg class="card-img" viewBox="0 0 180 200" fill="none">
+                    <rect x="35" y="10" width="110" height="180" rx="14" fill="#e63484" />
+                    <rect x="42" y="20" width="96" height="160" rx="5" fill="#c92d73" />
+                    <defs>
+                        <linearGradient id="ipadGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#f472b6" />
+                            <stop offset="40%" stop-color="#3b82f6" />
+                            <stop offset="70%" stop-color="#fbbf24" />
+                            <stop offset="100%" stop-color="#10b981" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="45" y="23" width="90" height="154" rx="4" fill="url(#ipadGrad)" />
+                    <circle cx="90" cy="193" r="3" fill="#c92d73" />
+                    <rect x="78" y="10" width="24" height="5" rx="2" fill="#c92d73" />
+                </svg>
+                <div class="color-dots">
+                    <div class="dot active" style="background:#3b7abf;"></div>
+                    <div class="dot" style="background:#e63484;"></div>
+                    <div class="dot" style="background:#f0c040;"></div>
+                    <div class="dot" style="background:#f0f0f0;border-color:#ccc;"></div>
+                </div>
+                <div class="badge-new"></div>
+                <div class="card-name">iPad</div>
+                <div class="card-desc">iPad màn hình toàn phần, đầy màu sắc. Cho mọi tác vụ hàng ngày.</div>
+                <a href="#" class="card-btn">Mua</a>
+                <a href="#" class="card-btn card-btn-ghost" style="margin-top:8px;">Tìm hiểu thêm</a>
             </div>
 
-            <!-- Bước 6 — Khắc: Thêm Chi Tiết Khắc (Miễn Phí) / Không khắc -->
-            <div class="rf-bfe-step" data-step="engraving">
-              <!-- TODO -->
+            <!-- iPad mini -->
+            <div class="card">
+                <svg class="card-img" viewBox="0 0 180 200" fill="none">
+                    <rect x="50" y="24" width="80" height="152" rx="12" fill="#3a3a3c" />
+                    <rect x="57" y="34" width="66" height="132" rx="5" fill="#1c1c1e" />
+                    <defs>
+                        <linearGradient id="miniGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#f59e0b" />
+                            <stop offset="40%" stop-color="#ef4444" />
+                            <stop offset="70%" stop-color="#ec4899" />
+                            <stop offset="100%" stop-color="#8b5cf6" />
+                        </linearGradient>
+                    </defs>
+                    <rect x="57" y="34" width="66" height="132" rx="4" fill="url(#miniGrad)" />
+                    <rect x="83" y="24" width="14" height="4" rx="2" fill="#2c2c2e" />
+                    <circle cx="90" cy="182" r="3" fill="#3a3a3c" />
+                </svg>
+                <div class="color-dots">
+                    <div class="dot active" style="background:#3a3a3c;"></div>
+                    <div class="dot" style="background:#f5f5f0;border-color:#ccc;"></div>
+                    <div class="dot" style="background:#6c9ccf;"></div>
+                    <div class="dot" style="background:#d4b8a0;"></div>
+                </div>
+                <div class="badge-new"></div>
+                <div class="card-name">iPad mini</div>
+                <div class="card-desc">Trải nghiệm trọn vẹn iPad trong một thiết kế siêu gọn nhẹ.</div>
+                <a href="#" class="card-btn">Mua</a>
+                <a href="#" class="card-btn card-btn-ghost" style="margin-top:8px;">Tìm hiểu thêm</a>
             </div>
 
-            <!-- Bước 7 — Apple Pencil: Pro (3.168.000đ) / USB-C (1.885.000đ) / Không -->
-            <div class="rf-bfe-step" id="acc_pencil">
-              <!-- TODO -->
-            </div>
+        </div><!-- /cards-row -->
+    </section><!-- /compare-section -->
 
-            <!-- Bước 8 — Bàn phím: Magic Keyboard 11" (7.602.000đ) / 13" (9.068.000đ) / Không -->
-            <div class="rf-bfe-step" id="acc_keyboard">
-              <!-- TODO -->
-            </div>
+    <!-- =============================================
+     COMPARISON TABLE
+============================================= -->
+    <div class="compare-table">
 
-            <!-- Bước 9 — Apple Trade In: Đổi cũ lấy 900.000đ–24.100.000đ / Không đổi -->
-            <div class="rf-bfe-step rf-bfe-tradeup">
-              <!-- TODO -->
-            </div>
-
-            <!-- Bước 10 — AppleCare+: Thêm (3.799.000đ, badge giáo dục) / Không -->
-            <div class="rf-bfe-step rf-bfe-applecare-options">
-              <!-- TODO -->
-            </div>
-
-            <!-- Summary box: tên SP + giá tổng + nút "Tiếp tục" + icon yêu thích (trái tim) -->
-            <div class="rf-bfe-summary">
-              <!-- TODO -->
-            </div>
-
-          </div>
+        <!-- Prices -->
+        <div class="compare-row">
+            <div class="cell price">Từ 27.199.000đ</div>
+            <div class="cell price">Từ 15.289.000đ</div>
+            <div class="cell price">Từ 9.257.000đ</div>
+            <div class="cell price">Từ 12.344.000đ</div>
         </div>
 
-      </div>
+        <!-- Screen Size & Display Type -->
+        <div class="compare-row">
+            <div class="cell"><strong>13" hoặc 11"</strong>Màn hình Ultra Retina XDR³</div>
+            <div class="cell"><strong>13" hoặc 11"</strong>Màn hình Liquid Retina³</div>
+            <div class="cell"><strong>11"</strong>Màn hình Liquid Retina³</div>
+            <div class="cell"><strong>8,3"</strong>Màn hình Liquid Retina³</div>
+        </div>
+
+        <!-- ProMotion -->
+        <div class="compare-row">
+            <div class="cell">
+                <svg class="check-icon" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="#1d1d1f" stroke-width="1.5" />
+                    <path d="M6 10.5l3 3 5-5.5" stroke="#1d1d1f" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                Công nghệ ProMotion
+            </div>
+            <div class="cell"><span class="dash">—</span></div>
+            <div class="cell"><span class="dash">—</span></div>
+            <div class="cell"><span class="dash">—</span></div>
+        </div>
+
+        <!-- Wide Color -->
+        <div class="compare-row">
+            <div class="cell">Dải màu rộng P3</div>
+            <div class="cell">Dải màu rộng P3</div>
+            <div class="cell">Màu sRGB</div>
+            <div class="cell">Dải màu rộng P3</div>
+        </div>
+
+        <!-- True Tone -->
+        <div class="compare-row">
+            <div class="cell">True Tone</div>
+            <div class="cell">True Tone</div>
+            <div class="cell">True Tone</div>
+            <div class="cell">True Tone</div>
+        </div>
+
+        <!-- Anti-reflective -->
+        <div class="compare-row">
+            <div class="cell">Lớp phủ chống phản chiếu</div>
+            <div class="cell">Lớp phủ chống phản chiếu</div>
+            <div class="cell"><span class="dash">—</span></div>
+            <div class="cell">Lớp phủ chống phản chiếu</div>
+        </div>
+
+        <!-- Nano-texture -->
+        <div class="compare-row">
+            <div class="cell" style="font-size:13px;line-height:1.4;">Tùy chọn mặt kính có cấu trúc nano trên các phiên
+                bản
+                1TB hoặc 2TB
+            </div>
+            <div class="cell"><span class="dash">—</span></div>
+            <div class="cell"><span class="dash">—</span></div>
+            <div class="cell"><span class="dash">—</span></div>
+        </div>
+
+        <!-- Chip -->
+        <div class="compare-row">
+            <div class="cell">
+                <div class="chip-badge m5">M5</div>
+                <span>Chip M5</span>
+            </div>
+            <div class="cell">
+                <div class="chip-badge">M4</div>
+                <span>Chip M4</span>
+            </div>
+            <div class="cell">
+                <div class="chip-badge" style="font-size:13px;">A16</div>
+                <span>Chip A16</span>
+            </div>
+            <div class="cell">
+                <div class="chip-badge" style="font-size:12px;padding:4px 7px;">A17<br>PRO</div>
+                <span>Chip A17 Pro</span>
+            </div>
+        </div>
+
+        <!-- Apple Intelligence -->
+        <div class="compare-row">
+            <div class="cell">
+                <svg class="ai-icon" viewBox="0 0 40 40">
+                    <defs>
+                        <linearGradient id="ai1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f472b6" />
+                            <stop offset="50%" stop-color="#818cf8" />
+                            <stop offset="100%" stop-color="#38bdf8" />
+                        </linearGradient>
+                        <linearGradient id="ai2" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#fb923c" />
+                            <stop offset="50%" stop-color="#e879f9" />
+                            <stop offset="100%" stop-color="#a78bfa" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 4 C28 4 36 10 36 20 C36 30 28 36 20 36 C12 36 4 30 4 20 C4 10 12 4 20 4Z" fill="none"
+                        stroke="url(#ai1)" stroke-width="3" />
+                    <path d="M20 8 C26 8 32 13 32 20 C32 27 26 32 20 32 C14 32 8 27 8 20 C8 13 14 8 20 8Z" fill="none"
+                        stroke="url(#ai2)" stroke-width="2.5" stroke-dasharray="5 3" />
+                    <path d="M20 12 C24 12 28 15.5 28 20 S24 28 20 28 C16 28 12 24.5 12 20 S16 12 20 12Z" fill="none"
+                        stroke="url(#ai1)" stroke-width="2" />
+                    <circle cx="20" cy="20" r="3" fill="url(#ai2)" />
+                </svg>
+                Apple Intelligence⁴
+            </div>
+            <div class="cell">
+                <svg class="ai-icon" viewBox="0 0 40 40">
+                    <defs>
+                        <linearGradient id="ai3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f472b6" />
+                            <stop offset="50%" stop-color="#818cf8" />
+                            <stop offset="100%" stop-color="#38bdf8" />
+                        </linearGradient>
+                        <linearGradient id="ai4" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#fb923c" />
+                            <stop offset="50%" stop-color="#e879f9" />
+                            <stop offset="100%" stop-color="#a78bfa" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 4 C28 4 36 10 36 20 C36 30 28 36 20 36 C12 36 4 30 4 20 C4 10 12 4 20 4Z" fill="none"
+                        stroke="url(#ai3)" stroke-width="3" />
+                    <path d="M20 8 C26 8 32 13 32 20 C32 27 26 32 20 32 C14 32 8 27 8 20 C8 13 14 8 20 8Z" fill="none"
+                        stroke="url(#ai4)" stroke-width="2.5" stroke-dasharray="5 3" />
+                    <path d="M20 12 C24 12 28 15.5 28 20 S24 28 20 28 C16 28 12 24.5 12 20 S16 12 20 12Z" fill="none"
+                        stroke="url(#ai3)" stroke-width="2" />
+                    <circle cx="20" cy="20" r="3" fill="url(#ai4)" />
+                </svg>
+                Apple Intelligence⁴
+            </div>
+            <div class="cell"><span class="dash">—</span></div>
+            <div class="cell">
+                <svg class="ai-icon" viewBox="0 0 40 40">
+                    <defs>
+                        <linearGradient id="ai5" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#f472b6" />
+                            <stop offset="50%" stop-color="#818cf8" />
+                            <stop offset="100%" stop-color="#38bdf8" />
+                        </linearGradient>
+                        <linearGradient id="ai6" x1="100%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#fb923c" />
+                            <stop offset="50%" stop-color="#e879f9" />
+                            <stop offset="100%" stop-color="#a78bfa" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M20 4 C28 4 36 10 36 20 C36 30 28 36 20 36 C12 36 4 30 4 20 C4 10 12 4 20 4Z" fill="none"
+                        stroke="url(#ai5)" stroke-width="3" />
+                    <path d="M20 8 C26 8 32 13 32 20 C32 27 26 32 20 32 C14 32 8 27 8 20 C8 13 14 8 20 8Z" fill="none"
+                        stroke="url(#ai6)" stroke-width="2.5" stroke-dasharray="5 3" />
+                    <path d="M20 12 C24 12 28 15.5 28 20 S24 28 20 28 C16 28 12 24.5 12 20 S16 12 20 12Z" fill="none"
+                        stroke="url(#ai5)" stroke-width="2" />
+                    <circle cx="20" cy="20" r="3" fill="url(#ai6)" />
+                </svg>
+                Apple Intelligence⁴
+            </div>
+        </div>
+
+        <!-- Camera Rear -->
+        <div class="compare-row">
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                    <rect x="2" y="8" width="32" height="22" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="18" cy="18" r="6" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="18" cy="18" r="2.5" fill="#1d1d1f" />
+                    <rect x="24" y="4" width="6" height="5" rx="1.5" fill="#1d1d1f" />
+                </svg>
+                Camera Wide 12MP<br />Video 4K, ProRes
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                    <rect x="3" y="8" width="30" height="20" rx="8" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="18" cy="17" r="5" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="18" cy="17" r="2" fill="#1d1d1f" />
+                    <circle cx="9" cy="9" r="1.5" fill="#1d1d1f" />
+                </svg>
+                Camera Wide 12MP<br />Video 4K
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                    <rect x="3" y="8" width="30" height="20" rx="8" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="18" cy="17" r="5" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="18" cy="17" r="2" fill="#1d1d1f" />
+                    <circle cx="9" cy="9" r="1.5" fill="#1d1d1f" />
+                </svg>
+                Camera Wide 12MP<br />Video 4K
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                    <rect x="3" y="8" width="30" height="20" rx="8" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="18" cy="17" r="5" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="18" cy="17" r="2" fill="#1d1d1f" />
+                    <circle cx="9" cy="9" r="1.5" fill="#1d1d1f" />
+                </svg>
+                Camera Wide 12MP<br />Video 4K
+            </div>
+        </div>
+
+        <!-- Front Camera -->
+        <div class="compare-row">
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                    <rect x="2" y="6" width="32" height="24" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="30" cy="8" r="2" stroke="#1d1d1f" stroke-width="1.5" />
+                </svg>
+                Camera 12MP Center Stage trên cạnh ngang
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                    <rect x="2" y="6" width="32" height="24" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="30" cy="8" r="2" stroke="#1d1d1f" stroke-width="1.5" />
+                </svg>
+                Camera 12MP Center Stage trên cạnh ngang
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                    <rect x="2" y="6" width="32" height="24" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="30" cy="8" r="2" stroke="#1d1d1f" stroke-width="1.5" />
+                </svg>
+                Camera 12MP Center Stage trên cạnh ngang
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 36 36" fill="none">
+                    <rect x="2" y="6" width="32" height="24" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <circle cx="30" cy="8" r="2" stroke="#1d1d1f" stroke-width="1.5" />
+                </svg>
+                Camera 12MP Center Stage
+            </div>
+        </div>
+
+        <!-- TrueDepth -->
+        <div class="compare-row">
+            <div class="cell" style="font-size:13px;">Hệ thống camera TrueDepth</div>
+            <div class="cell"><span class="dash">—</span></div>
+            <div class="cell"><span class="dash">—</span></div>
+            <div class="cell"><span class="dash">—</span></div>
+        </div>
+
+        <!-- Apple Pencil -->
+        <div class="compare-row">
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                    <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5" />
+                    <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f" />
+                    <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1" />
+                </svg>
+                Hỗ trợ Apple Pencil Pro
+                <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                    <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5" />
+                    <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f" />
+                    <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1" />
+                </svg>
+                Hỗ trợ Apple Pencil (USB‑C)
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                    <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5" />
+                    <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f" />
+                    <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1" />
+                </svg>
+                Hỗ trợ Apple Pencil Pro
+                <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                    <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5" />
+                    <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f" />
+                    <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1" />
+                </svg>
+                Hỗ trợ Apple Pencil (USB‑C)
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                    <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5" />
+                    <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f" />
+                    <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1" />
+                </svg>
+                Hỗ trợ Apple Pencil (USB‑C)
+                <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                    <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5" />
+                    <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f" />
+                    <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1" />
+                </svg>
+                Hỗ trợ Apple Pencil (thế hệ thứ 1)⁴
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                    <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5" />
+                    <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f" />
+                    <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1" />
+                </svg>
+                Hỗ trợ Apple Pencil Pro
+                <svg class="acc-icon" viewBox="0 0 14 46" fill="none">
+                    <rect x="3" y="2" width="8" height="38" rx="4" stroke="#1d1d1f" stroke-width="1.5" />
+                    <path d="M5 40 L7 44 L9 40Z" fill="#1d1d1f" />
+                    <line x1="3" y1="8" x2="11" y2="8" stroke="#1d1d1f" stroke-width="1" />
+                </svg>
+                Hỗ trợ Apple Pencil (USB‑C)
+            </div>
+        </div>
+
+        <!-- Keyboard -->
+        <div class="compare-row">
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 46 32" fill="none">
+                    <rect x="1" y="1" width="44" height="22" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <rect x="5" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".5" />
+                    <rect x="13" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".5" />
+                    <rect x="21" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".5" />
+                    <rect x="29" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".5" />
+                    <rect x="37" y="6" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".5" />
+                    <rect x="5" y="12" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".5" />
+                    <rect x="13" y="12" width="20" height="3" rx="1" fill="#1d1d1f" opacity=".5" />
+                    <rect x="37" y="12" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".5" />
+                </svg>
+                Hỗ trợ Magic Keyboard cho iPad Pro
+                <svg class="acc-icon" viewBox="0 0 46 32" fill="none">
+                    <rect x="1" y="1" width="44" height="22" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <rect x="5" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="13" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="21" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="29" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="37" y="6" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="5" y="12" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="13" y="12" width="20" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="37" y="12" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                </svg>
+                Hỗ trợ Magic Keyboard cho iPad Air
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 46 32" fill="none">
+                    <rect x="1" y="1" width="44" height="22" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <rect x="5" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="13" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="21" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="29" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="37" y="6" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="5" y="12" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="13" y="12" width="20" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="37" y="12" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                </svg>
+                Hỗ trợ Magic Keyboard cho iPad Air
+                <svg class="acc-icon" viewBox="0 0 46 32" fill="none">
+                    <rect x="1" y="1" width="44" height="22" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <rect x="5" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="13" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="21" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="29" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="37" y="6" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="5" y="12" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="13" y="12" width="20" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="37" y="12" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                </svg>
+                Hỗ trợ Magic Keyboard Folio
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 46 32" fill="none">
+                    <rect x="1" y="1" width="44" height="22" rx="3" stroke="#1d1d1f" stroke-width="1.8" />
+                    <rect x="5" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="13" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="21" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="29" y="6" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="37" y="6" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="5" y="12" width="5" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="13" y="12" width="20" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                    <rect x="37" y="12" width="4" height="3" rx="1" fill="#1d1d1f" opacity=".4" />
+                </svg>
+                Hỗ trợ Magic Keyboard Folio
+                <svg class="acc-icon" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <path d="M12 10 L20 16 L12 22" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round" />
+                    <path d="M20 10 L12 16 L20 22" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+                Hỗ trợ bàn phím Bluetooth
+            </div>
+            <div class="cell">
+                <svg class="acc-icon" viewBox="0 0 32 32" fill="none">
+                    <rect x="2" y="2" width="28" height="28" rx="4" stroke="#1d1d1f" stroke-width="1.8" />
+                    <path d="M12 10 L20 16 L12 22" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round" />
+                    <path d="M20 10 L12 16 L20 22" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+                Hỗ trợ bàn phím Bluetooth
+            </div>
+        </div>
+
+    </div><!-- /compare-table -->
+
+    <section class="section-form">
+        <div class="section-form__inner">
+            <div class="section-form__header">
+                <h2 class="form-title">THÔNG TIN CÁ NHÂN</h2>
+                <p class="form-desc">Hãy để lại thông tin nếu bạn quan tâm đến sản phẩm của chúng tôi.</p>
+            </div>
+            <form class="form-content">
+                <div id="customer-name" class="form-field">
+                    <label>
+                        Họ và tên
+                        <input type="text" placeholder="Nguyễn Văn A" required/>
+                    </label>
+                    <span class="form-error-message">Vui lòng nhập họ và tên</span>
+                </div>
+                <div id="customer-tel" class="form-field">
+                    <label>
+                        Số điện thoại
+                        <input type="tel" placeholder="0123456789" pattern="[0-9]{10}" required/>
+                    </label>
+                    <span class="form-error-message">Số điện thoại không hợp lệ</span>
+                </div>
+                <button id="customer-btn" class="form-submit-btn">Gửi thông tin</button>
+                <div id="customer-success" class="form-success-message">
+                    Thông tin của bạn đã được ghi nhận.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- =============================================
+     FAQ Section
+============================================= -->
+    <section class="faq-section">
+        <div class="faq-header">
+            <h2>Câu Hỏi Thường Gặp</h2>
+            <button class="faq-toggle-all open" id="faqToggleAll" aria-label="Thu gọn tất cả">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 13 L10 7 L16 13" stroke="#1d1d1f" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="faq-list" id="faqList">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apple Pencil nào tương thích với iPad này?
+                    <svg class="faq-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4 6.5 L9 11.5 L14 6.5" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        iPad Pro hỗ trợ Apple Pencil Pro và Apple Pencil (USB‑C). iPad Air hỗ trợ Apple Pencil Pro và
+                        Apple
+                        Pencil
+                        (USB‑C). iPad hỗ trợ Apple Pencil (USB‑C) và Apple Pencil (thế hệ thứ 1). iPad mini hỗ trợ Apple
+                        Pencil Pro
+                        và Apple Pencil (USB‑C).
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Bàn phím nào tương thích với iPad này?
+                    <svg class="faq-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4 6.5 L9 11.5 L14 6.5" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        iPad Pro tương thích với Magic Keyboard cho iPad Pro và Magic Keyboard cho iPad Air. iPad Air
+                        tương
+                        thích
+                        với Magic Keyboard cho iPad Air và Magic Keyboard Folio. iPad tương thích với Magic Keyboard
+                        Folio
+                        và bàn
+                        phím Bluetooth. iPad mini tương thích với bàn phím Bluetooth.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Điểm khác nhau giữa các lựa chọn kính màn hình là gì?
+                    <svg class="faq-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4 6.5 L9 11.5 L14 6.5" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Màn hình tiêu chuẩn có lớp phủ chống phản chiếu giúp giảm ánh sáng phản chiếu. Tùy chọn kính có
+                        cấu
+                        trúc
+                        nano (chỉ có trên iPad Pro 1TB và 2TB) mang lại trải nghiệm viết, vẽ tự nhiên hơn với cảm giác
+                        mờ
+                        đặc trưng,
+                        đồng thời vẫn giảm độ phản chiếu hiệu quả.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    iPad này có loại SIM nào?
+                    <svg class="faq-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4 6.5 L9 11.5 L14 6.5" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Các mẫu iPad Wi-Fi + Cellular hỗ trợ eSIM và nano-SIM (tùy theo khu vực). Một số mẫu chỉ hỗ trợ
+                        eSIM. Vui
+                        lòng kiểm tra thông số kỹ thuật cụ thể của từng sản phẩm để biết thêm chi tiết.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    AppleCare+ bao gồm những gì?
+                    <svg class="faq-chevron" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M4 6.5 L9 11.5 L14 6.5" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        AppleCare+ dành cho iPad bao gồm dịch vụ sửa chữa hoặc thay thế thiết bị, bảo vệ chống tai nạn
+                        (lên
+                        đến 2 sự
+                        cố mỗi 12 tháng với phí dịch vụ), hỗ trợ kỹ thuật ưu tiên từ chuyên gia Apple qua điện thoại
+                        hoặc
+                        chat, và
+                        bảo hành pin. Phí dịch vụ sẽ áp dụng cho mỗi sự cố về tai nạn.
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /faq-list -->
+    </section>
+
+    <!-- Footer note -->
+    <div class="footer-note">
+        <p>Giá hiện thị đã bao gồm tất cả các khoản thuế. Giao hàng miễn phí cho tất cả đơn hàng.</p>
+        <p>◊ Chỉ dành cho người mới đăng ký. Gói dịch vụ sẽ gia hạn với giá 79.000đ mỗi tháng hoặc 790.000đ mỗi năm tùy
+            thuộc vào gói đã chọn cho đến khi bị hủy. Chỉ dành cho sinh viên đại học và nhân viên sư phạm. Yêu cầu xác
+            thực
+            thông tin. Có áp dụng các điều khoản. Ưu đãi trong thời gian có hạn; ưu đãi có thể kết thúc bất cứ lúc nào.
+            Ưu
+            đãi
+            chỉ áp dụng cho sinh viên đại học và nhân viên sư phạm đã xác thực, không áp dụng cho nhóm Chia Sẻ Trong Gia
+            Đình.
+        </p>
     </div>
 
-    <!-- ── FE-2.4: WHAT'S IN THE BOX ───────────────────────────────────
-      H2 "Trong hộp có gì" + danh sách ảnh + nhãn sản phẩm đi kèm:
-      iPad Pro, Cáp Sạc USB-C, Bộ Tiếp Hợp Nguồn USB-C 20W.
-    ─────────────────────────────────────────────────────────────────────── -->
-    <section id="section-witb" class="section-witb">
-      <!-- TODO: #buyflow-witb > .rc-witb-items -->
-    </section>
+    <!-- GLOBAL FOOTER -->
+    <footer id="global-footersection">
+        <!-- TODO -->
+    </footer>
 
-    <!-- ── FE-2.5 + FE-2.6: FORM THÔNG TIN KHÁCH HÀNG ─────────────────
-      Tính năng bổ sung (không có trên trang Apple gốc).
-      HTML/CSS (FE-2.5): tiêu đề, field Họ tên + Số điện thoại, nút "Gửi Thông Tin".
-      JS Validate (FE-2.6): không rỗng, số điện thoại 10 chữ số bắt đầu bằng 0.
-    ─────────────────────────────────────────────────────────────────────── -->
-    <section id="section-customer-form" class="section-customer-form">
-      <!-- TODO: .customer-form > .form-group (label + input + .error-message) -->
-    </section>
-
-    <!-- ── FE-2.7: CÂU HỎI THƯỜNG GẶP ────────────────────────────────
-      Accordion "Câu Hỏi Thường Gặp" với 5 câu hỏi lồng nhau:
-      Apple Pencil tương thích, Bàn phím tương thích, Kính màn hình, SIM, AppleCare+.
-    ─────────────────────────────────────────────────────────────────────── -->
-    <section id="section-faq" class="section-faq">
-      <!-- TODO: #buyflow-community-app > .rc-accordion -->
-    </section>
-
-    <!-- Sticky Chat Button (góc phải, hiện sau khi cuộn)
-         Nút tròn + text "Bạn có thêm câu hỏi nào nữa không?" + link "Hỏi Chuyên Gia iPad". -->
-    <div class="rs-sticky-chat">
-      <!-- TODO -->
-    </div>
-
-  </main>
-
-  <!-- GLOBAL FOOTER (dùng chung với index.html)
-       Directory links 5 cột + bottom bar pháp lý. -->
-  <footer id="global-footersection">
-    <!-- TODO -->
-  </footer>
-
-  <script src="js/app.js"></script>
-  <script src="js/buy-ipad-pro.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/buy-ipad-pro.js"></script>
 
 </body>
+
 </html>

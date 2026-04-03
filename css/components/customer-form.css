@@ -4,29 +4,88 @@
    ================================================================ */
 
 /* ---- Wrapper ---- */
-/* .section-customer-form */
-/* TODO */
+.section-form {
+    background: var(--color-bg);
+    width: 100%;
+}
+
+.section-form__inner {
+    height: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.section-form__header {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
 /* ---- Header ---- */
-/* .customer-form-title   (H2) */
-/* .customer-form-desc    (mô tả ngắn bên dưới tiêu đề) */
-/* TODO */
+.form-title {
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.form-desc {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
 
 /* ---- Form layout ---- */
-/* .customer-form */
-/* .form-group            (wrapper mỗi field: label + input + error) */
-/* TODO */
+.form-content {
+    flex-grow: 1;
+    align-self: stretch;
+    background: var(--color-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 
 /* ---- Labels ---- */
-/* .form-group label */
-/* .form-required         (dấu * màu đỏ) */
-/* TODO */
+.form-field label {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
 
 /* ---- Inputs ---- */
-/* .form-group input[type="text"],
-   .form-group input[type="tel"]   (border, padding, focus ring) */
-/* .form-group input.error         (border đỏ khi không hợp lệ) */
-/* TODO */
+.form-field input[type="text"],
+.form-field input[type="tel"] {
+    width: 30rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-field input:focus {
+    border-color: #0071e3;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.3);
+}
+
+.form-field input.error {
+    border-color: #ff3b30;
+}
 
 /* ---- Checkbox (optional) ---- */
 /* .form-group input[type="checkbox"] */
@@ -34,15 +93,56 @@
 /* TODO */
 
 /* ---- Error messages ---- */
-/* .error-message         (inline, màu đỏ, ẩn mặc định) */
-/* .error-message.visible (hiện khi có lỗi) */
-/* TODO */
+.form-error-message {
+    color: #ff3b30;
+    font-size: 0.9rem;
+    display: none;
+    align-self: flex-end;
+    width: 30rem;
+    margin-top: -0.5rem;
+}
+
+.form-error-message.visible {
+    display: block;
+}
 
 /* ---- Submit button ---- */
-/* .form-submit-btn       (style giống Apple button) */
-/* .form-submit-btn:disabled */
-/* TODO */
+.form-submit-btn {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #0071e3;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    align-self: flex-end;
+    width: max-content;
+}
+
+.form-submit-btn:hover {
+    background-color: #0077ed;
+}
+
+.form-submit-btn:active {
+    transform: scale(0.8);
+}
 
 /* ---- Success message ---- */
-/* .form-success-message  (ẩn mặc định, hiện sau khi gửi thành công) */
-/* TODO */
+.form-success-message {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #e3f8e9;
+    color: #1a7f37;
+    border-radius: 8px;
+    border: 1px solid #cce8d6;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-success-message.visible {
+    display: block;
+}

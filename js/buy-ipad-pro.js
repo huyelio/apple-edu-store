@@ -1,47 +1,105 @@
-/* ================================================================
-   buy-ipad-pro.js — JavaScript for buy-ipad-pro.html
-   (Trang Mua iPad Pro với ưu đãi Giáo Dục)
-   ================================================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+  const toggleAllBtn = document.getElementById('faqToggleAll');
 
-/* ---- Section 2: Sticky Bar — show/hide on scroll ---- */
-// TODO
+  if (toggleAllBtn) {
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question');
+      if (btn) {
+        btn.addEventListener('click', () => {
+          const isOpen = item.classList.contains('open');
+          // Close all
+          faqItems.forEach(i => i.classList.remove('open'));
+          // Toggle current
+          if (!isOpen) item.classList.add('open');
+        });
+      }
+    });
 
-/* ---- Section 4 > Gallery — dot nav & paddle nav ---- */
-// Chuyển ảnh khi click dot hoặc Prev/Next
-// TODO
+    // Toggle all open/close
+    toggleAllBtn.addEventListener('click', () => {
+      const anyOpen = document.querySelector('.faq-item.open');
+      if (anyOpen) {
+        faqItems.forEach(i => i.classList.remove('open'));
+        toggleAllBtn.classList.remove('open');
+      } else {
+        faqItems.forEach(i => i.classList.add('open'));
+        toggleAllBtn.classList.add('open');
+      }
+    });
+  }
+});
 
-/* ---- Section 4 > Selection Steps — step unlock logic ---- */
-// Khi chọn xong Step N thì unlock Step N+1
-// Không cần hiệu ứng thay đổi giá hay ảnh khi chọn cấu hình
-// TODO
+// =======================
+// Gallery Slider Logic
+// =======================
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryWrapper = document.querySelector('.raw-image > div');
+  const items = document.querySelectorAll('.inline-image-item');
+  const dotBtns = document.querySelectorAll('.gallery-dotnav-button');
+  const prevBtn = document.querySelector('.paddlenav-arrow-previous');
+  const nextBtn = document.querySelector('.paddlenav-arrow-next');
 
-/* ---- Section 4 > Step 7/8 Accessories — expand/collapse tile ---- */
-// Khi chọn một accessory, hiện nút "Xác nhận" bên trong tile
-// TODO
+  if (!galleryWrapper || items.length === 0) return;
 
-/* ---- Section 4 > Summary — update price total ---- */
-// Cộng dồn giá các option đã chọn vào summary box
-// TODO
+  let currentIndex = 0;
+  const numItems = items.length;
 
-/* ---- Section 4 > Summary — "Tiếp tục" button ---- */
-// Chỉ enable khi đã chọn đủ các step bắt buộc (1–5)
-// TODO
+  // Set initial transition style so it animates smoothly after initial render
+  setTimeout(() => {
+    galleryWrapper.style.transition = 'transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1)';
+  }, 100);
 
-/* ---- Section 4 > Summary — Yêu thích (heart icon) ---- */
-// Toggle trạng thái filled/outline
-// TODO
+  function updateGallery(index) {
+    currentIndex = index;
+    // Each item takes 50% of the 200% width container, so moving -50% shifts by one item
+    const translatePct = -(currentIndex * (100 / numItems));
+    galleryWrapper.style.transform = `translateX(${translatePct}%)`;
 
-/* ---- Section 5: Customer Form — validation & submit ---- */
-// - Validate Họ tên: không rỗng
-// - Validate Số điện thoại: 10 chữ số, bắt đầu bằng 0
-// - Hiển thị error message inline nếu sai
-// - Khi hợp lệ: hiện thông báo thành công (chưa cần gọi API)
-// TODO
+    // Update dots (disable the active one)
+    dotBtns.forEach((btn, i) => {
+      if (i === currentIndex) {
+        btn.setAttribute('disabled', 'true');
+      } else {
+        btn.removeAttribute('disabled');
+      }
+    });
 
-/* ---- Section 7: FAQ — accordion expand/collapse ---- */
-// Click tiêu đề -> toggle nội dung, animate chevron
-// TODO
+    // Update buttons visibility
+    if (currentIndex === 0) {
+      prevBtn.classList.add('visuallyhidden');
+    } else {
+      prevBtn.classList.remove('visuallyhidden');
+    }
 
-/* ---- Section 8: Sticky Chat — show after scroll down ---- */
-// Hiện nút chat sau khi cuộn qua một ngưỡng nhất định
-// TODO
+    if (currentIndex === numItems - 1) {
+      nextBtn.classList.add('visuallyhidden');
+    } else {
+      nextBtn.classList.remove('visuallyhidden');
+    }
+  }
+
+  // Next/Prev Events
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) updateGallery(currentIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < numItems - 1) updateGallery(currentIndex + 1);
+    });
+  }
+
+  // Dots Events
+  dotBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      updateGallery(index);
+    });
+  });
+
+  // Initialize
+  updateGallery(0);
+});

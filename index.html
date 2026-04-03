@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ưu Đãi Dành Cho Ngành Giáo Dục và Chiết Khấu Cho Sinh Viên - Giáo Dục - Apple (VN)</title>
-
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/components/header.css" />
   <link rel="stylesheet" href="css/components/product-card.css" />
@@ -25,10 +24,208 @@
        + icon Search, Bag
        + Flyout submenu khi hover mỗi mục
   ============================================================ -->
-  <header id="globalheader">
+  <header id="globalheader" class="global-header">
     <!-- TODO: .globalmessage-segment -->
+    <nav class="global-nav" aria-label="Menu toàn cục">
+      <ul class="global-nav__top-list">
+        <li class="global-nav__top-item">
+          <a href="#" class="global-nav__link">Trang chủ cửa hàng giáo dục
+          </a>
+        </li>
+        <li class="global-nav__top-item">
+          <a href="#" class="global-nav__link" style="border-left: 0.5px solid #110909; padding-left: 1rem;">Thoát</a>
+        </li>
+      </ul>
+      <ul class="global-nav__list">
+        <!-- Hamburger (chỉ hiện trên mobile) -->
+        <li class="global-nav__item global-nav__item--menu">
+          <button id="menu-toggle" class="global-nav__menu-btn" aria-label="Menu" aria-expanded="false">
+            <svg class="icon-menu" width="18" height="14" viewBox="0 0 18 14" xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor" aria-hidden="true">
+              <rect y="0" width="18" height="1.5" rx="0.75" />
+              <rect y="6.25" width="18" height="1.5" rx="0.75" />
+              <rect y="12.5" width="18" height="1.5" rx="0.75" />
+            </svg>
+            <svg class="icon-close" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor" aria-hidden="true">
+              <line x1="1" y1="1" x2="15" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="15" y1="1" x2="1" y2="15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+          </button>
+        </li>
+
+        <!-- Logo Apple -->
+        <li class="global-nav__item global-nav__item--logo">
+          <a href="https://www.apple.com/vn/" class="global-nav__link" aria-label="Apple">
+            <!-- Apple logo SVG -->
+            <!-- <svg class="icon-apple" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 814 1000" aria-hidden="true">
+              <path
+                d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105.9-57.8-155.5-127.4C46 376.6 0 246.2 0 121.8c0-74.5 27.9-144.3 79.7-194.2 51.8-50 113.5-78.2 183.4-78.2 71 0 130.9 42.3 173.6 42.3 41 0 112.2-44.4 194.6-44.4 28.2 0 127.3 2.6 194.6 96zM549.5 94.7c-.6-53.1 21.8-107.5 55.9-146.2 33.4-36.7 89-63.7 135-66.5 2.6 51.2-14.1 103.3-47.7 140.5-33.4 37.6-85.9 66.5-143.2 72.2z" />
+            </svg> -->
+            <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z">
+              </path>
+            </svg>
+          </a>
+        </li>
+
+        <!-- Các mục điều hướng chính -->
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Cửa hàng</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Mac</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">iPad</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">iPhone</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Watch</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">AirPods</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">TV &amp; Nhà</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Giải trí</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Phụ kiện</a>
+        </li>
+        <li class="global-nav__item">
+          <a href="#" class="global-nav__link">Hỗ trợ</a>
+        </li>
+
+        <!-- Biểu tượng Tìm kiếm -->
+        <li class="global-nav__item global-nav__item--icon">
+          <button id="search-toggle" class="global-nav__link global-nav__search-btn" aria-label="Tìm kiếm apple.com"
+            aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="44px" viewBox="0 0 15 44">
+              <path
+                d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z">
+              </path>
+            </svg>
+          </button>
+        </li>
+
+        <!-- Biểu tượng Giỏ hàng -->
+        <li class="global-nav__item global-nav__item--icon">
+          <button id="bag-toggle" class="global-nav__link global-nav__bag-btn" aria-label="Giỏ hàng"
+            aria-expanded="false">
+            <svg height="44" viewBox="0 0 14 44" width="14" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m11.3535 16.0283h-1.0205a3.4229 3.4229 0 0 0 -3.333-2.9648 3.4229 3.4229 0 0 0 -3.333 2.9648h-1.02a2.1184 2.1184 0 0 0 -2.117 2.1162v7.7155a2.1186 2.1186 0 0 0 2.1162 2.1167h8.707a2.1186 2.1186 0 0 0 2.1168-2.1167v-7.7155a2.1184 2.1184 0 0 0 -2.1165-2.1162zm-4.3535-1.8652a2.3169 2.3169 0 0 1 2.2222 1.8652h-4.4444a2.3169 2.3169 0 0 1 2.2222-1.8652zm5.37 11.6969a1.0182 1.0182 0 0 1 -1.0166 1.0171h-8.7069a1.0182 1.0182 0 0 1 -1.0165-1.0171v-7.7155a1.0178 1.0178 0 0 1 1.0166-1.0166h8.707a1.0178 1.0178 0 0 1 1.0164 1.0166z">
+              </path>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
     <!-- TODO: #globalnav -->
+    <!-- Search panel — trượt xuống khi bấm icon search -->
+    <div class="search-panel" id="search-panel" aria-hidden="true">
+      <div class="search-panel__inner">
+        <div class="search-panel__input-wrap">
+          <svg height="32" viewBox="0 0 30 32" width="30" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m23.3291 23.3066-4.35-4.35c-.0105-.0105-.0247-.0136-.0355-.0235a6.8714 6.8714 0 1 0 -1.5736 1.4969c.0214.0256.03.0575.0542.0815l4.35 4.35a1.1 1.1 0 1 0 1.5557-1.5547zm-15.4507-8.582a5.6031 5.6031 0 1 1 5.603 5.61 5.613 5.613 0 0 1 -5.603-5.61z">
+            </path>
+          </svg>
+          <input type="search" id="search-input" class="search-panel__input" placeholder="Tìm kiếm trên apple.com"
+            autocomplete="off" spellcheck="false" />
+          <button id="search-cancel" class="search-panel__cancel" type="button">Huỷ</button>
+        </div>
+        <div class="search-panel__suggestions">
+          <p class="search-panel__suggestions-title">Liên Kết Nhanh</p>
+          <ul class="search-panel__suggestions-list">
+            <li><a href="#">Mua Sắm Apple Store Trực Tuyến</a></li>
+            <li><a href="#">Phụ kiện</a></li>
+            <li><a href="#">AirPods</a></li>
+            <li><a href="#">Apple Intelligence</a></li>
+            <li><a href="#">Apple Trade In</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile nav (chỉ hiện trên mobile khi bấm hamburger) -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul class="mobile-nav__list">
+        <li><a href="#" class="mobile-nav__link">Cửa hàng</a></li>
+        <li><a href="#" class="mobile-nav__link">Mac</a></li>
+        <li><a href="#" class="mobile-nav__link">iPad</a></li>
+        <li><a href="#" class="mobile-nav__link">iPhone</a></li>
+        <li><a href="#" class="mobile-nav__link">Watch</a></li>
+        <li><a href="#" class="mobile-nav__link">AirPods</a></li>
+        <li><a href="#" class="mobile-nav__link">TV &amp; Nhà</a></li>
+        <li><a href="#" class="mobile-nav__link">Giải trí</a></li>
+        <li><a href="#" class="mobile-nav__link">Phụ kiện</a></li>
+        <li><a href="#" class="mobile-nav__link">Hỗ trợ</a></li>
+      </ul>
+    </div>
+
+    <!-- Bag panel — trượt xuống khi bấm icon giỏ hàng -->
+    <div class="bag-panel" id="bag-panel" aria-hidden="true">
+      <div class="bag-panel__inner">
+        <h2 class="bag-panel__empty-title">Túi của bạn trống.</h2>
+        <p class="bag-panel__login-text">
+          <a href="#" class="bag-panel__login-link">Đăng nhập</a> để xem bạn có sản phẩm nào đã lưu không
+        </p>
+        <hr class="bag-panel__divider" />
+        <p class="bag-panel__profile-title">Hồ Sơ Của Tôi</p>
+        <ul class="bag-panel__profile-list">
+          <li class="bag-panel__profile-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <a href="#">Mục Yêu Thích</a>
+          </li>
+          <li class="bag-panel__profile-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <line x1="3" y1="9" x2="21" y2="9" />
+              <line x1="9" y1="21" x2="9" y2="9" />
+            </svg>
+            <a href="#">Đơn hàng</a>
+          </li>
+          <li class="bag-panel__profile-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <a href="#">Tài khoản</a>
+          </li>
+          <li class="bag-panel__profile-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+              aria-hidden="true">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+              <polyline points="10 17 15 12 10 7" />
+              <line x1="15" y1="12" x2="3" y2="12" />
+            </svg>
+            <a href="#">Đăng nhập</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
+
+
+  <!-- Backdrop làm mờ nội dung phía dưới khi search mở -->
+  <div class="search-backdrop" id="search-backdrop"></div>
 
   <main id="main-content">
 
@@ -39,8 +236,17 @@
       - Subheadline: "Những phương tiện hỗ trợ học tập tuyệt vời nhất."
       - Nút CTA: "Kết Nối Với Chuyên Gia"
     ============================================================ -->
+
     <section id="section-hero" class="section-hero">
-      <!-- TODO -->
+      <div class="section-hero__inner">
+        <h1 class="section-hero__title">Cửa Hàng Giáo Dục</h1>
+        <div class="section-hero__aside">
+          <p class="section-hero__subtitle"><span style="width: 50px; display: inline-block;"></span>Những phương tiện
+            hỗ trợ học tập tuyệt vời
+            nhất.</p>
+          <a href="#" class="section-hero__link">Kết Nối Với Chuyên Gia ↗</a>
+        </div>
+      </div>
     </section>
 
     <!-- ============================================================
@@ -51,8 +257,46 @@
                AirPods | AirTag | Apple TV 4K | Phụ Kiện
       - Mũi tên Prev/Next (paddle nav)
     ============================================================ -->
-    <section id="section-product-nav" class="section-product-nav">
-      <!-- TODO -->
+    <section class="Item-list">
+      <div class="item">
+        <img src="images/products/Fe1-456/mac3.png" alt="Mac">
+        <p class="detail">Mac</p>
+      </div>
+
+      <div class="item">
+        <img src="images/products/Fe1-456/ipad3.png" alt="iPad">
+        <p class="detail">iPad</p>
+      </div>
+
+      <div class="item">
+        <img src="images/products/Fe1-456/iphone3.png" alt="iPhone">
+        <p class="detail">iPhone</p>
+      </div>
+
+      <div class="item">
+        <img src="images/products/Fe1-456/watch3.png" alt="Apple Watch">
+        <p class="detail">Apple Watch</p>
+      </div>
+
+      <div class="item">
+        <img src="images/products/Fe1-456/airpod.png" alt="AirPods">
+        <p class="detail">AirPods</p>
+      </div>
+
+      <div class="item">
+        <img src="images/products/Fe1-456/airtag3.png" alt="AirTag">
+        <p class="detail">AirTag</p>
+      </div>
+
+      <div class="item">
+        <img src="images/products/Fe1-456/appletv3.png" alt="Apple TV 4K">
+        <p class="detail">Apple TV 4K</p>
+      </div>
+
+      <div class="item">
+        <img src="images/products/Fe1-456/phukien3.png" alt="Phụ kiện">
+        <p class="detail">Phụ kiện</p>
+      </div>
     </section>
 
     <!-- ============================================================
@@ -76,8 +320,228 @@
           • "Khám phá các phụ kiện với trợ giá cho giáo dục."
       - Mũi tên Prev/Next
     ============================================================ -->
-    <section id="section-edu-savings" class="section-edu-savings">
-      <!-- TODO -->
+    <section class="section-edu-savings">
+      <h2>
+        <span class="text-1">Trợ giá cho giáo dục.</span>
+        <span class="text-2">Nhận giá đặc biệt khi mua Mac, iPad và nhiều sản phẩm khác.</span>
+      </h2>
+
+      <div class="scroll-container">
+
+        <button class="arrow left">&#10094;</button>
+        <button class="arrow right">&#10095;</button>
+
+        <div class="scroll-content">
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+
+            <div class="card-text">
+              <h3 class="title-white">MacBook Pro</h3>
+              <p class="subtitle-white">Nay với M5, M5 Pro và M5 Max</p>
+              <p class="price-white">Từ 42tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/macbook-pro.jfif" alt="MacBook Pro M5">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+
+            <div class="card-text">
+              <h3 class="title">MacBook Air</h3>
+              <p class="subtitle">Nay siêu mạnh mẽ với M5</p>
+              <p class="price">Từ 27tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/macbook-air.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+
+            <div class="card-text">
+              <h3 class="title">MacBook Neo</h3>
+              <p class="subtitle">Điều tuyệt vời huyền diệu của Mac ở mức giá bất ngờ</p>
+              <p class="price">Từ 13tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/macbook-neo.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+            <div class="card-text">
+              <h3 class="title">iPad Air</h3>
+              <p class="subtitle">Nay siêu mạnh mẽ với M4</p>
+              <p class="price">Từ 15tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/ipad-air.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+
+            <div class="card-text">
+              <h3 class="title">Studio Display</h3>
+              <p class="subtitle">Tuyệt diệu từ cái nhìn đầu tiên</p>
+              <p class="price">Từ 42tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/studio-display.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+            <div class="card-text">
+              <h3 class="title-white">Studio Display XDR</h3>
+              <p class="subtitle-white">Thánh chuốt pixel</p>
+              <p class="price-white">Từ 87tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+
+            <img src="images/products/Fe1-456/studio-display-xdr.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+
+            <div class="card-text">
+              <h3 class="title-white">iPad Pro</h3>
+              <p class="subtitle-white">Mmmmmạnh mẽ</p>
+              <p class="price-white">Từ 27tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/ipad-pro.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+            <div class="card-text">
+              <h3 class="title">iPad</h3>
+              <p class="subtitle">Thấy là yêu. Vẽ là phiêu. Tuyệt diệu</p>
+              <p class="price">Từ 9tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/ipad.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+
+            <div class="card-text">
+              <h3 class="title">Mac Studio</h3>
+              <p class="subtitle">Thêm sức mạnh cho bạn</p>
+              <p class="price">Từ 54tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/mac-studio" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+
+            <div class="card-text">
+              <h3 class="title">iMac</h3>
+              <p class="subtitle">Sáng lllllláng</p>
+              <p class="price">Từ 33tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/imac.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+
+            <div class="card-text">
+              <h3 class="title">Mac mini</h3>
+              <p class="subtitle">Xuống cỡ. Lên trình</p>
+              <p class="price">Từ 12tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/mac-mini.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="edu-badge">
+              <svg width="110" height="110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3L1 9L12 15L21 10.0909V17.5H23V9L12 3Z" fill="#009D83" />
+                <path d="M5 11.1818V14.5C5 14.5 5 19 12 19C19 19 19 14.5 19 14.5V11.1818L12 15L5 11.1818Z"
+                  fill="#009D83" />
+              </svg>
+            </div>
+
+            <div class="card-text">
+              <h3 class="title">iPad Mini</h3>
+              <p class="subtitle">Điều tuyệt vời nằm gọn trong tay</p>
+              <p class="price">Từ 12tr với chính sách trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/ipad-mini.jfif" alt="">
+          </div>
+
+          <div class="card">
+            <div class="card-text">
+              <p class="special">Khám phá các phụ kiện với trợ giá cho giáo dục</p>
+            </div>
+            <img src="images/products/Fe1-456/final.jfif" alt="">
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ============================================================
@@ -96,7 +560,131 @@
     ============================================================ -->
     <section id="section-store-highlights" class="section-store-highlights">
       <!-- TODO -->
+      <section class="section section-square-card">
+        <div class="cardsshelf-header-container">
+          <div class="cardsshelf-header-first">Apple Store tạo nên mọi khác biệt.<span
+              class="cardsshelf-header-second">Thêm nhiều lý do để mua sắm cùng chúng tôi.</span></div>
+        </div>
+        <div class="square-card-list">
+          <div class="square-card-column">
+            <div class="square-card-item">
+              <div class="square-card-item-icon">
+                <svg width="46" height="56" viewBox="0 0 46 56" class="dd-glyph-svg dd-glyph-elevated"
+                  aria-hidden="true">
+                  <path fill="currentColor"
+                    d="M44.064,20.6426l-16.57-7.5307A10.46,10.46,0,0,0,23.0977,12c-.0328,0-.0655,0-.0977.0006S22.9351,12,22.9023,12a10.4613,10.4613,0,0,0-4.396,1.1119L1.9194,20.6426a2.273,2.273,0,0,0,0,4.2132L7,27.1688v8.1543c0,2.0883,1.4287,4.1717,4,5.7761v2.4413h.127A1.5988,1.5988,0,0,0,9.875,45.1v4.8a1.6,1.6,0,0,0,1.6,1.6h1.05a1.6,1.6,0,0,0,1.6-1.6V45.1a1.5988,1.5988,0,0,0-1.252-1.5595H13v-1.4A25.1411,25.1411,0,0,0,22.9946,44h.0108C32.8872,44,39,39.6616,39,35.3231V27.1683l5.064-2.3125a2.2632,2.2632,0,0,0,0-4.2132ZM9,35.3231V28.074l.4028.1822,1.42.6469.1772.08v9.6641A4.6469,4.6469,0,0,1,9,35.3231Zm28,0C37,38.1223,32.1367,42,22.9946,42A21.9859,21.9859,0,0,1,13,39.9286V29.89l5.5063,2.4967A10.1047,10.1047,0,0,0,22.8145,33.5c.062,0,.1235-.0008.1855-.0023.062.0015.1235.0023.1855.0023a10.1047,10.1047,0,0,0,4.3082-1.1136l9.0869-4.13L37,28.0681Zm6.2334-12.2866L39,24.97l-1.1665.5327L37,25.8762l-1.2471.5592L26.66,30.5687a8.2115,8.2115,0,0,1-3.4742.9313l-.1372-.0016L23,31.4971l-.0483.0013-.1372.0016a8.23,8.23,0,0,1-3.4825-.9351l-5.124-2.3235,7.58-3.8079A6.3805,6.3805,0,0,0,23,24.5521c1.7588,0,3.1982-.6762,3.4355-1.5521a.9783.9783,0,0,0,.0484-.25c0-.8525-1.148-1.5626-2.6851-1.75a6.15,6.15,0,0,0-1.5976,0c-1.5371.1874-2.6851.8975-2.6851,1.75a.9783.9783,0,0,0,.0484.25,1.1186,1.1186,0,0,0,.1088.2573L11.8657,27.18l-.2138-.0969-1.4253-.6492L9,25.8792l-.8232-.3722L7,24.9713,2.7568,23.04C2.5,22.921,2.5,22.7962,2.5,22.7491c0-.1495.1611-.2461.2461-.2854l16.5806-7.5276A8.5757,8.5757,0,0,1,22.9023,14l.1216,0,.0738,0a8.5614,8.5614,0,0,1,3.5683.9327l16.5723,7.5315c.12.0541.2617.1474.2617.2849C43.5,22.7947,43.5,22.9155,43.2334,23.0365Z">
+                  </path>
+                </svg>
+              </div>
+              <div class="square-card-item-header-container">
+                <div class="square-card-item-header">
+                  <span class="dd-highlight">Tiết kiệm với ưu đãi đặc biệt</span>
+                  dành cho sinh viên và nhà giáo.
+                </div>
+              </div>
+            </div>
+            <div class="square-card-item">
+              <div class="square-card-item-icon">
+                <svg width="40" height="56" viewBox="0 0 40 56" class="dd-glyph-svg dd-glyph-elevated"
+                  aria-hidden="true">
+                  <path d="m0 0h40v56h-40z" fill="none"></path>
+                  <path fill="#007aff"
+                    d="m38 29.0205v9.9795c0 3.8594-3.1403 7-6.9996 7h-22c-3.8594 0-7-3.1406-7-7v-4.75h-1.2514c-.7087 0-.8958-.4824-.502-1.0337l2.2051-3.1304c.315-.4529.7875-.443 1.1025 0l2.2051 3.1403c.3839.5414.1969 1.0238-.5021 1.0238h-1.2576v4.75c0 2.7568 2.2435 5 5.0004 5h22c2.7568 0 5-2.2432 5-5v-9.9795c0-.5527.4473-1 1-1s.9996.4473.9996 1zm1.251-7.2705h-1.251v-4.75c0-3.8594-3.1403-7-6.9996-7h-22c-3.8594 0-7 3.1406-7 7v9.9795c0 .5527.4473 1 1 1s.9996-.4473.9996-1v-9.9795c0-2.7568 2.2435-5 5.0004-5h22c2.7568 0 5 2.2432 5 5v4.75h-1.258c-.6989 0-.886.4823-.502 1.0237l2.2051 3.1404c.315.4429.7875.4529 1.1025 0l2.2051-3.1305c.3937-.5513.2067-1.0336-.5021-1.0336zm-13.8013 1.6872c.2991-.2918.7214-.4372 1.2668-.4372h3.569c.5396 0 .9599.1454 1.261.4372.303.2918.4536.7004.4536 1.225v8.6845c0 .5246-.1486.9313-.4477 1.2201s-.7214.4332-1.2668.4332h-3.569c-.5454 0-.9677-.1444-1.2668-.4332s-.4496-.6955-.4496-1.2201v-8.6845c0-.5246.1505-.9333.4496-1.225zm.7038 9.7945c0 .2004.0469.3517.1447.4548.0958.1032.2424.1552.436.1552h3.524c.1935 0 .3402-.0521.4398-.1552.0997-.1032.1506-.2544.1506-.4548v-8.4546c0-.2004-.0508-.3537-.1506-.4598-.0997-.1061-.2463-.1591-.4398-.1591h-3.524c-.1935 0-.3402.053-.436.1591-.0977.1061-.1447.2593-.1447.4598zm2.3488-13.2317h-16.6196c-.5806 0-1.0401.1572-1.3773.4725s-.5054.783-.5054 1.4019v11.1256h-1.2559c-.2757 0-.5103.0824-.7038.2798s-.2903.4352-.2903.7122.0968.5138.2903.7122c.1935.1965.4281.2957.7038.2957h15.1703c-.2581-.4126-.393-.8841-.4047-1.4146 0-.1002-.002-.2004-.0059-.3006-.002-.1002-.0039-.1846-.0039-.2848h-12v-10.6512c0-.2829.0704-.4951.2111-.6366s.3519-.2122.6334-.2122h17.7686c-.0352-.4715-.1916-.9037-.4672-1.1424s-.6569-.3576-1.1437-.3576zm-.6924 5.4067h1.3802c.1114 0 .2072-.0403.2854-.1199.0801-.0796.1193-.1778.1193-.2957 0-.112-.0391-.2063-.1193-.2829-.0782-.0766-.174-.1149-.2854-.1149h-1.3802c-.1173 0-.215.0383-.2913.1149s-.1134.1709-.1134.2829c0 .1179.0371.2161.1134.2957s.174.1199.2913.1199zm-.4179 7.8983h2.2c.1887 0 .284-.1032.284-.3095 0-.0884-.027-.1611-.0809-.2171s-.1222-.0835-.2031-.0835h-2.2c-.0809 0-.1456.0275-.1941.0835s-.0719.1287-.0719.2171c0 .2063.0881.3095.266.3095z">
+                  </path>
+                </svg>
+              </div>
+              <div class="square-card-item-header-container">
+                <div class="square-card-item-header">
+                  <span class="dd-highlight" style="color: #007aff;">Đổi thiết bị cũ đủ điều kiện,</span>
+                  nhận điểm tín dụng để mua thiết bị mới.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="square-card-column">
+            <div class="square-card-item">
+              <div class="square-card-item-icon">
+                <svg height="56" viewBox="0 0 61 56" width="61" class="dd-glyph-svg dd-glyph-elevated"
+                  aria-hidden="true">
+                  <path d="m0 0h61v56h-61z" fill="none"></path>
+                  <path fill="#008009"
+                    d="m25 42.0161c-1.3044 0-2.4033.8373-2.8164 2-.0095.0265-.0164.054-.0251.0807-.0942.2914-.1584.5964-.1584.9193 0 .3525.0718.6697.1836.9839h-6.4569c-.5522 0-1-.4312-1-.9839s.4478-1 1-1h.2733v-4.0161h-13.0001c-1.6569 0-3-1.3271-3-2.9839v-24c0-1.6569 1.3431-3.0161 3-3.0161h36c1.6569 0 3 1.3592 3 3.0161v9.9839h-2v-9.4839c0-.8284-.6716-1.5161-1.5-1.5161h-35c-.8284 0-1.5.6876-1.5 1.5161v18.5c0 .5523.4477.9839 1 .9839h23v9.0161zm36 3c0 .5527-.4478.9839-1 .9839h-35c-.5522 0-1-.4312-1-.9839 0-.4131.2505-.7667.6074-.9193.1206-.0516.2529-.0967.3926-.0967h3v-15.9839c0-1.6569 1.3433-3.0161 3-3.0161h23c1.6567 0 3 1.3592 3 3.0161v15.9839h3c.5522 0 1 .4633 1 1.0161zm-31-1.0161h25v-15.9839c0-.5514-.4485-1.0161-1-1.0161h-23c-.5515 0-1 .4647-1 1.0161z">
+                  </path>
+                </svg>
+              </div>
+              <div class="square-card-item-header-container">
+                <div class="square-card-item-header">
+                  <span class="dd-highlight" style="color: #008009;">Tùy chỉnh máy Mac của bạn</span>
+                  bằng <span class="dd-highlight" style="color: #008009;">chip, bộ nhớ, ổ lưu trữ</span>
+                  và theo <span class="dd-highlight" style="color: #008009;">màu sắc</span>
+                </div>
+              </div>
+            </div>
+            <div class="square-card-item">
+              <div class="square-card-item-icon">
+                <svg width="40" height="56" viewBox="0 0 40 56" class="dd-glyph-svg dd-glyph-elevated"
+                  aria-hidden="true">
+                  <path d="m0 0h40v56h-40z" fill="none"></path>
+                  <path fill="#ac39ff"
+                    d="m32.7812 29.6094a1.0221 1.0221 0 0 0 -1-.125 42.9866 42.9866 0 0 1 -5.76 1.3437 37.7 37.7 0 0 1 -6.01.4688 37.8947 37.8947 0 0 1 -6.0208-.4688 42.1134 42.1134 0 0 1 -5.75-1.3437 1.08 1.08 0 0 0 -1.0313.125.9492.9492 0 0 0 -.2812.9583 12.0862 12.0862 0 0 0 2.1875 5.6667 13.3019 13.3019 0 0 0 4.6446 4.0521 13.0763 13.0763 0 0 0 6.25 1.51 13.0332 13.0332 0 0 0 6.2292-1.51 13.3984 13.3984 0 0 0 4.6562-4.0521 11.8567 11.8567 0 0 0 2.1771-5.6667.9968.9968 0 0 0 -.2913-.9583zm-2.3124 4.4167a37.2669 37.2669 0 0 1 -5.1771 1.0939 38.5047 38.5047 0 0 1 -5.2813.3646 38.8064 38.8064 0 0 1 -5.2812-.3646 37.13 37.13 0 0 1 -5.198-1.0937 9.7 9.7 0 0 1 -1.0833-2.9167 43.2962 43.2962 0 0 0 5.6459 1.2292 39.8385 39.8385 0 0 0 5.9166.4375 39.9092 39.9092 0 0 0 5.9063-.4375 42.4138 42.4138 0 0 0 5.6354-1.2292 9.43 9.43 0 0 1 -1.0833 2.9165zm-17.8021-8.5834a2.8583 2.8583 0 0 1 0-3.5416 1.8441 1.8441 0 0 1 1.4271-.7084 1.9442 1.9442 0 0 1 1.4895.7084 2.7531 2.7531 0 0 1 -.01 3.5312 1.944 1.944 0 0 1 -1.4791.7188 1.8438 1.8438 0 0 1 -1.4275-.7084zm11.7812-.01a2.8064 2.8064 0 0 1 0-3.5312 1.8745 1.8745 0 0 1 1.4375-.7084 1.8935 1.8935 0 0 1 1.4583.7084 2.8207 2.8207 0 0 1 0 3.5416 1.8931 1.8931 0 0 1 -1.4583.7084 1.8644 1.8644 0 0 1 -1.4375-.7192zm-4.4479-14.7327a17.3 17.3 0 1 1 -17.3 17.3 17.32 17.32 0 0 1 17.3-17.3m0-2.2a19.5 19.5 0 1 0 19.5 19.5 19.5 19.5 0 0 0 -19.5-19.5z">
+                  </path>
+                </svg>
+              </div>
+              <div class="square-card-item-header-container">
+                <div class="square-card-item-header">
+                  Thêm dấu ấn của riêng bạn.
+                  <span class="dd-highlight" style="color: #ac39ff;">Khắc kết hợp biểu tượng cảm xúc, tên và số miễn
+                    phí.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="square-card-column">
+            <div class="square-card-item">
+              <div class="square-card-item-icon">
+                <svg width="47.341" height="56" viewBox="0 0 47.341 56" class="dd-glyph-svg dd-glyph-elevated"
+                  aria-hidden="true">
+                  <path fill="#008009"
+                    d="M14.1084,43.6255l.0957.3064a2.415,2.415,0,0,1-.56.068H6.7139a2.1166,2.1166,0,0,1-1.149-.3106,1.7539,1.7539,0,0,1-.7133-1.0318l-.587-1.8794a2.9344,2.9344,0,0,0-.5366-1.0988,3.3837,3.3837,0,0,0-.94-.73,5.1128,5.1128,0,0,1-1.939-1.9048A6.1739,6.1739,0,0,1,0,33.8647V22.1688A6.2909,6.2909,0,0,1,.8491,18.947a4.975,4.975,0,0,1,1.939-1.8962,2.8881,2.8881,0,0,0,.94-.7047,3.0245,3.0245,0,0,0,.5366-1.1075l.587-1.8794a1.7639,1.7639,0,0,1,.7133-1.049A2.1208,2.1208,0,0,1,6.7139,12h6.9306a2.2861,2.2861,0,0,1,.5635.0725l-.0854.2742a1.8226,1.8226,0,0,1-.2637.6265,1.48,1.48,0,0,1-.4639.3195l-.0293.0147-.0288.0155c-.2056.1115-.3945.2445-.5874.3723H7.3921a1.4418,1.4418,0,0,0-.834.23,1.1531,1.1531,0,0,0-.3843.6661l-.666,1.9664h4.6436a9.1622,9.1622,0,0,0-.8306,2.0408H5.5049a3.5094,3.5094,0,0,0-3.5093,3.5095V33.8916a3.51,3.51,0,0,0,3.5093,3.51H9.3193a9.049,9.049,0,0,0,.8365,2.0406H5.51l.666,2.1747a1.1418,1.1418,0,0,0,.3549.458,1.4538,1.4538,0,0,0,.8272.23h5.3994c.1846.1235.3643.253.5606.362a2.0286,2.0286,0,0,1,.5595.4127A1.62,1.62,0,0,1,14.1084,43.6255Zm32.88-21.1546a1.2387,1.2387,0,0,0-.9395-.3692H46a6.1929,6.1929,0,0,0-.832-3.1465,5.1066,5.1066,0,0,0-1.938-1.9044,2.926,2.926,0,0,1-.9483-.7215,3.2987,3.2987,0,0,1-.5444-1.0907l-.5718-1.8794a1.7454,1.7454,0,0,0-.7212-1.049A2.1308,2.1308,0,0,0,39.3037,12H32.3726a2.3514,2.3514,0,0,0-.5767.073l.082.2694a1.9662,1.9662,0,0,0,.2862.6253,1.5365,1.5365,0,0,0,.4809.3347l.0293.0148.0283.0158a8.0223,8.0223,0,0,1,3.0362,2.9758,8.88,8.88,0,0,1,.9438,2.29h3.8125a3.5094,3.5094,0,0,1,3.5093,3.5095V33.8916a3.51,3.51,0,0,1-3.5093,3.51H36.69a8.8289,8.8289,0,0,1-.95,2.2876,8.0342,8.0342,0,0,1-3.0571,2.989,1.25,1.25,0,0,0-.7988.9807l-.082.2692A2.35,2.35,0,0,0,32.3726,44h6.9311a2.2231,2.2231,0,0,0,1.1406-.2934,1.681,1.681,0,0,0,.7212-1.049l.5718-1.8794a2.6882,2.6882,0,0,1,1.4927-1.829,5.1012,5.1012,0,0,0,1.938-1.9048,6.1644,6.1644,0,0,0,.832-3.18v-6.83h.0493a1.2112,1.2112,0,0,0,.9395-.3859,1.4356,1.4356,0,0,0,.352-1.0069V23.4944A1.4223,1.4223,0,0,0,46.9888,22.4709ZM31.7314,40.9186a3.7586,3.7586,0,0,0-1.1186.8615,2.9147,2.9147,0,0,0-.2524.397,4.3847,4.3847,0,0,0-.39.9l-.6743,2.2174a1.9877,1.9877,0,0,1-.8506,1.2377,2.6271,2.6271,0,0,1-1.3467.3462H18.9214a2.4984,2.4984,0,0,1-1.3555-.3665,2.0673,2.0673,0,0,1-.8413-1.2174l-.6929-2.2174a3.9959,3.9959,0,0,0-.3789-.8989,2.7,2.7,0,0,0-.2544-.3977,3.963,3.963,0,0,0-1.0732-.8384c-.0132-.0074-.0225-.0157-.0356-.0231a5.9359,5.9359,0,0,1-1.7466-1.4768,6.485,6.485,0,0,1-.541-.7706,7.23,7.23,0,0,1-.5743-1.27A7.383,7.383,0,0,1,11,34.92V21.12a7.573,7.573,0,0,1,.4287-2.5211,7.2553,7.2553,0,0,1,.5733-1.28,6.4177,6.4177,0,0,1,.53-.7606A5.7452,5.7452,0,0,1,14.29,15.0814c.0283-.0141.0478-.0315.0751-.0459a3.3619,3.3619,0,0,0,1.0337-.7857,2.7914,2.7914,0,0,0,.2559-.4056,4.0936,4.0936,0,0,0,.3774-.9011l.6929-2.2175a2.0789,2.0789,0,0,1,.8413-1.2376,2.5025,2.5025,0,0,1,1.3555-.3661h8.1772a2.517,2.517,0,0,1,1.3467.3661,2.0644,2.0644,0,0,1,.8506,1.2376l.6743,2.2175a4.433,4.433,0,0,0,.3921.8909,3.09,3.09,0,0,0,.25.396,3.4461,3.4461,0,0,0,1.1186.8514,6.0224,6.0224,0,0,1,2.2867,2.2468,6.8821,6.8821,0,0,1,.5673,1.2706A7.6129,7.6129,0,0,1,35,21.0408h.0576a1.4615,1.4615,0,0,1,1.1089.4355,1.6773,1.6773,0,0,1,.4155,1.2077v2.5343a1.6924,1.6924,0,0,1-.4155,1.1879,1.4286,1.4286,0,0,1-1.1089.4554H34.88L35,34.92a7.54,7.54,0,0,1-.4141,2.4816,6.9189,6.9189,0,0,1-.5678,1.27A6.0176,6.0176,0,0,1,31.7314,40.9186ZM18.24,12.312h9.5889l-.1157-.3778a1.3435,1.3435,0,0,0-.419-.54,1.7145,1.7145,0,0,0-.976-.2719H19.7217a1.7025,1.7025,0,0,0-.9839.2719,1.3635,1.3635,0,0,0-.4536.7859ZM17.4985,14.5h11l-.3266-1.068H17.86ZM27.76,43.688H18.1714l.1157.3777a1.3435,1.3435,0,0,0,.419.54,1.7137,1.7137,0,0,0,.976.2719h6.5962a1.7017,1.7017,0,0,0,.9839-.2719,1.3635,1.3635,0,0,0,.4536-.7859Zm.7412-2.188h-11l.3266,1.068H28.14Zm3.8769-4.0988A4.2493,4.2493,0,0,0,33,35.2068V20.7931A4.518,4.518,0,0,0,28.707,16.5H17.293a4.2119,4.2119,0,0,0-.4439.0447A4.3067,4.3067,0,0,0,13,20.7931V35.2068a4.3079,4.3079,0,0,0,3.8584,4.2494,4.2072,4.2072,0,0,0,.4346.0438H28.707a4.1942,4.1942,0,0,0,.4424-.0446A4.2652,4.2652,0,0,0,32.3784,37.4012Z">
+                  </path>
+                </svg>
+              </div>
+              <div class="square-card-item-header-container">
+                <div class="square-card-item-header">
+                  <span class="dd-highlight" style="color: #008009;">Chọn vỏ.Lựa dây.</span>
+                  Tùy chỉnh Apple Watch <span class="dd-highlight" style="color: #008009;">chỉ dành riêng cho bạn</span>
+                </div>
+              </div>
+            </div>
+            <div class="square-card-item">
+              <div class="square-card-item-icon">
+                <svg width="48" height="56" viewBox="0 0 48 56" class="dd-glyph-svg dd-glyph-elevated"
+                  aria-hidden="true">
+                  <path d="m0 0h48v56h-48z" fill="none"></path>
+                  <path fill="rgb(2, 122, 255)"
+                    d="m46.5553 27.6681a10.41 10.41 0 0 0 -2.6433-3.176 12.898 12.898 0 0 0 -3.93-2.1507 14.028 14.028 0 0 0 -4.3619-.7538c-.1407-.01-.2814-.01-.4322-.01-.603 0-1.6859.03-2.2588.1005a13.6292 13.6292 0 0 0 -3.0252.6634 13.0173 13.0173 0 0 0 -3.93 2.1507 10.4083 10.4083 0 0 0 -2.6433 3.176 8.4663 8.4663 0 0 0 .1708 8.1609 9.6142 9.6142 0 0 0 1.186 1.588 10.6752 10.6752 0 0 0 1.6885 1.5176l.211.1507a13.86 13.86 0 0 0 4.4131 1.9698 19.1708 19.1708 0 0 0 4.299.4824c.402 0 .8141-.01 1.2262-.04h.1809a20.7883 20.7883 0 0 0 2.2312 1.2763 17.57 17.57 0 0 0 2.1407.8945 5.3063 5.3063 0 0 0 1.5878.3316 1.08 1.08 0 0 0 .7739-.2613.9119.9119 0 0 0 .3216-.6533 1.1967 1.1967 0 0 0 -.2815-.7839c-.221-.2613-.4824-.6031-.804-1.0252a12.5728 12.5728 0 0 1 -.8141-1.196c-.02-.03.04-.1608.07-.1708a10.42 10.42 0 0 0 4.05-3.4875 8.448 8.448 0 0 0 1.5183-4.8443 8.2907 8.2907 0 0 0 -.9447-3.9096zm-2.2312 7.6282a8.3359 8.3359 0 0 1 -3.2966 2.8142 2.1523 2.1523 0 0 0 -1.0854 1.3266 2.0632 2.0632 0 0 0 .1709 1.6382c.01.02.02.03.03.05-.11-.05-.2211-.1-.3417-.1608a18.6866 18.6866 0 0 1 -2.02-1.1559 2.1979 2.1979 0 0 0 -1.2362-.3215h-.1709c-.3618.03-.7236.04-1.0754.04a16.721 16.721 0 0 1 -3.7965-.4221 12.4286 12.4286 0 0 1 -2.985-1.186c-.2713-.1508-.5427-.3216-.794-.4925a7.5181 7.5181 0 0 1 -1.0251-.8241 7.8848 7.8848 0 0 1 -1.4674-1.7991 6.4587 6.4587 0 0 1 -.1308-6.1804 8.4059 8.4059 0 0 1 2.151-2.5729 10.9211 10.9211 0 0 1 3.3065-1.8091 12.7522 12.7522 0 0 1 3.1458-.6232c.3216-.02 1.1533-.03 1.4849-.03.3619 0 .7237.01 1.0855.04a12.4791 12.4791 0 0 1 3.0553.6131 11.0977 11.0977 0 0 1 3.3167 1.8092 8.4173 8.4173 0 0 1 2.1307 2.5628 6.213 6.213 0 0 1 .7135 2.9649 6.4836 6.4836 0 0 1 -1.1658 3.7186zm-13.4241-19.6254a18.268 18.268 0 0 0 -5.5981-3.0654 23.2813 23.2813 0 0 0 -7.2238-1.1055 20.7964 20.7964 0 0 0 -6.8443 1.1055 18.1537 18.1537 0 0 0 -5.5981 3.0654 14.5464 14.5464 0 0 0 -3.7689 4.5327 11.7279 11.7279 0 0 0 -1.3568 5.568 13.6656 13.6656 0 0 0 2.1608 7.4147 15.1353 15.1353 0 0 0 5.8492 5.0252.0845.0845 0 0 1 .04.1105 15.9945 15.9945 0 0 1 -1.176 1.779c-.4522.603-.8241 1.0954-1.1357 1.4673a1.6471 1.6471 0 0 0 -.4019 1.1156 1.3831 1.3831 0 0 0 .4522.9347 1.576 1.576 0 0 0 1.1156.3719 7.3006 7.3006 0 0 0 2.2513-.4724 26.4909 26.4909 0 0 0 3.0654-1.2764 28.1581 28.1581 0 0 0 3.196-1.789 1.6481 1.6481 0 0 1 .191-.09c.6633.05 1.3166.08 1.96.08a24.1784 24.1784 0 0 0 5.6563-.6533c.1307-.03.2513-.07.3719-.1005a11.8356 11.8356 0 0 1 -1.5677-1.6889 22.3119 22.3119 0 0 1 -4.46.4322c-.5829 0-1.1859-.03-1.8091-.07l-.07-.01h-.08a2.3717 2.3717 0 0 0 -1.2764.412 27.0214 27.0214 0 0 1 -2.985 1.6684 25.586 25.586 0 0 1 -2.8342 1.186c-.1206.04-.2312.08-.3417.1105.1005-.1306.211-.2713.3216-.4221a20.518 20.518 0 0 0 1.3066-1.99 2.0973 2.0973 0 0 0 -.8845-2.9046 13.1092 13.1092 0 0 1 -5.0855-4.3618 11.6 11.6 0 0 1 -1.8202-6.279 9.7382 9.7382 0 0 1 1.1156-4.6332 12.672 12.672 0 0 1 3.2663-3.91 16.232 16.232 0 0 1 4.9851-2.7236 18.7722 18.7722 0 0 1 6.191-.995 21.1057 21.1057 0 0 1 6.5609.995 16.1166 16.1166 0 0 1 4.985 2.7236 13.5029 13.5029 0 0 1 2.07 2.0805 17.1418 17.1418 0 0 1 2.3015-.2412 14.7186 14.7186 0 0 0 -3.0954-3.3968z">
+                  </path>
+                </svg>
+              </div>
+              <div class="square-card-item-header-container">
+                <div class="square-card-item-header">
+                  <span class="dd-highlight" style="color: rgb(2, 122, 255);">Mua hàng trực tiếp với Chuyên gia</span>
+                  trực tuyến.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
+
+
+
+
+
+
+
+
 
     <!-- ============================================================
       SECTION 6: TIỀM NĂNG VÔ TẬN  (#shelf-4 / Shelf-3)
