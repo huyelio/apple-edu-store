@@ -370,3 +370,310 @@ body {
   justify-content: flex-end; /* Đẩy ảnh sát về bên phải */
 }
 
+
+/*=====================
+STICKY BAR
+======================*/
+
+.sticky-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255);
+    border-bottom: 1px solid #d2d2d7;
+    z-index: 9999;
+}
+
+.sticky-bar-container {
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.sticky-bar-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+    height: 52px;
+
+}
+
+.sticky-bar-title {
+    font-size: 21px;
+    line-height: 1.14286;
+    font-weight: 600;
+    letter-spacing: .011em;
+    color: #1d1d1f;
+    text-decoration: none;
+}
+
+.sticky-bar-price {
+    font-size: 17px;
+    line-height: 1.33337;
+    font-weight: 600;
+    letter-spacing: -.021em;
+    color: #1d1d1f;
+}
+
+.sticky-bar-price span {
+    font-weight: 600;
+}
+
+.sticky-bar-shipping-wrapper {
+    border-top: 1px solid #d2d2d7;
+}
+
+.sticky-bar-shipping {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 52px;
+    font-size: 14px;
+    line-height: 1.33337;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    color: #1d1d1f;
+}
+
+.sticky-bar-shipping svg {
+    margin-right: 8px;
+    width: 23px;
+    height: 25px;
+    color: #1d1d1f;
+}
+
+/*=================
+Wrapper Header
+==================*/
+.rf-bfe {
+    margin: auto;
+    max-width: 2632px;
+    min-width: 980px;
+    width: 87.5%;
+    
+}
+
+.header-wrapper {
+    align-items: flex-start;
+    display: flex;
+    padding: 52px 0 22px;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.header {
+    max-width: 640px
+}
+
+.header h1 {
+    color: #1d1d1f;
+    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -.003em;
+    line-height: 1.0834933333;
+    padding-bottom: 13px
+}
+
+.header-price-wrapper {
+    margin-inline-start:auto}
+
+.r-fade-transition-exit-done {
+    display: none
+}
+
+.header-price {
+    opacity: 1
+}
+
+.header-price.r-fade-transition-exit-done {
+    display: block
+}
+
+.header-price.r-fade-transition-enter-done,.header-price.r-fade-transition-exit-done {
+    transition: opacity .5s ease-out,transform .5s ease-out
+}
+
+.header-price.r-fade-transition-exit-done {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.header .header-price {
+    opacity: 1;
+    transform: none
+}
+
+.header-price .rc-prices,.header-price .rc-prices-inline {
+    margin-bottom: 0
+}
+
+.header-price .rc-prices {
+    margin-bottom: 0
+}
+
+.header-price .rc-prices .as-price-currentprice,.header-price .rc-prices .rc-prices-currentprice,.header-price .rc-prices-inline .as-price-currentprice,.header-price .rc-prices-inline .rc-prices-currentprice {
+    color: #1d1d1f;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.4705882353
+}
+
+.header-wrapper .as-price-currentprice,.header-wrapper .rc-prices-currentprice {
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.016em;
+    line-height: 1.4285914286
+}
+
+.header-price .price-point {
+    display: inline
+}
+
+.nowrap {
+    display: inline-block;
+    text-decoration: inherit;
+    white-space: nowrap
+}
+
+.header-savingsmessage {
+    display: inline-flex;
+    font-weight: 600;
+    padding-top: 2px
+}
+
+.header-savingsmessage svg {
+    height: 25px;
+    width: 25px
+}
+
+.header-savingsmessage span {
+    margin-top: 3px;
+    margin-inline-start:2px}
+
+.header-footer {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 6px
+}
+
+.header-footer a {
+  text-decoration: none;
+  color: #0066cc;
+}
+.rf-energylabel-container {
+    display: flex;
+    gap: 10px 15px;
+    margin: 20px 0 0
+}
+
+.header-rightsection {
+    margin-inline-start:auto}
+
+.header-learnmorelink-items {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px
+}
+
+.header-learnmorelink:last-child {
+    padding-bottom: 0;
+    padding-top: 0
+}
+
+.header-learnmorelink a,.header-learnmorelink button {
+    background-color: #f5f5f7;
+    border-radius: 18px;
+    color: #1d1d1f;
+    display: flex;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    line-height: 1.3333733333;
+    margin: 6px 0;
+    padding: 12px 16px;
+    text-decoration: none
+}
+
+.header-learnmorelink a:after,.header-learnmorelink button:after {
+    padding-top: 3px
+}
+
+.header-learnmorelink .header-plusicon:after,.header-learnmorelink .header-plusicon:before {
+    color: inherit;
+    display: inline-block;
+    font-family: SF Pro Icons;
+    font-size: inherit;
+    font-style: normal;
+    font-weight: inherit;
+    line-height: 1;
+    position: relative;
+    text-decoration: underline;
+    z-index: 1;
+    alt: "";
+    text-decoration: none
+}
+
+.header-learnmorelink .header-plusicon:before {
+    display: none
+}
+
+.header-learnmorelink .header-plusicon:after,.header-learnmorelink .header-plusicon:before {
+    content: ""
+}
+
+.header-learnmorelink .header-plusicon:after {
+    padding-inline-start:.24em;top: 0
+}
+
+
+/*================= 
+Column Left
+==================*/
+.column-left{
+
+}
+.image-container{
+
+}
+.image-wraper{
+
+}
+.image-section {
+
+}
+.image-section-firstrender {
+
+}
+.transition-enter-done{
+
+}
+.image-dotnav{}
+.dotnav-items{}
+.dotnav-item{}
+.gallery-dotnav-button{}
+.dotnav-link {}
+.typography-body{}
+.raw-image{}
+.inline-image-item{}
+.image-item{}
+.image-content{}
+.galary-image-wrapper{}
+.galary-image{}
+.image-paddler-nav{}
+.paddlenav-arrow {}
+.paddlenav-arrow-previous {}
+.visuallyhidden{}
+.paddlenav-arrow-next{}
+
+/*================= 
+Column Right
+==================*/
