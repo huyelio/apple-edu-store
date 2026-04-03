@@ -187,14 +187,14 @@ function initBuyFlow() {
     '11inch': {
       '256gb': { 'glossy': { 'wifi': 27199000, 'wificell': 32799000 }, 'matte': null },
       '512gb': { 'glossy': { 'wifi': 32799000, 'wificell': 38399000 }, 'matte': null },
-      '1tb':   { 'glossy': { 'wifi': 43999000, 'wificell': 49599000 }, 'matte': { 'wifi': 46799000, 'wificell': 52399000 } },
-      '2tb':   { 'glossy': { 'wifi': 55199000, 'wificell': 60799000 }, 'matte': { 'wifi': 57999000, 'wificell': 63599000 } },
+      '1tb': { 'glossy': { 'wifi': 43999000, 'wificell': 49599000 }, 'matte': { 'wifi': 46799000, 'wificell': 52399000 } },
+      '2tb': { 'glossy': { 'wifi': 55199000, 'wificell': 60799000 }, 'matte': { 'wifi': 57999000, 'wificell': 63599000 } },
     },
     '13inch': {
       '256gb': { 'glossy': { 'wifi': 37199000, 'wificell': 42799000 }, 'matte': null },
       '512gb': { 'glossy': { 'wifi': 42799000, 'wificell': 48399000 }, 'matte': null },
-      '1tb':   { 'glossy': { 'wifi': 53999000, 'wificell': 59599000 }, 'matte': { 'wifi': 56799000, 'wificell': 62399000 } },
-      '2tb':   { 'glossy': { 'wifi': 65199000, 'wificell': 70799000 }, 'matte': { 'wifi': 67999000, 'wificell': 73599000 } },
+      '1tb': { 'glossy': { 'wifi': 53999000, 'wificell': 59599000 }, 'matte': { 'wifi': 56799000, 'wificell': 62399000 } },
+      '2tb': { 'glossy': { 'wifi': 65199000, 'wificell': 70799000 }, 'matte': { 'wifi': 67999000, 'wificell': 73599000 } },
     }
   };
 
@@ -203,7 +203,88 @@ function initBuyFlow() {
 
   // --- Helper: format number ---
   function formatPrice(n) {
+    if (typeof n !== 'number') return "";
     return n.toLocaleString('vi-VN') + 'đ';
+  }
+
+  // --- Helper: Compute "Price From" for any given partial state ---
+  function computePriceFromState(currentState) {
+    const capacities = ["256gb", "512gb", "1tb", "2tb"];
+    const finishes = ["glossy", "matte"];
+    const connections = ["wifi", "wificell"];
+
+    const targetSizes = currentState.size ? [currentState.size] : ["11inch", "13inch"];
+    const targetCapacities = currentState.capacity ? [currentState.capacity] : capacities;
+    const targetFinishes = currentState.finish ? [currentState.finish] : finishes;
+    const targetConnections = currentState.connection ? [currentState.connection] : connections;
+
+    let min = Infinity;
+    targetSizes.forEach(s => {
+      targetCapacities.forEach(cap => {
+        const capNode = prices[s]?.[cap];
+        if (!capNode) return;
+        targetFinishes.forEach(fin => {
+          const finNode = capNode[fin];
+          if (!finNode) return;
+          targetConnections.forEach(conn => {
+            const p = finNode[conn];
+            if (typeof p === 'number' && p < min) min = p;
+          });
+        });
+      });
+    });
+    return min === Infinity ? null : min;
+  }
+
+  // --- Helper: Sync all price labels in the UI based on current state ---
+  function syncAllPrices() {
+    // 1. Update Main Price Totals (Header, Sticky Bar, Summary)
+    const currentMin = computePriceFromState(state);
+
+    if (currentMin !== null) {
+      const formatted = formatPrice(currentMin);
+      if (summaryPrice) summaryPrice.textContent = `Từ ${formatted}`;
+      if (stickyBarPrice) stickyBarPrice.textContent = formatted;
+      if (headerPriceEl) headerPriceEl.textContent = formatted;
+    }
+
+    // 2. Update Option-level "From" prices (Contextual prices)
+    const groups = [
+      { name: "dimensionScreensize", key: "size" },
+      { name: "dimensionCapacity", key: "capacity" },
+      { name: "dimensionFinish", key: "finish" },
+      { name: "dimensionConnection", key: "connection" },
+      { name: "dimensionEngraving", key: "engraving" }
+    ];
+
+    groups.forEach(group => {
+      const inputs = document.querySelectorAll(`input[name="${group.name}"]`);
+      inputs.forEach(input => {
+        const testState = { ...state, [group.key]: input.value };
+        const priceFrom = computePriceFromState(testState);
+
+        if (priceFrom !== null) {
+          // Use CSS.escape for IDs that might contain colons
+          const escapedId = (window.CSS && CSS.escape) ? CSS.escape(input.id) : input.id;
+          const label = document.querySelector(`label[for="${escapedId}"]`);
+
+          if (label) {
+            const priceEl = label.querySelector(".nowrap") || label.querySelector(".price-point");
+            if (priceEl) {
+              const f = formatPrice(priceFrom);
+              if (group.name === "dimensionScreensize") {
+                priceEl.textContent = f;
+              } else {
+                priceEl.textContent = (priceEl.classList.contains('nowrap') ? "" : "Từ ") + f;
+              }
+            }
+          }
+        }
+      });
+    });
+
+    // 3. Update Summary Title
+    updateSummaryTitle();
   }
 
   // --- Helper: enable a step (remove disabled from all inputs & labels) ---
@@ -244,36 +325,24 @@ function initBuyFlow() {
   }
 
   // --- Steps ---
-  const stepSize       = document.querySelector('.rf-bfe-dimension-dimensionscreensize');
-  const stepColor      = document.querySelector('.rf-bfe-dimension-dimensioncolor');
-  const stepCapacity   = document.querySelector('.rf-bfe-dimension-dimensioncapacity');
-  const stepFinish     = document.querySelector('.rf-bfe-dimension-dimensionfinish');
+  const stepSize = document.querySelector('.rf-bfe-dimension-dimensionscreensize');
+  const stepColor = document.querySelector('.rf-bfe-dimension-dimensioncolor');
+  const stepCapacity = document.querySelector('.rf-bfe-dimension-dimensioncapacity');
+  const stepFinish = document.querySelector('.rf-bfe-dimension-dimensionfinish');
   const stepConnection = document.querySelector('.rf-bfe-dimension-dimensionconnection');
-  const stepEngraving  = document.querySelector('.rf-bfe-engraving');
-  const stepPencil     = document.getElementById('acc_pencil');
+  const stepEngraving = document.querySelector('.rf-bfe-engraving');
+  const stepPencil = document.getElementById('acc_pencil');
   const stepKeyboard11 = document.getElementById('acc_keyboard_11inch');
   const stepKeyboard13 = document.getElementById('acc_keyboard_13inch');
 
   // Summary elements
-  const summaryTitle  = document.querySelector('.rf-bfe-summary-producttitle');
-  const summaryPrice  = document.querySelector('.rf-bfe-summary-price .price-point');
-  const continueBtn   = document.querySelector('.rc-summary-button button');
+  const summaryTitle = document.querySelector('.rf-bfe-summary-producttitle');
+  const summaryPrice = document.querySelector('.rf-bfe-summary-price .price-point');
+  const continueBtn = document.querySelector('.rc-summary-button button');
 
   // Sticky bar price
   const stickyBarPrice = document.querySelector('.sticky-bar-price span');
-  const headerPriceEl  = document.querySelector('.rc-prices-currentprice .nowrap');
-
-  // --- Update price display ---
-  function updatePrice() {
-    const { size, capacity, finish, connection } = state;
-    if (!size || !capacity || !finish || !connection) return;
-    const p = prices[size]?.[capacity]?.[finish]?.[connection];
-    if (!p) return;
-    const formatted = formatPrice(p);
-    if (summaryPrice) summaryPrice.textContent = `Từ ${formatted}`;
-    if (stickyBarPrice) stickyBarPrice.textContent = formatted;
-    if (headerPriceEl) headerPriceEl.textContent = formatted;
-  }
+  const headerPriceEl = document.querySelector('.rc-prices-currentprice .nowrap');
 
   // --- Update summary product name ---
   function updateSummaryTitle() {
@@ -342,10 +411,11 @@ function initBuyFlow() {
       state.size = input.value;
       // Reset downstream
       state.color = state.capacity = state.finish = state.connection = null;
-      [stepColor, stepCapacity, stepFinish, stepConnection, stepEngraving, stepPencil, stepKeyboard11, stepKeyboard13]
+      [stepColor, stepCapacity, stepFinish, stepConnection, stepPencil, stepKeyboard11, stepKeyboard13]
         .forEach(disableStep);
       enableStep(stepColor);
       updateKeyboardVisibility();
+      syncAllPrices();
       scrollToStep(stepColor);
     });
   });
@@ -357,9 +427,10 @@ function initBuyFlow() {
     input.addEventListener('change', () => {
       state.color = input.value;
       state.capacity = state.finish = state.connection = null;
-      [stepCapacity, stepFinish, stepConnection, stepEngraving, stepPencil, stepKeyboard11, stepKeyboard13]
+      [stepCapacity, stepFinish, stepConnection, stepPencil, stepKeyboard11, stepKeyboard13]
         .forEach(disableStep);
       enableStep(stepCapacity);
+      syncAllPrices();
       scrollToStep(stepCapacity);
     });
   });
@@ -371,10 +442,11 @@ function initBuyFlow() {
     input.addEventListener('change', () => {
       state.capacity = input.value;
       state.finish = state.connection = null;
-      [stepFinish, stepConnection, stepEngraving, stepPencil, stepKeyboard11, stepKeyboard13]
+      [stepFinish, stepConnection, stepPencil, stepKeyboard11, stepKeyboard13]
         .forEach(disableStep);
       enableStep(stepFinish);
       updateFinishAvailability();
+      syncAllPrices();
       scrollToStep(stepFinish);
     });
   });
@@ -386,9 +458,10 @@ function initBuyFlow() {
     input.addEventListener('change', () => {
       state.finish = input.value;
       state.connection = null;
-      [stepConnection, stepEngraving, stepPencil, stepKeyboard11, stepKeyboard13]
+      [stepConnection, stepPencil, stepKeyboard11, stepKeyboard13]
         .forEach(disableStep);
       enableStep(stepConnection);
+      syncAllPrices();
       scrollToStep(stepConnection);
     });
   });
@@ -399,16 +472,40 @@ function initBuyFlow() {
   document.querySelectorAll('input[name="dimensionConnection"]').forEach(input => {
     input.addEventListener('change', () => {
       state.connection = input.value;
+
+      // Enable accessory sections
       enableStep(stepEngraving);
-      enableStep(stepPencil);
       // Enable correct keyboard based on size
       if (state.size === '11inch') enableStep(stepKeyboard11);
       else if (state.size === '13inch') enableStep(stepKeyboard13);
-      updatePrice();
-      updateSummaryTitle();
+
+      syncAllPrices();
+
       // Enable continue button
-      if (continueBtn) continueBtn.removeAttribute('disabled');
+      if (continueBtn) {
+        continueBtn.removeAttribute('disabled');
+        // Final summary section should be enabled too
+        const stepSummary = document.querySelector('.rf-bfe-summary');
+        if (stepSummary) stepSummary.classList.remove('rf-bfe-step-disabled');
+      }
+
+      // Scroll to the next visible major action (Pencil)
       scrollToStep(stepEngraving);
+    });
+  });
+
+  // ============================
+  // Step 6: Engraving
+  // ============================
+    document.querySelectorAll('input[name="dimensionEngraving"]').forEach(input => {
+    input.addEventListener('change', () => {
+      state.engraving = input.value;
+      state.pencil = null;
+      [stepPencil, stepKeyboard11, stepKeyboard13]
+        .forEach(disableStep);
+      enableStep(stepPencil);
+      syncAllPrices();
+      scrollToStep(stepPencil);
     });
   });
 
@@ -446,6 +543,6 @@ function initBuyFlow() {
   // Keyboard 13-inch hidden until 13-inch is selected
   if (stepKeyboard13) stepKeyboard13.classList.add('rf-inlineaccessorylot-hidden');
 
-  // Set initial price
-  if (stickyBarPrice) stickyBarPrice.textContent = '27.199.000đ';
+  // Set initial prices
+  syncAllPrices();
 }
