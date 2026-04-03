@@ -709,10 +709,10 @@ Sticky Container & Layout
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
-  max-width: 2632px;
-  min-width: 980px;
-  width: 87.5%;
-  margin: auto;
+  width: 100%;
+  max-width: 1440px !important; /* Ngăn container phình quá to trên màn lớn */
+  margin: 0 auto !important;
+  padding: 0 90px; /* Thêm lề trái phải an toàn */
 }
 
 /*================= 
@@ -720,8 +720,9 @@ Column Left
 ==================*/
 .column-left {
   position: relative;
-  flex: 1; /* Takes up remaining space */
-  padding-right: 50px; /* Give some breathing room to the right column */
+  flex-basis: 58.33333%;
+  max-width: 58.33333%;
+  padding-right: 0;
 }
 
 .image-container {
@@ -839,14 +840,12 @@ Column Left
 
 .image-paddler-nav {
   position: absolute;
-  top: calc(50% - 20px);
+  top: 50%;
   left: 0;
   right: 0;
   transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
+  /* Không dùng flex nữa để không bị nhảy vị trí khi ẩn 1 nút */
   pointer-events: none;
-  padding: 0 16px;
   z-index: 10;
 }
 
@@ -863,6 +862,9 @@ Column Left
   pointer-events: auto;
   transition: background-color 0.2s;
   backdrop-filter: blur(5px);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .paddlenav-arrow:hover {
@@ -875,16 +877,19 @@ Column Left
   fill: #1d1d1f;
 }
 
-.paddlenav-arrow-previous {}
+.paddlenav-arrow-previous {
+  left: 16px;
+}
 
 .visuallyhidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  position: absolute;
 }
 
-.paddlenav-arrow-next {}
+.paddlenav-arrow-next {
+  right: 16px;
+}
 
 
 
@@ -893,7 +898,15 @@ Column Right
 ==================*/
 .rf-bfe-column-right {
   flex-basis: 19.2941176471rem;
-  max-width: 19.2941176471rem
+  max-width: 19.2941176471rem;
+}
+
+@media only screen and (min-width: 1069px) {
+  .rf-bfe-column-right {
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+    padding-top: 322px; /* Tăng padding để tiêu đề Phiên Bản căn vừa tầm ảnh iPad */
+  }
 }
 
 @media(max-width: 1023px)and (max-device-width:736px) {
@@ -1297,7 +1310,7 @@ SCROLLBAR
         display: block;
         position: absolute;
         top: 0;
-        right: -60px; /* Đẩy hẳn scrollbar ra ngoài 60px so với mép phải */
+        right: 20px; /* Nằm an toàn trong vùng padding 40px của container chính */
         height: 100%;
         z-index: 10;
         width: 20px;
