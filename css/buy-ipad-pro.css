@@ -634,45 +634,177 @@ Wrapper Header
     padding-inline-start:.24em;top: 0
 }
 
-
 /*================= 
 Column Left
 ==================*/
 .column-left{
-
+    position: relative;
+    width: 100%;
 }
+
 .image-container{
-
+    position: sticky;
+    top: 24px;
+    width: 100%;
+    max-width: 903px;
+    margin: 0 auto;
 }
+
 .image-wraper{
-
+    width: 100%;
 }
+
 .image-section {
-
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
+
 .image-section-firstrender {
-
 }
+
 .transition-enter-done{
-
 }
-.image-dotnav{}
-.dotnav-items{}
-.dotnav-item{}
-.gallery-dotnav-button{}
+
+.image.inline-image {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-dotnav{
+    order: 2;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.dotnav-items{
+    display: flex;
+    list-style: none;
+    gap: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+.dotnav-item{
+    display: flex;
+}
+
+.gallery-dotnav-button{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #d2d2d7; 
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0;
+}
+
+.gallery-dotnav-button:not([disabled]):hover {
+    background-color: #86868b;
+}
+
+.gallery-dotnav-button[disabled] {
+    background-color: #1d1d1f; 
+    cursor: default;
+}
+
 .dotnav-link {}
+
 .typography-body{}
-.raw-image{}
-.inline-image-item{}
-.image-item{}
-.image-content{}
-.galary-image-wrapper{}
-.galary-image{}
-.image-paddler-nav{}
-.paddlenav-arrow {}
+
+.raw-image{
+    order: 1;
+    width: 100%;
+    overflow: hidden; 
+    border-radius: 12px;
+}
+
+.raw-image > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.inline-image-item{
+    width: 50%; /* Tràn khung 200% nên chia đôi */
+    flex-shrink: 0;
+}
+
+.image-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.image-content{
+    width: 100%;
+}
+
+.galary-image-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-image, .galary-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.image-paddler-nav{
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    padding: 0 16px;
+    z-index: 10;
+}
+
+.paddlenav-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(220, 220, 225, 0.7); 
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    transition: background-color 0.2s;
+    backdrop-filter: blur(5px);
+}
+
+.paddlenav-arrow:hover {
+    background-color: rgba(200, 200, 205, 0.9);
+}
+
+.paddlenav-arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: #1d1d1f;
+}
+
 .paddlenav-arrow-previous {}
-.visuallyhidden{}
+
+.visuallyhidden{
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    position: absolute;
+}
+
 .paddlenav-arrow-next{}
+
+
 
 /*================= 
 Column Right
